@@ -56,15 +56,16 @@
                 http_response_code(405);
                 echo "Erreur : Méthode {$action} non définie dans le contrôleur.";
             }
-        } catch (Exception $e) {
-            $erreur = $e->getMessage();
+        } catch (Throwable $e) {
             http_response_code(500);
-            echo $erreur;
-            //require_once __DIR__ . '/../views/error.php';
+            $err_code = 500;
+            $erreur = $e->getMessage();
+            require_once __DIR__ . '/../views/error.php';
         }
     } else {
         http_response_code(404);
-        echo "not good";
-        //require_once __DIR__ . '/../views/error.php';
+        $err_code = 404;
+        $erreur = "Page inexistante...";
+        require_once __DIR__ . '/../views/error.php';
     }
 
