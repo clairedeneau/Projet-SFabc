@@ -113,24 +113,16 @@ header {
 
 /* MISE EN FORME DU CONTENU DE LA PAGE */
 
-/* Ajout d'un espace à gauche et à droite du texte dans le main */
 main {
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
-    max-width: 1200px; /* Tu peux ajuster la largeur maximale selon tes préférences */
+    max-width: 1200px;
 }
 
-/* Mise en forme de la liste */
 .info-surcyclage ul {
-    padding-left: 20px; /* Assure un léger décalage à gauche pour la liste */
+    padding-left: 20px;
 }
-
-.info-surcyclage ul li {
-    list-style-type: decimal;
-    margin-bottom: 10px;
-}
-
 
 
 /* MISE EN FORME DU FOOTER */ 
