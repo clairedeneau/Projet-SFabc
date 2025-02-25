@@ -1,0 +1,14 @@
+
+{
+    
+    "avis": [
+    {
+        "idProduit": 1,
+        "user": "John Doe",
+        "mail": "",
+        "note": 4,
+        "comment": "Great product, really enjoyed using it!",
+        "date": "2023-10-01"
+    }
+
+]}
