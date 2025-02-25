@@ -1,7 +1,7 @@
 <?php
 return [
     '/' => [
-        'controler' => SFabc\controlers\Homecontroler::class,
+        'controler' => SFabc\controlers\HomeControler::class,
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
@@ -19,25 +19,25 @@ return [
         'requiresArgument' => false
     ],
     '/search' => [
-        'controler' => SFabc\controlers\Searchcontroler::class,
+        'controler' => SFabc\controlers\SearchControler::class,
+        'methods' => ['GET', 'POST'],
+        'redirect' => '/',
+        'requiresArgument' => false
+    ],
+    '/articles' => [
+        'controler' => SFabc\controlers\ControleurArticles::class,
+        'methods' => ['GET', 'POST'],
+        'redirect' => '/',
+        'requiresArgument' => false
+    ],
+    '/admin' => [
+        'controler' => SFabc\controlers\AdminLoginControler::class,
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
     ],
     '/logout' => [
-        'controler' => SFabc\controlers\Logoutcontroler::class,
-        'methods' => ['GET', 'POST'],
-        'redirect' => '/',
-        'requiresArgument' => false
-    ],
-    '/me' => [
-        'controler' => SFabc\controlers\Profilecontroler::class,
-        'methods' => ['GET', 'POST'],
-        'redirect' => '/',
-        'requiresArgument' => false
-    ],
-    '/suscribe' => [
-        'controler' => SFabc\controlers\Suscribecontroler::class,
+        'controler' => SFabc\controlers\AdminLogoutControler::class,
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false

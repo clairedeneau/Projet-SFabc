@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <link rel="stylesheet" href="static/contact.css">
     <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/header.css">
     
     <title>Contact</title>
 </head>
@@ -18,15 +19,15 @@
             <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
         </div>
         <ul>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="contact.php" class="nav-link-active">Contact</a></li>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/contact" class="nav-link-active">Contact</a></li>
         </ul>
     </nav>
 
     <nav id="mainnav">
         <div class="logo-container">
-            <a id="logo" href="#"><img src="static/images/logo.png" alt="SFabc" width="120" heigt="auto"></a>
+            <a id="logo" href="/"><img src="static/images/logo.png" alt="SFabc" width="120" heigt="auto"></a>
         </div>
     </nav>
 </header>
