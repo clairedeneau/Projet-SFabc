@@ -110,7 +110,6 @@ header {
     color: white;
 }
 
-
 /* MISE EN FORME DU FORMULAIRE */
 
 #info-form {
@@ -177,44 +176,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #4A3628;
-}
-
-
-/* MISE EN FORME DU FOOTER */ 
-
-footer {
-    background-color: #B8A67E;
-    margin-top: 10px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: left;
-}
-
-.footer-content p {
-    margin: 0;
-}
-
-.footer-content .social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.footer-note {
-    margin: 0;
-    text-align: right;
-    flex-grow: 1;
-}
-
-.social-icons a img {
-    width: 24px;
-    height: 24px;
 }
