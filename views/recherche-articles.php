@@ -71,6 +71,7 @@
     </nav>
 </header>
 <section class="bandeau">
+    <h1>Résultats de votre recherche</h1>
     <img src="static/images/fond_bandeau.png" alt="bandeau">
 </section>
 
