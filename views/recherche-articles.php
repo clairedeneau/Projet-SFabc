@@ -1,41 +1,3 @@
-<?php
-    $articles = [
-        [
-            "nom" => "Couteau en bois personnalisé",
-            "prix" => "À partir de 15.00 €",
-            "image" => "couteaux/couteau gravure personnalisée 1.jpg"
-        ],
-        [
-            "nom" => "Eclairage ambiance bouteille - grand modèle",
-            "prix" => "17.90 €",
-            "image" => "bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg"
-        ],
-        [
-            "nom" => "Aimants bois gravés personnalisés",
-            "prix" => "À partir de 15.00 €",
-            "image" => "aimants/aimants gravure et découpe personnalisee bois recyclage surcyclage upcycling 1.png"
-        ],
-        [
-            "nom" => "Jack en bois personnalisé",
-            "prix" => "À partir de 26.00 €",
-            "image" => "jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg"
-        ]
-        ];
-
-    $query = isset($_GET['recherche']) ? strtolower(trim($_GET['recherche'])) : "";
-    $articles_filtre = [];
-    if($query) {
-        foreach ($articles as $article) {
-            if (strpos(strtolower($article["nom"]), $query) !== false) {
-                $articles_filtre[] = $article;
-            }
-        }
-    } else {
-        $articles_filtre = $articles;
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -78,10 +40,10 @@
 <body>
     <h2>Résultats de la recherche - "<?= htmlspecialchars($query) ?>"</h2>
     <main>
-        <?php if(empty($articles_filtre)): ?> 
+        <?php if(empty($articles)): ?> 
             <p style="color: red;"> Aucun résultat trouvé !</p>
         <?php else: ?>
-            <?php foreach ($articles_filtre as $article): ?>
+            <?php foreach ($articles as $article): ?>
                 <div class="produit">
                     <img src="<?= htmlspecialchars($article["image"]) ?>" alt="<?= htmlspecialchars($article["nom"]) ?>" width="200" height="auto">
                     <div class="contenu-produit">
