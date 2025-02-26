@@ -31,13 +31,12 @@
 <body>
     <?php if (!empty($erreur)) echo "<p id='info-erreur'>$erreur</p>"; ?>
     <div class="container">
-        <form action="login.php" method="post" class="connexion-form">
+        <form action="admin" method="post" class="connexion-form">
             <input type="text" name="identifiant" id="identifiant" placeholder="Identifiant" required>
             <input type="password" name="password" id="mot-passe" placeholder="Mot de passe" required>
             <button type="submit" name="valider">Valider</button>
         </form>
     </div>
-    
 </body>
 <?php
 require_once "footer.php"

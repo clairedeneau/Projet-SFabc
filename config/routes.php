@@ -2,7 +2,7 @@
 return [
     '/' => [
         'controler' => SFabc\controlers\HomeControler::class,
-        'methods' => ['GET', 'POST'],
+        'methods' => ['GET'],
         'redirect' => '/',
         'requiresArgument' => false
     ],
@@ -20,7 +20,7 @@ return [
     ],
     '/articles' => [
         'controler' => SFabc\controlers\ControleurArticles::class,
-        'methods' => ['GET', 'POST'],
+        'methods' => ['GET'],
         'redirect' => '/',
         'requiresArgument' => false
     ],
