@@ -18,12 +18,6 @@ return [
         'redirect' => '/',
         'requiresArgument' => false
     ],
-    '/search' => [
-        'controler' => SFabc\controlers\SearchControler::class,
-        'methods' => ['GET', 'POST'],
-        'redirect' => '/',
-        'requiresArgument' => false
-    ],
     '/articles' => [
         'controler' => SFabc\controlers\ControleurArticles::class,
         'methods' => ['GET', 'POST'],
