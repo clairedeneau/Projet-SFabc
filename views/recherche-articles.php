@@ -1,3 +1,41 @@
+<?php
+    $articles = [
+        [
+            "nom" => "Couteau en bois personnalisé",
+            "prix" => "À partir de 15.00 €",
+            "image" => "couteaux/couteau gravure personnalisée 1.jpg"
+        ],
+        [
+            "nom" => "Eclairage ambiance bouteille - grand modèle",
+            "prix" => "17.90 €",
+            "image" => "bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg"
+        ],
+        [
+            "nom" => "Aimants bois gravés personnalisés",
+            "prix" => "À partir de 15.00 €",
+            "image" => "aimants/aimants gravure et découpe personnalisee bois recyclage surcyclage upcycling 1.png"
+        ],
+        [
+            "nom" => "Jack en bois personnalisé",
+            "prix" => "À partir de 26.00 €",
+            "image" => "jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg"
+        ]
+        ];
+
+    $query = isset($_GET['recherche']) ? strtolower(trim($_GET['recherche'])) : "";
+    $articles_filtre = [];
+    if($query) {
+        foreach ($articles as $article) {
+            if (strpos(strtolower($article["nom"]), $query) !== false) {
+                $articles_filtre[] = $article;
+            }
+        }
+    } else {
+        $articles_filtre = $articles;
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,26 +48,17 @@
     <link rel="stylesheet" href="static/recherche-articles.css">
     <link rel="stylesheet" href="static/header.css">
     <link rel="stylesheet" href="static/footer.css">
-    <title>Recherche d'articles</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".produit img").forEach(img => {
-                if (img.naturalHeight > img.naturalWidth) {
-                    img.style.transform = "rotate(90deg)";
-                }
-            });
-        });
-    </script>
-
+    <title>Résultats recherche d'articles</title>
 </head>
 <header>
     <nav id="topnav">
-        <div class="search-container">
+        <form action="recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
-            <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
-        </div>
+            <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
+            <button type="submit" style="display: none;"></button>
+        </form>
         <ul>
-            <li><a href="/articles">Articles</a></li>
+            <li><a href="/articles" class="nav-link-active">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
@@ -46,36 +75,21 @@
 </section>
 
 <body>
-    <h2>Tous les articles</h2>
+    <h2>Résultats de la recherche - "<?= htmlspecialchars($query) ?>"</h2>
     <main>
-        <div class="produit">
-            <img src="couteaux/couteau gravure personnalisée 1.jpg" alt="Couteau gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Couteau en bois personnalisé</h3>
-                <p id="prix">À partir de 15.00 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Eclairage ambiance bouteille - grand modèle</h3>
-                <p id="prix">17.90 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="aimants/aimants gravure et découpe personnalisee bois recyclage surcyclage upcycling 1.png" alt="Aimants" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Aimants bois gravés personnalisés</h3>
-                <p id="prix">À partir de 15.00 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg" alt="Jeu bois gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Jack en bois personnalisé</h3>
-                <p id="prix">À partir de 26.00 €</p>
-            </div>
-        </div>
+        <?php if(empty($articles_filtre)): ?> 
+            <p style="color: red;"> Aucun résultat trouvé !</p>
+        <?php else: ?>
+            <?php foreach ($articles_filtre as $article): ?>
+                <div class="produit">
+                    <img src="<?= htmlspecialchars($article["image"]) ?>" alt="<?= htmlspecialchars($article["nom"]) ?>" width="200" height="auto">
+                    <div class="contenu-produit">
+                        <h3><?= htmlspecialchars($article["nom"]) ?></h3>
+                        <p id="prix"><?= htmlspecialchars($article["prix"]) ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </main>
 </body>
 <?php
