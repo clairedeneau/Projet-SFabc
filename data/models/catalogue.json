@@ -18,6 +18,7 @@
         "txt1": null,
         "txt2": null,
         "photos": [
+
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_7.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_10.jpg",
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_11.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_12.jpg",
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_13.jpg"
@@ -32,7 +33,7 @@
             "Tête rectangle ",
             " Alimentation sur secteur (220 V) ",
             " Fil en corde ",
-            " Positionnable à volonté (couché, debout, assis, oreilles positionnables"
+            " Positionnable à volonté (couché, debout, assis, oreilles positionnables)"
         ],
         "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
         "prix": [
@@ -44,7 +45,8 @@
         "txt1": null,
         "txt2": null,
         "photos": [
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
+            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg",
+            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"

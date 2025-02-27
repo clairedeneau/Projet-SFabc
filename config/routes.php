@@ -52,7 +52,7 @@ return [
         'controler' => SFabc\controlers\DetailControler::class,
         'methods' => ['GET'],
         'redirect' => '/',
-        'requiresArgument' => false
+        'requiresArgument' => true
     ],
     '/avis' => [
         'controler' => SFabc\controlers\AvisControler::class,
