@@ -15,9 +15,6 @@ class GestionArticlesControler extends Controler
         try {
             $jsonProvider = new JsonProvider('../data/models/catalogue.json');
             $catalogues = $jsonProvider->loadCatalogue();
-            error_log(print_r($catalogues, true));
-            error_log(print_r($_GET, true));
-            error_log(print_r(count($catalogues), true));
             $_SESSION['catalogue'] = [];
             if (isset($_GET['index'])){
                 if(count($catalogues) ==  $_GET['index']){
@@ -25,9 +22,7 @@ class GestionArticlesControler extends Controler
                         count($catalogues) + 1,
                         "Nouveau produit",
                         [],
-                        '',
                         [],
-                        '',
                         '',
                         [],
                         '',
@@ -80,10 +75,13 @@ class GestionArticlesControler extends Controler
                                 $nomArticle = $_POST['nom'];
                                 $famille = $_POST['famille'];
                                 $sousfamille = $_POST['sousFamille'];
+                                $txt1 = $_POST['text1'];
 
                                 $catalogue->setNom($nomArticle);
                                 $catalogue->setFamille($famille);
                                 $catalogue->setSousFamille($sousfamille);
+                                $catalogue->setTxt1($txt1);
+
                             }
                             elseif ($_POST['form_type'] === 'edit_description') {
                                 $currentDescriptions = [];

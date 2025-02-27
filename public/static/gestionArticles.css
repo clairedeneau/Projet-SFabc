@@ -162,7 +162,7 @@ a {
 
 
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="email"] {
     font-family: 'Alata', sans-serif;
     font-size: 16px;
     border: 1.5px solid #5A4328;
@@ -172,6 +172,17 @@ input[type="text"], input[type="email"], textarea {
     background-color: #EEE7D8;
 }
 
+textarea{
+
+    width: calc(100% - 20px);
+    font-size: 16px;
+    border: 1.5px solid #5A4328;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    background-color: #EEE7D8;
+}
 input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
     color: #B8A67E;
 }
@@ -184,3 +195,4 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     border-radius: 5px;
     font-size: 16px;
 }
+

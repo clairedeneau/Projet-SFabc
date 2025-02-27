@@ -114,6 +114,8 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
         </select>
         <button type="button" id="myBtn3">Nouveau Prix</button>
         <button type="button" id="myBtn4">Modifier Prix</button>
+
+        <textarea name="text1" id="description" placeholder="Text"><?php echo htmlspecialchars($selectedCatalogue->getTxt1()); ?></textarea>
         <button type="submit" class="save-button" name="form_type" value="edit_article">Enregistrer les changements</button>
     </form> 
 
@@ -159,7 +161,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                 <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
                 <input type="hidden" name="form_type" value="add_prix">
                 <input type="text" name="new_description" placeholder="Nouvelle description">
-                <input type="text" name="new_prix" placeholder="Nouveau tarif">
+                <input type="text" name="new_prix" placeholder="Nouveau tarif" required>
                 <button type="submit" class="save-button">Enregistrer</button>
             </form>
         </div>
@@ -180,7 +182,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                 foreach ($prixs as $index => $prix) {
                     echo '<li>';
                     echo '<input type="text" name="modif_description'.$index.'" placeholder="Nouvelle description" value="' . htmlspecialchars($prix["description"]) . '">';
-                    echo '<input type="text" name="modif_prix'.$index.'" placeholder="Nouveau tarif" value="' . htmlspecialchars($prix["tarif"]) . '">';
+                    echo '<input type="text" name="modif_prix'.$index.'" placeholder="Nouveau tarif" value="' . htmlspecialchars($prix["tarif"]) . '" required>';
                     echo '</li>';  
                 }
                 ?>
@@ -205,27 +207,23 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
 </body>
 
 <script defer>
-    // Get the modal
     var modal = document.getElementById("myModal");
     var modal2 = document.getElementById("myModal2");
     var modal3 = document.getElementById("myModal3");
     var modal4 = document.getElementById("myModal4");
     
 
-    // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
     var btn2 = document.getElementById("myBtn2");
     var btn3 = document.getElementById("myBtn3");
     var btn4 = document.getElementById("myBtn4");
 
 
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     var span2 = document.getElementsByClassName("close")[1];
     var span3 = document.getElementsByClassName("close")[2];
     var span4 = document.getElementsByClassName("close")[3];
 
-    // When the user clicks the button, open the modal 
     btn.onclick = function() {
         modal.style.display = "block";
     }
@@ -274,6 +272,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             modal4.style.display = "none";
         }
     }
+
 </script>
 <?php
     require_once "footer.php"

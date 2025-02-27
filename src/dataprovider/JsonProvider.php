@@ -58,10 +58,8 @@ class JsonProvider
             $catalogueData['id'],
             $catalogueData['nom'],
             $catalogueData['description1'],
-            $catalogueData['description2'],
             $catalogueData['prix'],
             $catalogueData['txt1'],
-            $catalogueData['txt2'],
             $catalogueData['photos'],
             $catalogueData['famille'],
             $catalogueData['sousfamille']

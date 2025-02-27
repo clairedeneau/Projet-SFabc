@@ -1,27 +1,28 @@
 [
     {
         "id": 1,
-        "nom": "Mod\u00e8le Chdeap",
+        "nom": "Mod\u00e8le Chien",
         "description1": [
-            "",
-            "pdjapdjpdedkpapdk",
+            "T\u00eate l\u00e9g\u00e8rement en trap\u00e8ze\u00a0",
+            " Alimentation sur secteur (220 V)\u00a0",
             " Fil en corde\u00a0",
-            "aidda"
+            " Positionnable \u00e0 volont\u00e9 (couch\u00e9, debout, assis), oreilles positionnables\u00a0",
+            " Dimensions :  - couch\u00e9 : 30 cm de long",
+            " - 4 pattes : 30 cm de haut\u00a0",
+            "Gravure sur les pattes \u00e0 personnaliser"
         ],
-        "description2": "Dimensions :\n - couch\u00e9 : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes \u00e0 personnaliser",
         "prix": [
             {
                 "description": "",
                 "tarif": "69.00"
             }
         ],
-        "txt1": null,
-        "txt2": null,
+        "txt1": "DAPKJDA",
         "photos": [
             ""
         ],
-        "famille": "La",
-        "sousfamille": "daida"
+        "famille": "Lampes",
+        "sousfamille": "Lampe Bois recycl\u00e9 - \u00c9clairage Led (4W)"
     },
     {
         "id": 2,
@@ -30,9 +31,11 @@
             "T\u00eate rectangle\u00a0",
             " Alimentation sur secteur (220 V)\u00a0",
             " Fil en corde\u00a0",
-            " Positionnable \u00e0 volont\u00e9 (couch\u00e9, debout, assis\u00e0, oreilles positionnables"
+            " Positionnable \u00e0 volont\u00e9 (couch\u00e9, debout, assis\u00e0, oreilles positionnables",
+            " Dimensions :  - couch\u00e9 : 30 cm de long",
+            " - 4 pattes : 30 cm de haut\u00a0",
+            "Gravure sur les \u00e0 personnaliser"
         ],
-        "description2": "Dimensions :\n - couch\u00e9 : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes \u00e0 personnaliser",
         "prix": [
             {
                 "description": "",
@@ -40,7 +43,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -52,12 +54,12 @@
         "nom": "Mod\u00e8le Poule",
         "description1": [
             "Alimentation sur batterie (surcycl\u00e9e)\u00a0",
-            "Recharge par chargeur 5V (type t\u00e9l\u00e9phone portable)\u00a0"
+            "Recharge par chargeur 5V (type t\u00e9l\u00e9phone portable)\u00a0",
+            " T\u00eate et pattes positionnables\u00a0",
+            "Gravure \u00e0 personnaliser"
         ],
-        "description2": "T\u00eate et pattes positionnables\u00a0;Gravure \u00e0 personnaliser",
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -70,7 +72,6 @@
         "description1": [
             "Socle noir (7 couleurs - plaque 12 \u00d7 16 cm)"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -78,7 +79,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs plaques identiques command\u00e9es",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -91,7 +91,6 @@
         "description1": [
             "Socle blanc, lumineux, t\u00e9l\u00e9command\u00e9 (7 couleurs - plaque 12 \u00d7 16 cm)"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -99,7 +98,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs plaques identiques command\u00e9es",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -112,7 +110,6 @@
         "description1": [
             "Environ 25 cm \u00d7 diam : 6 cm"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -120,7 +117,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs bouteilles identiques command\u00e9es",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -133,7 +129,6 @@
         "description1": [
             "Environ 34 cm \u00d7 diam : 7,6 cm"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -141,7 +136,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs bouteilles identiques command\u00e9es",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -152,9 +146,10 @@
         "id": 8,
         "nom": "Mod\u00e8le 34 \u00d7 34 cm",
         "description1": [
-            ""
+            "Miroir Bois recycl\u00e9\u00a0",
+            "Dimension du miroir : 30 \u00d7 30 cm\u00a0",
+            "Gravure personnalis\u00e9e"
         ],
-        "description2": "Dimension du miroir : 30 \u00d7 30 cm\u00a0;Gravure personnalis\u00e9e",
         "prix": [
             {
                 "description": "Si gravure du bois uniquement\u00a0",
@@ -162,7 +157,7 @@
             },
             {
                 "description": "Si gravure du miroir uniquement\u00a0",
-                "tarif": "1"
+                "tarif": "31,90"
             },
             {
                 "description": "Si gravure du bois et du miroir",
@@ -170,7 +165,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs miroirs identiques command\u00e9es",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -181,9 +175,10 @@
         "id": 9,
         "nom": "Mod\u00e8le 25 \u00d7 34 cm",
         "description1": [
-            ""
+            "Miroir Bois recycl\u00e9\u00a0",
+            "Dimension du miroir : 21 \u00d7 30 cm\u00a0",
+            "Gravure personnalis\u00e9e"
         ],
-        "description2": "Dimension du miroir : 21 \u00d7 30 cm\u00a0;Gravure personnalis\u00e9e",
         "prix": [
             {
                 "description": "Si gravure du bois uniquement\u00a0",
@@ -191,7 +186,7 @@
             },
             {
                 "description": "Si gravure du miroir uniquement",
-                "tarif": "50"
+                "tarif": "30,90\u00a0"
             },
             {
                 "description": "Si gravure du bois et du miroir",
@@ -199,7 +194,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs miroirs identiques command\u00e9es",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -210,9 +204,9 @@
         "id": 10,
         "nom": "Tire-bouchon \"luxe\" personnalis\u00e9e",
         "description1": [
-            "Bois \/ m\u00e9tal"
+            "Bois \/ m\u00e9tal\u00a0",
+            "Dimension : 12 \u00d7 3 cm (pli\u00e9)"
         ],
-        "description2": "Dimension : 12 \u00d7 3 cm (pli\u00e9)",
         "prix": [
             {
                 "description": "Gravure manche bois\u00a0",
@@ -224,7 +218,6 @@
             }
         ],
         "txt1": "Prix d\u00e9gressif si plusieurs produits identiques command\u00e9s",
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -235,9 +228,9 @@
         "id": 11,
         "nom": "Stylo Bambou",
         "description1": [
-            "Bois \/ m\u00e9tal"
+            "Bois \/ m\u00e9tal\u00a0",
+            "Gravure personnalis\u00e9e"
         ],
-        "description2": "Gravure personnalis\u00e9e",
         "prix": [
             {
                 "description": "Gravure manche bois\u00a0",
@@ -249,7 +242,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -260,9 +252,9 @@
         "id": 12,
         "nom": "Couteau pliant",
         "description1": [
-            ""
+            "Bois \/ m\u00e9tal\u00a0",
+            "Gravure personnalis\u00e9e"
         ],
-        "description2": "Gravure personnalis\u00e9e",
         "prix": [
             {
                 "description": "Gravure manche bois\u00a0",
@@ -274,7 +266,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -285,9 +276,10 @@
         "id": 13,
         "nom": "Thermos en Bambou",
         "description1": [
-            "Bambou et Inox"
+            "Bambou et Inox\u00a0",
+            "450 mL\u00a0",
+            "Filtre pour le th\u00e9"
         ],
-        "description2": "450 mL\u00a0;Filtre pour le th\u00e9",
         "prix": [
             {
                 "description": "",
@@ -295,7 +287,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -308,10 +299,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -324,10 +313,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -340,10 +327,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -356,10 +341,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -372,10 +355,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -388,10 +369,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -404,10 +383,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -420,10 +397,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -436,10 +411,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -452,10 +425,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -468,10 +439,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -484,10 +453,8 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -498,9 +465,9 @@
         "id": 26,
         "nom": "Porte clef personnalis\u00e9",
         "description1": [
-            "M\u00e9tal - plaque noire"
+            "M\u00e9tal - plaque noire\u00a0",
+            "50 \u00d7 38 mm"
         ],
-        "description2": "50 \u00d7 38 mm",
         "prix": [
             {
                 "description": "Pour gravure des 2 c\u00f4t\u00e9s\u00a0",
@@ -512,7 +479,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -525,7 +491,6 @@
         "description1": [
             "Bois \/ m\u00e9tal"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -533,7 +498,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -546,7 +510,6 @@
         "description1": [
             ""
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "Prix\u00a0",
@@ -558,7 +521,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             ""
         ],
@@ -567,36 +529,38 @@
     },
     {
         "id": 29,
-        "nom": "Nouveau produit",
-        "description1": [],
-        "description2": "",
+        "nom": null,
+        "description1": [
+            ""
+        ],
         "prix": [],
-        "txt1": "",
-        "txt2": "",
-        "photos": [],
-        "famille": "",
-        "sousfamille": ""
+        "txt1": null,
+        "photos": [
+            ""
+        ],
+        "famille": null,
+        "sousfamille": null
     },
     {
         "id": 30,
-        "nom": "Nouveau produit",
-        "description1": [],
-        "description2": "",
+        "nom": null,
+        "description1": [
+            ""
+        ],
         "prix": [],
-        "txt1": "",
-        "txt2": "",
-        "photos": [],
-        "famille": "",
-        "sousfamille": ""
+        "txt1": null,
+        "photos": [
+            ""
+        ],
+        "famille": null,
+        "sousfamille": null
     },
     {
         "id": 31,
         "nom": "Nouveau produit",
         "description1": [],
-        "description2": "",
         "prix": [],
         "txt1": "",
-        "txt2": "",
         "photos": [],
         "famille": "",
         "sousfamille": ""
@@ -605,22 +569,8 @@
         "id": 32,
         "nom": "Nouveau produit",
         "description1": [],
-        "description2": "",
         "prix": [],
         "txt1": "",
-        "txt2": "",
-        "photos": [],
-        "famille": "",
-        "sousfamille": ""
-    },
-    {
-        "id": 33,
-        "nom": "Nouveau produit",
-        "description1": [],
-        "description2": "",
-        "prix": [],
-        "txt1": "",
-        "txt2": "",
         "photos": [],
         "famille": "",
         "sousfamille": ""
