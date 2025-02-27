@@ -66,7 +66,7 @@ class GestionAvisControler extends Controler
         if (isset($_POST['deconnexion'])) {
             session_destroy();
         }
-        error_log("POST: " . print_r($_POST, true));
+
         if (isset($_POST['id'])) {
             $id = (int) $_POST['id'];
             $jsonProvider = new JsonProvider('../data/models/avis.json');
@@ -79,6 +79,7 @@ class GestionAvisControler extends Controler
             }
             $jsonProvider->saveAvis($newAvis);
         }
+
         header('Location: /gestionavis');
     }
 }

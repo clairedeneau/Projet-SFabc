@@ -37,21 +37,17 @@ class JsonProvider
 
     public function loadAvis(): array
     {
-        return array_map(fn($item) => $this->mapToAvis($item), $this->loadData());
+        return array_map(fn($item) => $this->mapToAvis($item), $this->loadData()['avis']);
     }
 
     public function saveCatalogue(array $catalogues): void
     {
-        $_SESSION["savedCatalogue"] = $catalogues;
-
         $this->saveData(array_map(fn($catalogue) => $catalogue->toArray(), $catalogues));
     }
 
     public function saveAvis(array $avis): void
     {
-        $_SESSION["savedAvis"] = $avis;
-
-        $this->saveData(array_map(fn($avi) => $avi->toArray(), $avis));
+        $this->saveData(['avis' => array_map(fn($avi) => $avi->toArray(), $avis)]);
     }
 
     private function saveData(array $data): void
@@ -87,9 +83,8 @@ class JsonProvider
             $avisData['id'],
             $avisData['idProduit'],
             $avisData['user'],
-            $avisData['mail'],
             $avisData['note'],
-            $avisData['commentaire'],
+            $avisData['comment'],
             $avisData['date']
         );
     }

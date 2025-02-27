@@ -200,23 +200,9 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
 </div>
         <?php else: ?>
             <div id="product-details">
-            <h3>Choisissez un fichier dans le format .xlsx</h3>
-                <!--
-                <form action="gestionarticles" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="POST">
-                    <input type="hidden" name="form_type" value="import_file">
-                    <input type="file" name="imported_file" accept=".csv, .xlsx, .xls">
-                    <button type="submit" class="import-button">Importer</button>
-                </form>
-                -->
-
-                <form action="import.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="POST">
-                    <input type="file" name="file" id="file" accept=".xlsx">
-                    <button type="submit">Mettre à jour</button>
-                </form>
+                <h3>Sélectionnez un article pour afficher les détails</h3>
             </div>
-          
+            
 
             
 
@@ -297,12 +283,3 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
 ?>
 
 </html>
-
-
-
-
-
-
-
-
-

@@ -82,7 +82,11 @@
 <body>
 
         <?php
-            echo $article->renderDetail();
+            if($article){
+                echo $article->renderDetail();
+            }else{
+                echo "<p>Article non trouvé</p>";
+            }
         ?>
             
 

@@ -20,9 +20,11 @@
 <header>
     <nav id="topnav">
         <ul>
-            <li><a href="/articles"class="nav-link-active">Articles</a></li>
-            <li><a href="/a-propos">À propos</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/bienvenue">Informations générales</a></li>
+            <li><a href="/admin">Gestionnaire des pages</a></li>
+            <li><a href="/gestionarticles">Gestionnaire des articles</a></li>
+            <li><a href="/gestionavis" class="nav-link-active">Avis</a></li>
+            <li><a href="/logout">Déconnexion</a></li>
         </ul>
     </nav>
 

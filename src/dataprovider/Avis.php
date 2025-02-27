@@ -7,7 +7,6 @@ class Avis {
     private int $id;
     private int $idProduit;
     private string $user;
-    private string $mail;
     private int $note;
     private string $commentaire;
     private string $date;
@@ -16,7 +15,6 @@ class Avis {
         int $id,
         int $idProduit,
         string $user,
-        string $mail,
         int $note,
         string $commentaire,
         string $date
@@ -24,7 +22,6 @@ class Avis {
         $this->id = $id;
         $this->idProduit = $idProduit;
         $this->user = $user;
-        $this->mail = $mail;
         $this->note = $note;
         $this->commentaire = $commentaire;
         $this->date = $date;
@@ -49,14 +46,7 @@ class Avis {
     public function setUser($user){
         $this->user = $user;
     }
-
-    public function getMail() {
-        return $this->mail;
-    }
-
-    public function setMail($mail){
-        $this->mail = $mail;
-    }
+   
 
     public function getNote() {
         return $this->note;
@@ -88,9 +78,8 @@ class Avis {
             'id' => $this->id,
             'idProduit' => $this->idProduit,
             'user' => $this->user,
-            'mail' => $this->mail,
             'note' => $this->note,
-            'commentaire' => $this->commentaire,
+            'comment' => $this->commentaire,
             'date' => $this->date
         ];
     }

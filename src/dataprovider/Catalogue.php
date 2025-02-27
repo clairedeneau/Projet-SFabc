@@ -56,6 +56,7 @@ class Catalogue
     public function setDescription1($description1) {
         $this->description1 = $description1;
 
+    }
 
     public function getPrix() {
         return $this->prix;
@@ -113,9 +114,9 @@ class Catalogue
 
     public static function getProduitById($catalogues, $id) {
         $filteredCatalogues = array_filter($catalogues, function($catalogue) use ($id) {
-            return $catalogue->getId() === $id;
+            return $catalogue->getId() == $id;
         });
-
+        error_log("Catalogue::getProduitById : " . print_r($filteredCatalogues, true));
         return reset($filteredCatalogues);
 
     }
@@ -140,7 +141,7 @@ class Catalogue
             'famille' => $this->famille,
             'sousfamille' => $this->sousfamille
         ];
-
+    }
     public function renderArticle(): string {
         $html = "<div class='produit'>";
         $html .= "<a href='"."/detail/".$this->id."'>";
