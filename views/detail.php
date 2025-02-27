@@ -43,13 +43,13 @@
         <div class="diapo">
             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
             <div class="slide fade">
-                <img src="gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_1.jpg" alt="Image 1">
+                <img src="static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_1.jpg" alt="Image 1">
             </div>
             <div class="slide fade">
-                <img src="gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_2.jpg" alt="Image 2">
+                <img src="static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_2.jpg" alt="Image 2">
             </div>
             <div class="slide fade">
-                <img src="gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_3.jpg" alt="Image 3">
+                <img src="static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_3.jpg" alt="Image 3">
             </div>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>

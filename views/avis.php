@@ -72,7 +72,7 @@
         </div>
 
     </div>
-    <p class="retour">&#10094; <a href="">Retour</a></p>
+    <p class="retour">&#10094; <a href="/detail">Retour</a></p>
 </body>
 <?php
 require_once "footer.php"
