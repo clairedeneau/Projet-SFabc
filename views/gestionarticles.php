@@ -1,11 +1,3 @@
-<?php
-
-$selectedCatalogue = null;
-if (isset($_SESSION['catalogue'][$_GET['index']])) {
-    $selectedCatalogue = $_SESSION['catalogue'][$_GET['index']];
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,7 +10,6 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     <link rel="stylesheet" href="static/header.css">
     <link rel="stylesheet" href="static/gestionArticles.css">
     <link rel="stylesheet" href="static/modal.css">
-    
     
     <title>Gestionnaire des Articles</title>
 </head>
@@ -50,176 +41,131 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             <h3>Articles affichés :</h3>
             <ul>
                 <?php
-                if (isset($_SESSION['catalogue'])) {
-                    foreach ($_SESSION['catalogue'] as $index => $catalogue) {
-                        if ($catalogue->getNom() !== null) {
-                            echo '<li>';
-                            echo '<form action="gestionarticles" method="post" style="display:inline; margin-left: 10px;">';
-                            echo '<input type="hidden" name="_method" value="DELETE">';
-                            echo '<input type="hidden" name="id" value="' . $catalogue->getId() . '">';
-                            echo '<button type="submit" class="supprimer">🗑</button>';
-                            echo '</form>';
-                            echo '<form action="gestionarticles" method="get" style="display:inline;">';
-                            echo '<input type="hidden" name="index" value="' . $index . '">';
-                            echo '<button type="submit" style="background:none;border:none;color:black;cursor:pointer;">' . htmlspecialchars($catalogue->getNom()) . '</button>';
-                            echo '</form>';
-                            echo '</li>';
+                if (isset($catalogues) && !empty($catalogues)) {
+                    foreach ($catalogues as $familles) {
+                        
+                        foreach ($familles as $famille) {   
+                           foreach($famille as $sousfamille){
+                               foreach($sousfamille->getProduits() as $produit){
+                                   echo '<li>';
+                                   echo '<form action="gestionarticles" method="post" style="display:inline; margin-left: 10px;">';
+                                   echo '<input type="hidden" name="_method" value="DELETE">';
+                                   echo '<input type="hidden" name="id" value="' . $produit->getId() . '">';
+                                   echo '<button type="submit" class="supprimer">🗑</button>';
+                                   echo '</form>';
+                                   echo '<form action="gestionarticles" method="get" style="display:inline;">';
+                                   echo '<input type="hidden" name="index" value="' . $produit->getId() . '">';
+                                   echo '<button type="submit" style="background:none;border:none;color:black;cursor:pointer;">' . htmlspecialchars($produit->getNom()) . '</button>';
+                                   echo '</form>';
+                                   echo '</li>';
+                               }
+                           }
+                           // foreach ($sousfamille->getProduits() as $produit) {
+                           //     if ($produit->getNom() !== null) {
+                           //         echo '<li>';
+                           //         echo '<form action="gestionarticles" method="post" style="display:inline; margin-left: 10px;">';
+                           //         echo '<input type="hidden" name="_method" value="DELETE">';
+                           //         echo '<input type="hidden" name="id" value="' . $produit->getId() . '">';
+                           //         echo '<button type="submit" class="supprimer">🗑</button>';
+                           //         echo '</form>';
+                           //         echo '<form action="gestionarticles" method="get" style="display:inline;">';
+                           //         echo '<input type="hidden" name="index" value="' . $produit->getId() . '">';
+                           //         echo '<button type="submit" style="background:none;border:none;color:black;cursor:pointer;">' . htmlspecialchars($produit->getNom()) . '</button>';
+                           //         echo '</form>';
+                           //         echo '</li>';
+                           //     } else {
+                           //         echo '<p> Aucun produit dans cette famille </p>';
+                           //     }
+                           // }
                         }
+
+                    
                     }
                 }
                 ?>
             </ul>
             <?php
-    
-            
-                
                 if (isset($_SESSION['catalogue']) && !empty($_SESSION['catalogue'])) {
                     $lastElement = end($_SESSION['catalogue']);
-                    $lastIndex = $lastElement->getId();
-             echo '<form action="gestionarticles" method="get">';
-                echo '<button type="submit" class="ajouter" name="index" value="' . $lastIndex . '">Ajouter un produit</button>';
-                echo '</form>';
-                }
-                else {
+                    $lastIndex = $lastElement['id'];
+                    echo '<form action="gestionarticles" method="get">';
+                    echo '<button type="submit" class="ajouter" name="index" value="' . $lastIndex . '">Ajouter un produit</button>';
+                    echo '</form>';
+                } else {
                     echo '<form action="gestionarticles" method="get">';
                     echo '<button type="submit" class="ajouter" name="index" value="0">Ajouter un produit</button>';
                     echo '</form>';
                 }
-          
             ?>
         </div>
         <?php if ($selectedCatalogue): ?>
             <div id="product-details">
-    <h3>Détails du produit</h3>
-    <form action="gestionarticles" method="post">
-        <input type="hidden" name="_method" value="PUT">
-        <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
-        <input type="text" name="nom" value="<?php echo htmlspecialchars($selectedCatalogue->getNom()); ?>" placeholder="Nom">
-        <select name="description_index">
-            <?php 
-            $descriptions = $selectedCatalogue->getDescription1();
-            foreach ($descriptions as $index => $description) {
-                echo '<option value="' . $index . '">' . htmlspecialchars($description) . '</option>';
-            }
-            ?>
-        </select>
-        <button type="button" id="myBtn">Nouvelle Description</button>
-        <button type="button" id="myBtn2">Modifier Description</button>
+                <h3>Détails du produit</h3>
+                
+                <form action="gestionarticles" method="post">
+                    <?php 
+                        //var_dump($catalogues);
+                        //var_dump($selectedCatalogue);
+                    ?>
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                    <input type="text" name="nom" value="<?php echo htmlspecialchars($selectedCatalogue->getNom()); ?>" placeholder="Nom">
+                    <select name="description">
+                        <?php 
+                        $descriptions = $selectedCatalogue->getDescription1();
+                        foreach ($descriptions as $index => $description) {
+                            echo '<option value="' . htmlspecialchars(json_encode($descriptions)) . '">' . htmlspecialchars($description) . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <button type="button" id="myBtn">Nouvelle Description</button>
+                    <button type="button" id="myBtn2">Modifier Description</button>
+                    <select name="famille" id="famille-select">
+                        <?php 
+                        foreach ($catalogues as $index => $catalogue) {
+                            $selected = ($catalogue['nom'] == $nomFamille) ? 'selected' : '';
+                            echo '<option name="'.$catalogue['nom'] .'" value="' . htmlspecialchars($catalogue["nom"]). '" ' . $selected . '>' . htmlspecialchars($catalogue['nom']) .'</option>';
+                        }
+                        ?>
+                    </select>
+                    <select name="sousfamille" id="famille-select">
+                        <?php 
+                        foreach ($catalogues as $catalogue) {
+                            foreach ($catalogue as $famille) {
+                                foreach ($famille as $sousfamille) {
+                                    $selected = ($sousfamille->getNom() == $nomSousFamille) ? 'selected' : '';
+                                    echo '<option value="' . htmlspecialchars($sousfamille->getNom()) . '" ' . $selected . '>' . htmlspecialchars($sousfamille->getNom()) . '</option>';
+                                }
+                            }
+                        }
+                        ?>
+                    </select>
+                    
+                    <select name="prixI" id="prix-select">
+                        <?php 
+                        foreach ($selectedCatalogue->getPrix() as $index => $prix) {
+                            echo '<option name="'. $index .'" value="' . htmlspecialchars(json_encode($selectedCatalogue->getPrix())) . '">' . htmlspecialchars($prix['description']) .' ( '.htmlspecialchars($prix['tarif']).' € )'.'</option>';
+                        }
+                        ?>
+                    </select>
+                  
+                    <button type="button" id="myBtn3">Nouveau Prix</button>
+                    <button type="button" id="myBtn4">Modifier Prix</button>
 
-        <input type="text" name="famille" value="<?php echo htmlspecialchars($selectedCatalogue->getFamille()); ?>" placeholder="Famille">
-        <input type="text" name="sousFamille" value="<?php echo htmlspecialchars($selectedCatalogue->getSousFamille()); ?>" placeholder="Sous-famille">
-        <select name="prixI" id="prix-select">
-            <?php 
-            foreach ($selectedCatalogue->getPrix() as $index => $prix) {
-                echo '<option name="'. $index .'" value="' . htmlspecialchars($prix['description']). '">' . htmlspecialchars($prix['description']) .' ( '.htmlspecialchars($prix['tarif']).' € )'.'</option>';
-            }
-            ?>
-        </select>
-        <button type="button" id="myBtn3">Nouveau Prix</button>
-        <button type="button" id="myBtn4">Modifier Prix</button>
+                    <textarea name="text1" id="description" placeholder="Text"><?php echo htmlspecialchars($selectedCatalogue->getTxt1()); ?></textarea>
+                    <button type="submit" class="save-button" name="form_type" value="edit_article">Enregistrer les changements</button>
+                </form> 
 
-        <textarea name="text1" id="description" placeholder="Text"><?php echo htmlspecialchars($selectedCatalogue->getTxt1()); ?></textarea>
-        <button type="submit" class="save-button" name="form_type" value="edit_article">Enregistrer les changements</button>
-    </form> 
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Ajouter une nouvelle description</h2>
-            <form action="gestionarticles" method="post">
-                <input type="hidden" name="_method" value="POST">
-                <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
-                <input type="hidden" name="form_type" value="add_description">
-                <input type="text" name="new_description" placeholder="Nouvelle description">
-                <button type="submit" class="save-button">Enregistrer</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="myModal2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Modifier la description</h2>
-            <form action="gestionarticles" method="post">
-                <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
-                <input type="hidden" name="form_type" value="edit_description">
-                <?php 
-                $descriptions = $selectedCatalogue->getDescription1();
-                foreach ($descriptions as $index => $description) {
-                    echo '<input type="text" name="modif_description'.$index.'" placeholder="Nouvelle description" value="' . htmlspecialchars($description) . '">';
-                }
-                ?>
-                <button type="submit" class="save-button">Enregistrer</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="myModal3" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Ajouter un Prix</h2>
-            <form action="gestionarticles" method="post">
-                <input type="hidden" name="_method" value="POST">
-                <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
-                <input type="hidden" name="form_type" value="add_prix">
-                <input type="text" name="new_description" placeholder="Nouvelle description">
-                <input type="text" name="new_prix" placeholder="Nouveau tarif" required>
-                <button type="submit" class="save-button">Enregistrer</button>
-            </form>
-        </div>
-    </div>
-
-
-    <div id="myModal4" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Modifer les Prix</h2>
-            <form action="gestionarticles" method="post">
-                <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
-                <input type="hidden" name="form_type" value="edit_prix">
-                <ul>
-                <?php 
-                $prixs = $selectedCatalogue->getPrix();
-                foreach ($prixs as $index => $prix) {
-                    echo '<li>';
-                    echo '<input type="text" name="modif_description'.$index.'" placeholder="Nouvelle description" value="' . htmlspecialchars($prix["description"]) . '">';
-                    echo '<input type="text" name="modif_prix'.$index.'" placeholder="Nouveau tarif" value="' . htmlspecialchars($prix["tarif"]) . '" required>';
-                    echo '</li>';  
-                }
-                ?>
-                </ul>
-                <button type="submit" class="save-button">Enregistrer</button>
-            </form>
-        </div>
-    </div>
-
-    
-
-</div>
+                
+            </div>
         <?php else: ?>
             <div id="product-details">
-            <h3>Choisissez un fichier dans le format .xlsx</h3>
-                <!--
+                <h3>Choisissez un fichier dans le format .xlsx</h3>
                 <form action="gestionarticles" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="POST">
-                    <input type="hidden" name="form_type" value="import_file">
-                    <input type="file" name="imported_file" accept=".csv, .xlsx, .xls">
-                    <button type="submit" class="import-button">Importer</button>
-                </form>
-                -->
-
-                <form action="import.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="POST">
                     <input type="file" name="file" id="file" accept=".xlsx">
                     <button type="submit">Mettre à jour</button>
                 </form>
             </div>
-          
-
-            
-
         <?php endif; ?>
     </div>
 </body>
@@ -230,12 +176,10 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     var modal3 = document.getElementById("myModal3");
     var modal4 = document.getElementById("myModal4");
     
-
     var btn = document.getElementById("myBtn");
     var btn2 = document.getElementById("myBtn2");
     var btn3 = document.getElementById("myBtn3");
     var btn4 = document.getElementById("myBtn4");
-
 
     var span = document.getElementsByClassName("close")[0];
     var span2 = document.getElementsByClassName("close")[1];
@@ -274,8 +218,6 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
         modal4.style.display = "none";
     }
 
-    
-
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -290,19 +232,9 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             modal4.style.display = "none";
         }
     }
-
 </script>
 <?php
     require_once "footer.php"
 ?>
 
 </html>
-
-
-
-
-
-
-
-
-

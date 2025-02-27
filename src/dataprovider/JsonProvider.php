@@ -1,8 +1,8 @@
 <?php
+
 namespace SFabc\dataprovider;
 
 use Exception;
-
 
 class JsonProvider
 {
@@ -17,7 +17,6 @@ class JsonProvider
     {
         if (!file_exists($this->jsonFilePath)) {
             throw new Exception("Le fichier JSON n'existe pas.");
-
         }
 
         $jsonData = file_get_contents($this->jsonFilePath);
@@ -30,27 +29,105 @@ class JsonProvider
         return $data;
     }
 
-    public function loadCatalogue(): array
+    public function loadFamille(): array
     {
-        return array_map(fn($item) => $this->mapToCatalogue($item), $this->loadData());
+        $data = $this->loadData();
+        $familles = [];
+
+        foreach ($data['famille'] as $familleData) {
+            $sousfamilles = [];
+            foreach ($familleData['sousfamilles'] as $sousfamilleData) {
+                $produits = array_map(fn($produitData) => $this->mapToProduit($produitData), $sousfamilleData['produits']);
+                $sousfamilles[] = new SousFamille($sousfamilleData['nom'], $produits);
+            }
+            $familles[] = new Famille($familleData['nom'], $sousfamilles);
+        }
+
+        return $familles;
     }
 
-    public function loadAvis(): array
+    public function loadProduit(): array
     {
-        return array_map(fn($item) => $this->mapToAvis($item), $this->loadData()['avis']);
+        $data = $this->loadData();
+        $produits = [];
+
+        foreach ($data['famille'] as $familleData) {
+            foreach ($familleData['sousfamilles'] as $sousfamilleData) {
+                foreach ($sousfamilleData['produits'] as $produitData) {
+                    $produits[] = $this->mapToProduit($produitData);
+                }
+            }
+        }
+
+        return $produits;
     }
 
-    public function saveCatalogue(array $catalogues): void
+    public function getNomFamilleByProduitId(int $produitId): ?string
     {
-        $this->saveData(array_map(fn($catalogue) => $catalogue->toArray(), $catalogues));
+        $data = $this->loadData();
+
+        foreach ($data['famille'] as $familleData) {
+            foreach ($familleData['sousfamilles'] as $sousfamilleData) {
+                foreach ($sousfamilleData['produits'] as $produitData) {
+                    if ($produitData['id'] === $produitId) {
+                        return $familleData['nom'];
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 
-    public function saveAvis(array $avis): void
+    public function updateFamilleForProduit(int $produitId, string $nouvelleFamille): void
     {
-        $this->saveData(['avis' => array_map(fn($avi) => $avi->toArray(), $avis)]);
+        $data = $this->loadData();
+        $produitTrouve = false;
+        error_log("Produit ID: $produitId, Nouvelle famille: $nouvelleFamille");
+        foreach ($data['famille'] as &$familleData) {
+            foreach ($familleData['sousfamilles'] as &$sousfamilleData) {
+                foreach ($sousfamilleData['produits'] as &$produitData) {
+                    if ($produitData['id'] === $produitId) {
+                        $produitTrouve = true;
+                        break 3;
+                    }
+                }
+            }
+        }
+
+        if (!$produitTrouve) {
+            throw new Exception("Produit avec l'ID $produitId non trouvé.");
+        }
+
+        error_log("Produit trouvé: " . json_encode($produitData));
+
+        foreach ($data['famille'] as &$familleData) {
+            error_log("Famille: " . json_encode($familleData));
+            if ($familleData['nom'] == $nouvelleFamille) {
+                error_log("Nouvelle famille trouvée: " . json_encode($familleData));
+                foreach ($familleData['sousfamilles'] as &$sousfamilleData) {
+                    $sousfamilleData['produits'][] = $produitData;
+                }
+                break;
+            }
+        }
+
+
+        error_log("Data après ajout: " . json_encode($data));
+
+
+        $this->saveData($data);
     }
 
-    private function saveData(array $data): void
+
+    public function saveCatalogue(array $familles): void
+    {
+        $data = $this->loadData();
+        $data['famille'] = array_map(fn($famille) => $famille->toArray(), $familles);
+        $this->saveData($data);
+    }
+
+    private function    saveData(array $data): void
     {
         $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         if (json_last_error() !== JSON_ERROR_NONE) {
@@ -62,18 +139,15 @@ class JsonProvider
         }
     }
 
-
-    private function mapToCatalogue(array $catalogueData): Catalogue
+    private function mapToProduit(array $produitData): Produit
     {
-        return new Catalogue(
-            $catalogueData['id'],
-            $catalogueData['nom'],
-            $catalogueData['description1'],
-            $catalogueData['prix'],
-            $catalogueData['txt1'],
-            $catalogueData['photos'],
-            $catalogueData['famille'],
-            $catalogueData['sousfamille']
+        return new Produit(
+            $produitData['id'],
+            $produitData['nom'],
+            $produitData['description1'],
+            $produitData['prix'],
+            $produitData['txt1'],
+            $produitData['photos'],
         );
     }
 
@@ -84,9 +158,8 @@ class JsonProvider
             $avisData['idProduit'],
             $avisData['user'],
             $avisData['note'],
-            $avisData['comment'],
+            $avisData['ai'],
             $avisData['date']
         );
     }
 }
-

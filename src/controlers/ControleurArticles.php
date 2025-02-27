@@ -11,7 +11,7 @@ class ControleurArticles extends Controler
     public function get(string $params): void
     {
         $jp = new JsonProvider("../data/models/catalogue.json");
-        $articles = $jp->loadCatalogue();
+        $articles = $jp->loadProduit();
         $this->render('articles', ['articles' => $articles]);
     }
 }
