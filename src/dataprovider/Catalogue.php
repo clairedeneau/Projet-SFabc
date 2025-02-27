@@ -203,6 +203,7 @@ class Catalogue
         $html .= "<p>☆ ☆ ☆ ☆ ☆ - <a href='/avis'>Voir les avis</a></p>";
         $html .= "</div>";
         $html .= "</div>";
+        $html .= "</div>";
         return $html;
 
     }

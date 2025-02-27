@@ -80,7 +80,6 @@
 </section>
 
 <body>
-
         <?php
             if($article){
                 echo $article->renderDetail();
@@ -88,12 +87,6 @@
                 echo "<p>Article non trouvé</p>";
             }
         ?>
-            
-
-
-    </div>
-
-
 </body>
 <?php
 require_once "footer.php"

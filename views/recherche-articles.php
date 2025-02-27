@@ -45,10 +45,26 @@
         <?php else: ?>
             <?php foreach ($articles as $article): ?>
                 <div class="produit">
-                    <img src="<?= htmlspecialchars($article["image"]) ?>" alt="<?= htmlspecialchars($article["nom"]) ?>" width="200" height="auto">
+                    <?php
+                        $photo = $article->getPhotos();
+                        $imageSrc = !empty($photo) ? htmlspecialchars($photo[0]) : ""; 
+                    ?>
+                    <img src="<?= $imageSrc ?>" alt="<?= htmlspecialchars($article->getNom()) ?>" width="200" height="auto">
                     <div class="contenu-produit">
-                        <h3><?= htmlspecialchars($article["nom"]) ?></h3>
-                        <p id="prix"><?= htmlspecialchars($article["prix"]) ?></p>
+                        <h3><?= htmlspecialchars($article->getNom()) ?></h3>
+                        <p id="prix">
+                            <?php
+                            $prix = $article->getPrix();
+                            if (empty($prix)) {
+                                echo "Création sur demande";
+                            } elseif (count($prix) == 1) {
+                                echo htmlspecialchars($prix[0]["tarif"]) . " €";
+                            } else {
+                                $prixMini = min(array_column($prix, 'tarif'));
+                                echo "À partir de " . htmlspecialchars($prixMini) . " €";
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
             <?php endforeach; ?>
