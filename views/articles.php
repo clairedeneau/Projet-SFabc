@@ -48,34 +48,11 @@
 <body>
     <h2>Tous les articles</h2>
     <main>
-        <div class="produit">
-            <img src="static/images/images_articles/couteaux/couteau gravure personnalisée 1.jpg" alt="Couteau gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Couteau en bois personnalisé</h3>
-                <p id="prix">À partir de 15.00 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Eclairage ambiance bouteille - grand modèle</h3>
-                <p id="prix">17.90 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="static/images/images_articles/aimants/aimants gravure et découpe personnalisee bois recyclage surcyclage upcycling 1.png" alt="Aimants" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Aimants bois gravés personnalisés</h3>
-                <p id="prix">À partir de 15.00 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg" alt="Jeu bois gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Jack en bois personnalisé</h3>
-                <p id="prix">À partir de 26.00 €</p>
-            </div>
-        </div>
+        <?php
+        foreach($articles as $article){
+            echo $article->renderArticle();
+        }
+        ?>
     </main>
 </body>
 <?php

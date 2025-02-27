@@ -110,4 +110,15 @@ class Catalogue
 
         return reset($filteredCatalogues);
     }
+
+    public function renderArticle(): string {
+        $html = "<div class='produit'>";
+        $html .= "<img src='".$this->photos[0]."' alt='".$this->nom."' width='200' height='auto'>";
+        $html .= "<div class='contenu-produit'>";
+        $html .= "<h3>".$this->nom."</h3>";
+        $html .= "<p id='prix'>À partir de "."€</p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        return $html;
+    }
 }
