@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="produit">
-            <img src="bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
+            <img src="static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
             <div class="contenu-produit">
                 <h3>Eclairage ambiance bouteille - grand modèle</h3>
                 <p id="prix">17.90 €</p>
