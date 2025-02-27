@@ -11,16 +11,6 @@
     <link rel="stylesheet" href="static/header.css">
     <link rel="stylesheet" href="static/footer.css">
     <title>Articles</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".produit img").forEach(img => {
-                if (img.naturalHeight > img.naturalWidth + 10) {
-                    img.style.transform = "rotate(90deg)";
-                }
-            });
-        });
-    </script>
-
 </head>
 <header>
     <nav id="topnav">
