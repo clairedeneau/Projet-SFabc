@@ -80,16 +80,9 @@
 </section>
 
 <body>
-
         <?php
             echo $article->renderDetail();
         ?>
-            
-
-
-    </div>
-
-
 </body>
 <?php
 require_once "footer.php"

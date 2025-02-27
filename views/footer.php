@@ -10,8 +10,8 @@ $data = json_decode($json, true);
         <p><?= htmlspecialchars($data['tel'] ?? 'Téléphone non renseigné') ?></p>
         <p><?= htmlspecialchars($data['email'] ?? 'Email non renseigné') ?></p>
         <div class="social-icons">
-            <a href="<?= htmlspecialchars($data['instagram'] ?? '#') ?>"><img src="static/images/insta.png" alt="Instagram"></a>
-            <a href="<?= htmlspecialchars($data['facebook'] ?? '#') ?>"><img src="static/images/fb.png" alt="Facebook"></a>
+            <a href="<?= htmlspecialchars($data['instagram'] ?? '#') ?>"><img src="../static/images/insta.png" alt="Instagram"></a>
+            <a href="<?= htmlspecialchars($data['facebook'] ?? '#') ?>"><img src="../static/images/fb.png" alt="Facebook"></a>
         </div>
     </div>
     <p class="footer-note">IUT d'Orléans - Claire Deneau, Jean-Marc Jorite, Thomas Brossier</p>
