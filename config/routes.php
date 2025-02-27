@@ -47,5 +47,17 @@ return [
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
+    ],
+    '/detail' => [
+        'controler' => SFabc\controlers\DetailControler::class,
+        'methods' => ['GET'],
+        'redirect' => '/',
+        'requiresArgument' => false
+    ],
+    '/avis' => [
+        'controler' => SFabc\controlers\AvisControler::class,
+        'methods' => ['GET'],
+        'redirect' => '/',
+        'requiresArgument' => false
     ]
 ];

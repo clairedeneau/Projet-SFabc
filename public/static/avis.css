@@ -1,0 +1,71 @@
+body {
+    font-family: 'Alata', sans-serif;
+    background-color: #F6F2E8;
+    margin: 0;
+    padding: 0;
+}
+
+/* MISE EN FORME DU CONTENU DE LA PAGE */
+
+.titre {
+    margin: 10px 20px 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.titre h2 {
+    margin-right: 50px;
+}
+
+.titre p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5A4328BD;
+}
+
+.liste-avis {
+    padding: 0px 50px 0px 50px;
+}
+
+.titre-avis {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.titre-avis h3 {
+    margin-right: 25px;
+}
+
+.titre-avis p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5A4328BD;
+}
+
+.avis {
+    margin: 10px 5px 10px 5px;
+    padding: 0px 10px 5px 10px;
+    background-color: white;
+    border: 2px solid #5A4328;
+    border-radius: 15px;
+}
+
+.commentaire {
+    margin: 5px 10px 10px 25px;
+}
+
+.retour {
+    margin-left: 50px;
+    font-size: 20px;
+    color: #5A4328;
+}
+
+.retour a {
+    color: #5A4328;
+    text-decoration: none;
+}
+
+.retour a:hover {
+    color: #B8A67E;
+}
