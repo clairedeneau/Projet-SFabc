@@ -1,15 +1,15 @@
 [
     {
         "id": 1,
-        "nom": "Mod\u00e8le Chien",
+        "nom": "Modèle Chien",
         "description1": [
-            "T\u00eate l\u00e9g\u00e8rement en trap\u00e8ze\u00a0",
-            " Alimentation sur secteur (220 V)\u00a0",
-            " Fil en corde\u00a0",
-            " Positionnable \u00e0 volont\u00e9 (couch\u00e9, debout, assis), oreilles positionnables\u00a0",
-            " Dimensions :  - couch\u00e9 : 30 cm de long",
-            " - 4 pattes : 30 cm de haut\u00a0",
-            "Gravure sur les pattes \u00e0 personnaliser"
+            "Tête légèrement en trapèze ",
+            " Alimentation sur secteur (220 V) ",
+            " Fil en corde ",
+            " Positionnable à volonté (couché, debout, assis), oreilles positionnables ",
+            " Dimensions :  - couché : 30 cm de long",
+            " - 4 pattes : 30 cm de haut ",
+            "Gravure sur les pattes à personnaliser"
         ],
         "prix": [
             {
@@ -22,19 +22,19 @@
             ""
         ],
         "famille": "Lampes",
-        "sousfamille": "Lampe Bois recycl\u00e9 - \u00c9clairage Led (4W)"
+        "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"
     },
     {
         "id": 2,
-        "nom": "Mod\u00e8le Chat",
+        "nom": "Modèle Chat",
         "description1": [
-            "T\u00eate rectangle\u00a0",
-            " Alimentation sur secteur (220 V)\u00a0",
-            " Fil en corde\u00a0",
-            " Positionnable \u00e0 volont\u00e9 (couch\u00e9, debout, assis\u00e0, oreilles positionnables",
-            " Dimensions :  - couch\u00e9 : 30 cm de long",
-            " - 4 pattes : 30 cm de haut\u00a0",
-            "Gravure sur les \u00e0 personnaliser"
+            "Tête rectangle ",
+            " Alimentation sur secteur (220 V) ",
+            " Fil en corde ",
+            " Positionnable à volonté (couché, debout, assisà, oreilles positionnables",
+            " Dimensions :  - couché : 30 cm de long",
+            " - 4 pattes : 30 cm de haut ",
+            "Gravure sur les à personnaliser"
         ],
         "prix": [
             {
@@ -47,16 +47,16 @@
             ""
         ],
         "famille": "Lampes",
-        "sousfamille": "Lampe Bois recycl\u00e9 - \u00c9clairage Led (4W)"
+        "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"
     },
     {
         "id": 3,
-        "nom": "Mod\u00e8le Poule",
+        "nom": "Modèle Poule",
         "description1": [
-            "Alimentation sur batterie (surcycl\u00e9e)\u00a0",
-            "Recharge par chargeur 5V (type t\u00e9l\u00e9phone portable)\u00a0",
-            " T\u00eate et pattes positionnables\u00a0",
-            "Gravure \u00e0 personnaliser"
+            "Alimentation sur batterie (surcyclée) ",
+            "Recharge par chargeur 5V (type téléphone portable) ",
+            " Tête et pattes positionnables ",
+            "Gravure à personnaliser"
         ],
         "prix": [],
         "txt1": null,
@@ -64,13 +64,13 @@
             ""
         ],
         "famille": "Lampes",
-        "sousfamille": "Lampe Bois recycl\u00e9 - \u00c9clairage Led (4W)"
+        "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"
     },
     {
         "id": 4,
-        "nom": "Mod\u00e8le Basique",
+        "nom": "Modèle Basique",
         "description1": [
-            "Socle noir (7 couleurs - plaque 12 \u00d7 16 cm)"
+            "Socle noir (7 couleurs - plaque 12 × 16 cm)"
         ],
         "prix": [
             {
@@ -78,18 +78,18 @@
                 "tarif": "33.90"
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs plaques identiques command\u00e9es",
+        "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
         "photos": [
             ""
         ],
         "famille": "Lampes",
-        "sousfamille": "Lampe Led Plexi Personnalis\u00e9e"
+        "sousfamille": "Lampe Led Plexi Personnalisée"
     },
     {
         "id": 5,
-        "nom": "Mod\u00e8le Luxe",
+        "nom": "Modèle Luxe",
         "description1": [
-            "Socle blanc, lumineux, t\u00e9l\u00e9command\u00e9 (7 couleurs - plaque 12 \u00d7 16 cm)"
+            "Socle blanc, lumineux, télécommandé (7 couleurs - plaque 12 × 16 cm)"
         ],
         "prix": [
             {
@@ -97,18 +97,18 @@
                 "tarif": "36.90"
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs plaques identiques command\u00e9es",
+        "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
         "photos": [
             ""
         ],
         "famille": "Lampes",
-        "sousfamille": "Lampe Led Plexi Personnalis\u00e9e"
+        "sousfamille": "Lampe Led Plexi Personnalisée"
     },
     {
         "id": 6,
-        "nom": "Petit Mod\u00e8le",
+        "nom": "Petit Modèle",
         "description1": [
-            "Environ 25 cm \u00d7 diam : 6 cm"
+            "Environ 25 cm × diam : 6 cm"
         ],
         "prix": [
             {
@@ -116,7 +116,7 @@
                 "tarif": "14.90"
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs bouteilles identiques command\u00e9es",
+        "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
         "photos": [
             ""
         ],
@@ -125,9 +125,9 @@
     },
     {
         "id": 7,
-        "nom": "Grand Mod\u00e8le",
+        "nom": "Grand Modèle",
         "description1": [
-            "Environ 34 cm \u00d7 diam : 7,6 cm"
+            "Environ 34 cm × diam : 7,6 cm"
         ],
         "prix": [
             {
@@ -135,7 +135,7 @@
                 "tarif": "17.90"
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs bouteilles identiques command\u00e9es",
+        "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
         "photos": [
             ""
         ],
@@ -144,19 +144,19 @@
     },
     {
         "id": 8,
-        "nom": "Mod\u00e8le 34 \u00d7 34 cm",
+        "nom": "Modèle 34 × 34 cm",
         "description1": [
-            "Miroir Bois recycl\u00e9\u00a0",
-            "Dimension du miroir : 30 \u00d7 30 cm\u00a0",
-            "Gravure personnalis\u00e9e"
+            "Miroir Bois recyclé ",
+            "Dimension du miroir : 30 × 30 cm ",
+            "Gravure personnalisée"
         ],
         "prix": [
             {
-                "description": "Si gravure du bois uniquement\u00a0",
-                "tarif": "30,90\u00a0"
+                "description": "Si gravure du bois uniquement ",
+                "tarif": "30,90 "
             },
             {
-                "description": "Si gravure du miroir uniquement\u00a0",
+                "description": "Si gravure du miroir uniquement ",
                 "tarif": "31,90"
             },
             {
@@ -164,7 +164,7 @@
                 "tarif": "39,00"
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs miroirs identiques command\u00e9es",
+        "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
         "photos": [
             ""
         ],
@@ -173,27 +173,27 @@
     },
     {
         "id": 9,
-        "nom": "Mod\u00e8le 25 \u00d7 34 cm",
+        "nom": "Modèle 25 × 34 cm",
         "description1": [
-            "Miroir Bois recycl\u00e9\u00a0",
-            "Dimension du miroir : 21 \u00d7 30 cm\u00a0",
-            "Gravure personnalis\u00e9e"
+            "Miroir Bois recyclé ",
+            "Dimension du miroir : 21 × 30 cm ",
+            "Gravure personnalisée"
         ],
         "prix": [
             {
-                "description": "Si gravure du bois uniquement\u00a0",
-                "tarif": "29,90\u00a0"
+                "description": "Si gravure du bois uniquement ",
+                "tarif": "29,90 "
             },
             {
                 "description": "Si gravure du miroir uniquement",
-                "tarif": "30,90\u00a0"
+                "tarif": "30,90 "
             },
             {
                 "description": "Si gravure du bois et du miroir",
                 "tarif": "37,90"
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs miroirs identiques command\u00e9es",
+        "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
         "photos": [
             ""
         ],
@@ -202,39 +202,39 @@
     },
     {
         "id": 10,
-        "nom": "Tire-bouchon \"luxe\" personnalis\u00e9e",
+        "nom": "Tire-bouchon \"luxe\" personnalisée",
         "description1": [
-            "Bois \/ m\u00e9tal\u00a0",
-            "Dimension : 12 \u00d7 3 cm (pli\u00e9)"
+            "Bois \/ métal ",
+            "Dimension : 12 × 3 cm (plié)"
         ],
         "prix": [
             {
-                "description": "Gravure manche bois\u00a0",
-                "tarif": "9,50\u00a0"
+                "description": "Gravure manche bois ",
+                "tarif": "9,50 "
             },
             {
                 "description": "5 gravures",
-                "tarif": "29,90\u00a0"
+                "tarif": "29,90 "
             }
         ],
-        "txt1": "Prix d\u00e9gressif si plusieurs produits identiques command\u00e9s",
+        "txt1": "Prix dégressif si plusieurs produits identiques commandés",
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
+        "famille": "Gravures personnalisées",
         "sousfamille": "Tire bouchon"
     },
     {
         "id": 11,
         "nom": "Stylo Bambou",
         "description1": [
-            "Bois \/ m\u00e9tal\u00a0",
-            "Gravure personnalis\u00e9e"
+            "Bois \/ métal ",
+            "Gravure personnalisée"
         ],
         "prix": [
             {
-                "description": "Gravure manche bois\u00a0",
-                "tarif": "5,00\u00a0"
+                "description": "Gravure manche bois ",
+                "tarif": "5,00 "
             },
             {
                 "description": "2 gravures",
@@ -245,19 +245,19 @@
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
+        "famille": "Gravures personnalisées",
         "sousfamille": "Stylo"
     },
     {
         "id": 12,
         "nom": "Couteau pliant",
         "description1": [
-            "Bois \/ m\u00e9tal\u00a0",
-            "Gravure personnalis\u00e9e"
+            "Bois \/ métal ",
+            "Gravure personnalisée"
         ],
         "prix": [
             {
-                "description": "Gravure manche bois\u00a0",
+                "description": "Gravure manche bois ",
                 "tarif": "15,00"
             },
             {
@@ -269,16 +269,16 @@
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
+        "famille": "Gravures personnalisées",
         "sousfamille": "Couteau"
     },
     {
         "id": 13,
         "nom": "Thermos en Bambou",
         "description1": [
-            "Bambou et Inox\u00a0",
-            "450 mL\u00a0",
-            "Filtre pour le th\u00e9"
+            "Bambou et Inox ",
+            "450 mL ",
+            "Filtre pour le thé"
         ],
         "prix": [
             {
@@ -290,7 +290,7 @@
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
+        "famille": "Gravures personnalisées",
         "sousfamille": "Thermos"
     },
     {
@@ -319,7 +319,7 @@
             ""
         ],
         "famille": "BBQ",
-        "sousfamille": "Caisse \u00e0 bi\u00e8re"
+        "sousfamille": "Caisse à bière"
     },
     {
         "id": 16,
@@ -332,8 +332,8 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
-        "sousfamille": "Gravure coque t\u00e9l\u00e9phone"
+        "famille": "Création diverses sur mesures",
+        "sousfamille": "Gravure coque téléphone"
     },
     {
         "id": 17,
@@ -346,7 +346,7 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
+        "famille": "Création diverses sur mesures",
         "sousfamille": "Plaque porte de chambre"
     },
     {
@@ -360,7 +360,7 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
+        "famille": "Création diverses sur mesures",
         "sousfamille": "Tableau en bois"
     },
     {
@@ -374,8 +374,8 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
-        "sousfamille": "Jeux de soci\u00e9t\u00e9"
+        "famille": "Création diverses sur mesures",
+        "sousfamille": "Jeux de société"
     },
     {
         "id": 20,
@@ -388,8 +388,8 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
-        "sousfamille": "Bar \u00e0 p\u00e9tanque"
+        "famille": "Création diverses sur mesures",
+        "sousfamille": "Bar à pétanque"
     },
     {
         "id": 21,
@@ -402,7 +402,7 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
+        "famille": "Création diverses sur mesures",
         "sousfamille": "Guitare"
     },
     {
@@ -416,7 +416,7 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
+        "famille": "Création diverses sur mesures",
         "sousfamille": "Horloge Harry Potter"
     },
     {
@@ -430,7 +430,7 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
+        "famille": "Création diverses sur mesures",
         "sousfamille": "Vase"
     },
     {
@@ -444,7 +444,7 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
+        "famille": "Création diverses sur mesures",
         "sousfamille": "Table de chevet"
     },
     {
@@ -458,23 +458,23 @@
         "photos": [
             ""
         ],
-        "famille": "Cr\u00e9ation diverses sur mesures",
-        "sousfamille": "Coffre au tr\u00e9sor"
+        "famille": "Création diverses sur mesures",
+        "sousfamille": "Coffre au trésor"
     },
     {
         "id": 26,
-        "nom": "Porte clef personnalis\u00e9",
+        "nom": "Porte clef personnalisé",
         "description1": [
-            "M\u00e9tal - plaque noire\u00a0",
-            "50 \u00d7 38 mm"
+            "Métal - plaque noire ",
+            "50 × 38 mm"
         ],
         "prix": [
             {
-                "description": "Pour gravure des 2 c\u00f4t\u00e9s\u00a0",
-                "tarif": "11,90\u00a0"
+                "description": "Pour gravure des 2 côtés ",
+                "tarif": "11,90 "
             },
             {
-                "description": "Pour gravure d'un seul c\u00f4t\u00e9",
+                "description": "Pour gravure d'un seul côté",
                 "tarif": "7,90"
             }
         ],
@@ -482,14 +482,14 @@
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
+        "famille": "Gravures personnalisées",
         "sousfamille": "Porte clef"
     },
     {
         "id": 27,
-        "nom": "Boite \u00e0 mouchoirs personnalis\u00e9e",
+        "nom": "Boite à mouchoirs personnalisée",
         "description1": [
-            "Bois \/ m\u00e9tal"
+            "Bois \/ métal"
         ],
         "prix": [
             {
@@ -501,22 +501,22 @@
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
-        "sousfamille": "Boite \u00e0 mouchoirs"
+        "famille": "Gravures personnalisées",
+        "sousfamille": "Boite à mouchoirs"
     },
     {
         "id": 28,
-        "nom": "Mod\u00e8le 25 \u00d7 25 cm",
+        "nom": "Modèle 25 × 25 cm",
         "description1": [
             ""
         ],
         "prix": [
             {
-                "description": "Prix\u00a0",
+                "description": "Prix ",
                 "tarif": "15,00"
             },
             {
-                "description": "Pour image personnalis\u00e9e\u00a0",
+                "description": "Pour image personnalisée ",
                 "tarif": "22,00"
             }
         ],
@@ -524,7 +524,7 @@
         "photos": [
             ""
         ],
-        "famille": "Gravures personnalis\u00e9es",
+        "famille": "Gravures personnalisées",
         "sousfamille": "Gravure sur Toile"
     },
     {
@@ -574,5 +574,15 @@
         "photos": [],
         "famille": "",
         "sousfamille": ""
+    },
+    {
+        "id": 33,
+        "nom": "Nouveau prodamkdajd",
+        "description1": [],
+        "prix": [],
+        "txt1": "dpadja",
+        "photos": [],
+        "famille": "daojda",
+        "sousfamille": "dajd"
     }
 ]

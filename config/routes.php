@@ -54,4 +54,10 @@ return [
         'redirect' => '/gestionarticles',
         'requiresArgument' => false
     ],
+    '/gestionavis' => [
+        'controler' => SFabc\controlers\GestionAvisControler::class,
+        'methods' => ['GET', 'POST'],
+        'redirect' => '/gestionavis',
+        'requiresArgument' => false
+    ],
 ];

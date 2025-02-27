@@ -19,6 +19,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     <link rel="stylesheet" href="static/gestionArticles.css">
     <link rel="stylesheet" href="static/modal.css">
     
+    
     <title>Gestionnaire des Articles</title>
 </head>
 <header>

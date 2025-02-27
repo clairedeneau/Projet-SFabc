@@ -1,15 +1,30 @@
 
-{
-    
-    "avis": [
+[
     {
         "id": 1,
         "idProduit": 1,
         "user": "John Doe",
         "mail": "",
         "note": 4,
-        "comment": "Great product, really enjoyed using it!",
+        "commentaire": "Great product, really enjoyed using it!",
+        "date": "2023-10-01"
+    },
+    {
+        "id": 2,
+        "idProduit": 3,
+        "user": "John Doe",
+        "mail": "",
+        "note":2,
+        "commentaire": "Great product, really enjoyed using it!adovdaldoaudihaodadaipdhpiajdahpdapadovdaldoaudihaodadaipdhpiajdahpdapadovdaldoaudihaodadaipdhpiajdahpdapadovdaldoaudihaodadaipdhpiajdahpdapadovdaldoaudihaodadaipdhpiajdahpdapadovdaldoaudihaodadaipdhpiajdahpdap",
+        "date": "2023-10-01"
+    },
+    {
+        "id": 5,
+        "idProduit": 1,
+        "user": "John Doe",
+        "mail": "",
+        "note": 5,
+        "commentaire": "Great product, really enjoyed using it!",
         "date": "2023-10-01"
     }
-
-]}
+]
