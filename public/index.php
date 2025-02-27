@@ -60,12 +60,14 @@
             http_response_code(500);
             $err_code = 500;
             $erreur = $e->getMessage();
+            ob_end_clean();
             require_once __DIR__ . '/../views/error.php';
         }
     } else {
         http_response_code(404);
         $err_code = 404;
         $erreur = "Page inexistante...";
+        ob_end_clean();
         require_once __DIR__ . '/../views/error.php';
     }
 

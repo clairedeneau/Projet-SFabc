@@ -116,7 +116,19 @@ class Catalogue
         $html .= "<img src='".$this->photos[0]."' alt='".$this->nom."' width='200' height='auto'>";
         $html .= "<div class='contenu-produit'>";
         $html .= "<h3>".$this->nom."</h3>";
-        $html .= "<p id='prix'>À partir de "."€</p>";
+        $prixAffiche = "---------";
+        if(sizeof($this->prix) == 1){
+            $prixAffiche = $this->prix[0]["tarif"] . " €";
+        }else if(sizeof($this->prix) > 1){
+            $prixMini = $this->prix[0]["tarif"];
+            foreach($this->prix as $prixActuel){
+                if($prixActuel["tarif"] < $prixMini){
+                    $prixMini = $prixActuel["tarif"];
+                }
+            }
+            $prixAffiche = "A partir de " . $prixMini . " €";
+        }
+        $html .= "<p id='prix'>".$prixAffiche."</p>";
         $html .= "</div>";
         $html .= "</div>";
         return $html;
