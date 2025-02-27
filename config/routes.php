@@ -36,6 +36,12 @@ return [
         'redirect' => '/',
         'requiresArgument' => false
     ],
+    '/admin/bienvenue' => [
+        'controler' => SFabc\controlers\AdminBienvenue::class,
+        'methods' => ['GET'],
+        'redirect' => '/admin',
+        'requiresArgument' => false
+    ],
     '/logout' => [
         'controler' => SFabc\controlers\AdminLogoutControler::class,
         'methods' => ['GET', 'POST'],
