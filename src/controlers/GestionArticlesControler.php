@@ -20,7 +20,7 @@ class GestionArticlesControler extends Controler
             error_log(print_r(count($catalogues), true));
             $_SESSION['catalogue'] = [];
             if (isset($_GET['index'])){
-                if(count($catalogues) ==  $_GET['index'] && $_GET['index'] > 0){
+                if(count($catalogues) ==  $_GET['index']){
                     $produit = new Catalogue(
                         count($catalogues) + 1,
                         "Nouveau produit",
