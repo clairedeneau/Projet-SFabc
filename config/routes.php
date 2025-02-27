@@ -56,7 +56,7 @@ return [
     ],
     '/avis' => [
         'controler' => SFabc\controlers\AvisControler::class,
-        'methods' => ['GET'],
+        'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
     ]

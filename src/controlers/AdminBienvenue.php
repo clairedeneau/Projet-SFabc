@@ -6,7 +6,7 @@ namespace SFabc\controlers;
 class AdminBienvenue extends Controler
 {
 
-    private string $filePath = __DIR__ . '/../../data/models/information.json';
+   private string $filePath = __DIR__ . '/../../data/models/information.json';
 
     public function get(string $params): void
     {
@@ -14,7 +14,7 @@ class AdminBienvenue extends Controler
         $json = file_get_contents($this->filePath);
         $data = json_decode($json, true);
         $this->render('bienvenue', ['data' => $data]);
-    }
+    } 
 
     public function post(string $params): void
     {

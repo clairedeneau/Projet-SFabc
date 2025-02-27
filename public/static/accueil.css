@@ -28,7 +28,10 @@ main {
 .produit img {
     width: 180px;
     height: auto;
+    max-height: 200px;
     border-radius: 10px;
+    object-fit:scale-down;
+    background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 

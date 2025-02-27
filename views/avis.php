@@ -42,6 +42,26 @@
         <h2>Thermos personnalisé</h2>
         <p>☆ ☆ ☆ ☆ ☆</p>
     </div>
+
+    <div class="formulaire-avis">
+        <?php if (!empty($succes)): ?>
+            <p class="succes-message"><?= htmlspecialchars($succes) ?></p>
+        <?php endif; ?>
+        <button class="btn-form" onclick="toggleForm()">Donner un avis</button>
+        <div id="form-avis" class="form-avis">
+            <form action="avis" method="POST">
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+                <div class="note">
+                    <button type="button" onclick="changeRating(-1)">-</button>
+                    <input type="number" name="note" id="note" value="5" min="1" max="5" readonly>
+                    <button type="button" onclick="changeRating(1)">+</button>
+                </div>
+                <textarea name="comment" id="comment" rows="4" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
     <div class="liste-avis">
         <div class="avis">
             <div class="titre-avis">
@@ -77,5 +97,23 @@
 <?php
 require_once "footer.php"
 ?>
+
+<script>
+    // Fonction pour afficher ou cacher le formulaire
+    function toggleForm() {
+        const form = document.getElementById('form-avis');
+        form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Fonction pour augmenter ou diminuer la note
+    function changeRating(change) {
+        const noteInput = document.getElementById('note');
+        let currentNote = parseInt(noteInput.value);
+        currentNote += change;
+        if (currentNote >= 1 && currentNote <= 5) {
+            noteInput.value = currentNote;
+        }
+    }
+</script>
 
 </html>

@@ -43,6 +43,7 @@
     </nav>
 </header>
 <section class="bandeau">
+    <h1>Les articles en vente</h1>
     <img src="static/images/fond_bandeau.png" alt="bandeau">
 </section>
 
