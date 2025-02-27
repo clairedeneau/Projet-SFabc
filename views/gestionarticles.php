@@ -210,10 +210,10 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                 </form>
                 -->
 
-                <form action="import.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_method" value="POST">
-                    <input type="file" name="file" id="file" accept=".xlsx">
-                    <button type="submit">Mettre à jour</button>
+                <form action="gestionarticles" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" accept=".xlsx">
+                <button type="submit">Mettre à jour</button>
+                
                 </form>
             </div>
           

@@ -7,6 +7,7 @@ namespace SFabc\controlers;
 use \Exception;
 use SFabc\dataprovider\Catalogue;
 use SFabc\dataprovider\JsonProvider;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class GestionArticlesControler extends Controler
 {
@@ -32,18 +33,14 @@ class GestionArticlesControler extends Controler
                     $catalogues[] = $produit;
 
                     $jsonProvider->saveCatalogue($catalogues);
-
-                    
                 }
             }
 
             $catalogues = $jsonProvider->loadCatalogue();
 
-            
             foreach ($catalogues as $catalogue) {
                 $_SESSION['catalogue'][] = $catalogue;
             }
-            
 
             $this->render('gestionarticles', [
                 'catalogue' => $catalogues
@@ -60,6 +57,12 @@ class GestionArticlesControler extends Controler
             session_destroy();
             header('Location: connexionAdmin.php');
             exit();
+        }
+
+        if (isset($_FILES["file"])) {
+            $this->handleFileUpload();
+            header('Location: gestionarticles');
+            
         }
 
         $jsonProvider = new JsonProvider('../data/models/catalogue.json');
@@ -82,15 +85,14 @@ class GestionArticlesControler extends Controler
                                 $catalogue->setSousFamille($sousfamille);
                                 $catalogue->setTxt1($txt1);
 
-                            }
-                            elseif ($_POST['form_type'] === 'edit_description') {
+                            } elseif ($_POST['form_type'] === 'edit_description') {
                                 $currentDescriptions = [];
                                 $descriptions = $catalogue->getDescription1();
                                 foreach ($descriptions as $index => $description) {
                                     $currentDescriptions[] = $_POST['modif_description' . $index];
                                 }
                                 $catalogue->setDescription1($currentDescriptions);
-                            }elseif ($_POST['form_type'] === 'edit_prix') {
+                            } elseif ($_POST['form_type'] === 'edit_prix') {
                                 $currentPrix = [];
                                 $tarifs = $catalogue->getPrix();
                                 foreach ($tarifs as $index => $tarif) {
@@ -129,7 +131,7 @@ class GestionArticlesControler extends Controler
                         }
                     }
                 }
-            }elseif(isset($_POST['_method']) && $_POST['_method'] == 'DELETE'){
+            } elseif (isset($_POST['_method']) && $_POST['_method'] == 'DELETE') {
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
                     foreach ($catalogues as $index => $catalogue) {
@@ -148,6 +150,81 @@ class GestionArticlesControler extends Controler
         } catch (Exception $e) {
             echo "Erreur: " . htmlspecialchars($e->getMessage());
             error_log("Erreur lors de la mise à jour du catalogue: " . $e->getMessage());
+        }
+    }
+
+    private function handleFileUpload(): void
+    {
+        $fileTmpPath = $_FILES["file"]["tmp_name"];
+        $fileName = $_FILES["file"]["name"];
+        $fileType = $_FILES["file"]["type"];
+
+        error_log("Fichier reçu: " . $fileName);
+        error_log("Type de fichier: " . $fileType);
+        $allowedTypes = ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"];
+
+        $destinationPath =  '../data/' . $fileName;
+
+        if (move_uploaded_file($fileTmpPath, $destinationPath)) {
+            if (in_array($fileType, $allowedTypes)) {
+                $outputFileName = __DIR__ . '/../../data/models/catalogue.json';
+                error_log("Fichier déplacé avec succès.");
+                $this->convertToJSON($destinationPath, $outputFileName);
+            } else {
+                echo "Format de fichier non supporté.";
+            }
+        } else {
+            echo "Échec du déplacement du fichier.";
+        }
+    }
+
+    private function convertToJSON(string $inputFileName, string $outputFileName): void
+    {
+        $spreadsheet = IOFactory::load($inputFileName);
+        $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
+
+        $data = [];
+        $firstRow = true;
+        $productCounter = 1;
+
+        foreach ($sheetData as $row) {
+            if ($firstRow) {
+                $firstRow = false;
+                continue;
+            }
+
+            $produit = [
+                "id" => $productCounter++,
+                "nom" => $row['C'],
+                "description1" => isset($row['D']) ? explode(';', $row['D']) : [],
+                "prix" => []
+            ];
+
+            if (!empty($row['F'])) {
+                $prixDescriptions = isset($row['E']) ? explode(';', $row['E']) : [];
+                $prixTarifs = explode(';', str_replace(['€', ' '], '', $row['F']));
+
+                foreach ($prixTarifs as $index => $prix) {
+                    $produit["prix"][] = [
+                        "description" => isset($prixDescriptions[$index]) ? trim($prixDescriptions[$index]) : '',
+                        "tarif" => trim($prix)
+                    ];
+                }
+            }
+
+            $produit["txt1"] = $row['G'];
+            $produit["photos"] = isset($row['H']) ? explode(';', $row['H']) : [];
+            $produit["famille"] = $row['A'];
+            $produit["sousfamille"] = $row['B'];
+
+            $data[] = $produit;
+        }
+
+        $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        if (file_put_contents($outputFileName, $jsonData) === false) {
+            error_log("Erreur lors de l'écriture du fichier JSON.");
+        } else {
+            error_log("Fichier JSON mis à jour avec succès.");
         }
     }
 }
