@@ -1,31 +1,628 @@
-{
-    "famille": [
-        {
-            "nom": "Lampes",
-            "sousfamilles": [
-                {
-                    "nom": "Lampe Bois recyclé - Éclairage Led (4W)",
-                    "produits": [
-                        {
-                            "id": 1,
-                            "nom": "Modèle Chien",
-                            "description1": "Tête légèrement en trapèze ; Alimentation sur secteur (220 V) ; Fil en corde ; Positionnable à volonté (couché, debout, assis), oreilles positionnables",
-                            "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
-                            "prix": [
-                                {
-                                    "description": "",
-                                    "tarif": "69.00"
-                                }
-                            ],
-                            "txt1": null,
-                            "txt2": null,
-                            "photos": [
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "nom": "Mod\u00e8le Chdeap",
+        "description1": [
+            "",
+            "pdjapdjpdedkpapdk",
+            " Fil en corde\u00a0",
+            "aidda"
+        ],
+        "description2": "Dimensions :\n - couch\u00e9 : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes \u00e0 personnaliser",
+        "prix": [
+            {
+                "description": "",
+                "tarif": "69.00"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "La",
+        "sousfamille": "daida"
+    },
+    {
+        "id": 2,
+        "nom": "Mod\u00e8le Chat",
+        "description1": [
+            "T\u00eate rectangle\u00a0",
+            " Alimentation sur secteur (220 V)\u00a0",
+            " Fil en corde\u00a0",
+            " Positionnable \u00e0 volont\u00e9 (couch\u00e9, debout, assis\u00e0, oreilles positionnables"
+        ],
+        "description2": "Dimensions :\n - couch\u00e9 : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes \u00e0 personnaliser",
+        "prix": [
+            {
+                "description": "",
+                "tarif": "79.00"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Lampes",
+        "sousfamille": "Lampe Bois recycl\u00e9 - \u00c9clairage Led (4W)"
+    },
+    {
+        "id": 3,
+        "nom": "Mod\u00e8le Poule",
+        "description1": [
+            "Alimentation sur batterie (surcycl\u00e9e)\u00a0",
+            "Recharge par chargeur 5V (type t\u00e9l\u00e9phone portable)\u00a0"
+        ],
+        "description2": "T\u00eate et pattes positionnables\u00a0;Gravure \u00e0 personnaliser",
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Lampes",
+        "sousfamille": "Lampe Bois recycl\u00e9 - \u00c9clairage Led (4W)"
+    },
+    {
+        "id": 4,
+        "nom": "Mod\u00e8le Basique",
+        "description1": [
+            "Socle noir (7 couleurs - plaque 12 \u00d7 16 cm)"
+        ],
+        "description2": null,
+        "prix": [
+            {
+                "description": "",
+                "tarif": "33.90"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs plaques identiques command\u00e9es",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Lampes",
+        "sousfamille": "Lampe Led Plexi Personnalis\u00e9e"
+    },
+    {
+        "id": 5,
+        "nom": "Mod\u00e8le Luxe",
+        "description1": [
+            "Socle blanc, lumineux, t\u00e9l\u00e9command\u00e9 (7 couleurs - plaque 12 \u00d7 16 cm)"
+        ],
+        "description2": null,
+        "prix": [
+            {
+                "description": "",
+                "tarif": "36.90"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs plaques identiques command\u00e9es",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Lampes",
+        "sousfamille": "Lampe Led Plexi Personnalis\u00e9e"
+    },
+    {
+        "id": 6,
+        "nom": "Petit Mod\u00e8le",
+        "description1": [
+            "Environ 25 cm \u00d7 diam : 6 cm"
+        ],
+        "description2": null,
+        "prix": [
+            {
+                "description": "",
+                "tarif": "14.90"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs bouteilles identiques command\u00e9es",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Lampes",
+        "sousfamille": "Eclairage Ambiance Bouteille"
+    },
+    {
+        "id": 7,
+        "nom": "Grand Mod\u00e8le",
+        "description1": [
+            "Environ 34 cm \u00d7 diam : 7,6 cm"
+        ],
+        "description2": null,
+        "prix": [
+            {
+                "description": "",
+                "tarif": "17.90"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs bouteilles identiques command\u00e9es",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Lampes",
+        "sousfamille": "Eclairage Ambiance Bouteille"
+    },
+    {
+        "id": 8,
+        "nom": "Mod\u00e8le 34 \u00d7 34 cm",
+        "description1": [
+            ""
+        ],
+        "description2": "Dimension du miroir : 30 \u00d7 30 cm\u00a0;Gravure personnalis\u00e9e",
+        "prix": [
+            {
+                "description": "Si gravure du bois uniquement\u00a0",
+                "tarif": "30,90\u00a0"
+            },
+            {
+                "description": "Si gravure du miroir uniquement\u00a0",
+                "tarif": "1"
+            },
+            {
+                "description": "Si gravure du bois et du miroir",
+                "tarif": "39,00"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs miroirs identiques command\u00e9es",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Miroirs",
+        "sousfamille": "Miroir Bois"
+    },
+    {
+        "id": 9,
+        "nom": "Mod\u00e8le 25 \u00d7 34 cm",
+        "description1": [
+            ""
+        ],
+        "description2": "Dimension du miroir : 21 \u00d7 30 cm\u00a0;Gravure personnalis\u00e9e",
+        "prix": [
+            {
+                "description": "Si gravure du bois uniquement\u00a0",
+                "tarif": "29,90\u00a0"
+            },
+            {
+                "description": "Si gravure du miroir uniquement",
+                "tarif": "50"
+            },
+            {
+                "description": "Si gravure du bois et du miroir",
+                "tarif": "37,90"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs miroirs identiques command\u00e9es",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Miroirs",
+        "sousfamille": "Miroir Bois"
+    },
+    {
+        "id": 10,
+        "nom": "Tire-bouchon \"luxe\" personnalis\u00e9e",
+        "description1": [
+            "Bois \/ m\u00e9tal"
+        ],
+        "description2": "Dimension : 12 \u00d7 3 cm (pli\u00e9)",
+        "prix": [
+            {
+                "description": "Gravure manche bois\u00a0",
+                "tarif": "9,50\u00a0"
+            },
+            {
+                "description": "5 gravures",
+                "tarif": "29,90\u00a0"
+            }
+        ],
+        "txt1": "Prix d\u00e9gressif si plusieurs produits identiques command\u00e9s",
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Tire bouchon"
+    },
+    {
+        "id": 11,
+        "nom": "Stylo Bambou",
+        "description1": [
+            "Bois \/ m\u00e9tal"
+        ],
+        "description2": "Gravure personnalis\u00e9e",
+        "prix": [
+            {
+                "description": "Gravure manche bois\u00a0",
+                "tarif": "5,00\u00a0"
+            },
+            {
+                "description": "2 gravures",
+                "tarif": "7,00"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Stylo"
+    },
+    {
+        "id": 12,
+        "nom": "Couteau pliant",
+        "description1": [
+            ""
+        ],
+        "description2": "Gravure personnalis\u00e9e",
+        "prix": [
+            {
+                "description": "Gravure manche bois\u00a0",
+                "tarif": "15,00"
+            },
+            {
+                "description": "2 gravures",
+                "tarif": "18,00"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Couteau"
+    },
+    {
+        "id": 13,
+        "nom": "Thermos en Bambou",
+        "description1": [
+            "Bambou et Inox"
+        ],
+        "description2": "450 mL\u00a0;Filtre pour le th\u00e9",
+        "prix": [
+            {
+                "description": "",
+                "tarif": "44.90"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Thermos"
+    },
+    {
+        "id": 14,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "BBQ",
+        "sousfamille": "Support BBQ"
+    },
+    {
+        "id": 15,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "BBQ",
+        "sousfamille": "Caisse \u00e0 bi\u00e8re"
+    },
+    {
+        "id": 16,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Gravure coque t\u00e9l\u00e9phone"
+    },
+    {
+        "id": 17,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Plaque porte de chambre"
+    },
+    {
+        "id": 18,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Tableau en bois"
+    },
+    {
+        "id": 19,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Jeux de soci\u00e9t\u00e9"
+    },
+    {
+        "id": 20,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Bar \u00e0 p\u00e9tanque"
+    },
+    {
+        "id": 21,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Guitare"
+    },
+    {
+        "id": 22,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Horloge Harry Potter"
+    },
+    {
+        "id": 23,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Vase"
+    },
+    {
+        "id": 24,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Table de chevet"
+    },
+    {
+        "id": 25,
+        "nom": null,
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Cr\u00e9ation diverses sur mesures",
+        "sousfamille": "Coffre au tr\u00e9sor"
+    },
+    {
+        "id": 26,
+        "nom": "Porte clef personnalis\u00e9",
+        "description1": [
+            "M\u00e9tal - plaque noire"
+        ],
+        "description2": "50 \u00d7 38 mm",
+        "prix": [
+            {
+                "description": "Pour gravure des 2 c\u00f4t\u00e9s\u00a0",
+                "tarif": "11,90\u00a0"
+            },
+            {
+                "description": "Pour gravure d'un seul c\u00f4t\u00e9",
+                "tarif": "7,90"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Porte clef"
+    },
+    {
+        "id": 27,
+        "nom": "Boite \u00e0 mouchoirs personnalis\u00e9e",
+        "description1": [
+            "Bois \/ m\u00e9tal"
+        ],
+        "description2": null,
+        "prix": [
+            {
+                "description": "",
+                "tarif": "11.90"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Boite \u00e0 mouchoirs"
+    },
+    {
+        "id": 28,
+        "nom": "Mod\u00e8le 25 \u00d7 25 cm",
+        "description1": [
+            ""
+        ],
+        "description2": null,
+        "prix": [
+            {
+                "description": "Prix\u00a0",
+                "tarif": "15,00"
+            },
+            {
+                "description": "Pour image personnalis\u00e9e\u00a0",
+                "tarif": "22,00"
+            }
+        ],
+        "txt1": null,
+        "txt2": null,
+        "photos": [
+            ""
+        ],
+        "famille": "Gravures personnalis\u00e9es",
+        "sousfamille": "Gravure sur Toile"
+    },
+    {
+        "id": 29,
+        "nom": "Nouveau produit",
+        "description1": [],
+        "description2": "",
+        "prix": [],
+        "txt1": "",
+        "txt2": "",
+        "photos": [],
+        "famille": "",
+        "sousfamille": ""
+    },
+    {
+        "id": 30,
+        "nom": "Nouveau produit",
+        "description1": [],
+        "description2": "",
+        "prix": [],
+        "txt1": "",
+        "txt2": "",
+        "photos": [],
+        "famille": "",
+        "sousfamille": ""
+    },
+    {
+        "id": 31,
+        "nom": "Nouveau produit",
+        "description1": [],
+        "description2": "",
+        "prix": [],
+        "txt1": "",
+        "txt2": "",
+        "photos": [],
+        "famille": "",
+        "sousfamille": ""
+    },
+    {
+        "id": 32,
+        "nom": "Nouveau produit",
+        "description1": [],
+        "description2": "",
+        "prix": [],
+        "txt1": "",
+        "txt2": "",
+        "photos": [],
+        "famille": "",
+        "sousfamille": ""
+    },
+    {
+        "id": 33,
+        "nom": "Nouveau produit",
+        "description1": [],
+        "description2": "",
+        "prix": [],
+        "txt1": "",
+        "txt2": "",
+        "photos": [],
+        "famille": "",
+        "sousfamille": ""
+    }
+]

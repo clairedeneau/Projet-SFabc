@@ -47,5 +47,11 @@ return [
         'methods' => ['GET'],
         'redirect' => '/',
         'requiresArgument' => false
-    ]
+    ],
+    '/gestionarticles' => [
+        'controler' => SFabc\controlers\GestionArticlesControler::class,
+        'methods' => ['GET', 'POST'],
+        'redirect' => '/gestionarticles',
+        'requiresArgument' => false
+    ],
 ];
