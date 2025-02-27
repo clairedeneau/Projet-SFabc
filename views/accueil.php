@@ -13,10 +13,11 @@
 </head>
 <header>
     <nav id="topnav">
-        <div class="search-container">
+        <form action="recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
-            <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
-        </div>
+            <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
+            <button type="submit" style="display: none;"></button>
+        </form>
         <ul>
             <li><a href="/articles">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
@@ -38,7 +39,7 @@
     <main>
         <h2>Découvrez mes créations</h2>
         <div class="produit">
-            <img src="couteaux/couteau gravure personnalisée 1.jpg" alt="Couteau gravure" width="200" height="auto">
+            <img src="static/images/images_articles/couteaux/couteau gravure personnalisée 1.jpg" alt="Couteau gravure" width="200" height="auto">
             <div class="contenu-produit">
                 <h3>Couteau en bois personnalisé</h3>
                 <p>Couteau pliant avec gravure personnalisée.</p>
@@ -48,7 +49,7 @@
         </div>
         <div class="separateur"></div>
         <div class="produit">
-            <img src="bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
+            <img src="static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
             <div class="contenu-produit">
                 <h3>Bouteille en verre personnalisée</h3>
                 <p>Bouteille avec éclairage d'ambiance</p>

@@ -14,7 +14,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll(".produit img").forEach(img => {
-                if (img.naturalHeight > img.naturalWidth) {
+                if (img.naturalHeight > img.naturalWidth + 10) {
                     img.style.transform = "rotate(90deg)";
                 }
             });
@@ -24,12 +24,13 @@
 </head>
 <header>
     <nav id="topnav">
-        <div class="search-container">
+        <form action="recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
-            <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
-        </div>
+            <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
+            <button type="submit" style="display: none;"></button>
+        </form>
         <ul>
-            <li><a href="/articles">Articles</a></li>
+            <li><a href="/articles"  class="nav-link-active">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
@@ -42,40 +43,18 @@
     </nav>
 </header>
 <section class="bandeau">
+    <h1>Les articles en vente</h1>
     <img src="static/images/fond_bandeau.png" alt="bandeau">
 </section>
 
 <body>
     <h2>Tous les articles</h2>
     <main>
-        <div class="produit">
-            <img src="couteaux/couteau gravure personnalisée 1.jpg" alt="Couteau gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Couteau en bois personnalisé</h3>
-                <p id="prix">À partir de 15.00 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg" alt="Bouteille gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Eclairage ambiance bouteille - grand modèle</h3>
-                <p id="prix">17.90 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="aimants/aimants gravure et découpe personnalisee bois recyclage surcyclage upcycling 1.png" alt="Aimants" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Aimants bois gravés personnalisés</h3>
-                <p id="prix">À partir de 15.00 €</p>
-            </div>
-        </div>
-        <div class="produit">
-            <img src="jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg" alt="Jeu bois gravure" width="200" height="auto">
-            <div class="contenu-produit">
-                <h3>Jack en bois personnalisé</h3>
-                <p id="prix">À partir de 26.00 €</p>
-            </div>
-        </div>
+        <?php
+        foreach($articles as $article){
+            echo $article->renderArticle();
+        }
+        ?>
     </main>
 </body>
 <?php

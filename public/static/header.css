@@ -101,3 +101,7 @@ header {
     font-size: 64px;
     color: white;
 }
+
+.nav-link-active {
+    color:#F6F2E8;
+}

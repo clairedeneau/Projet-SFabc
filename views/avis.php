@@ -15,10 +15,11 @@
 </head>
 <header>
     <nav id="topnav">
-        <div class="search-container">
+        <form action="recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
-            <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
-        </div>
+            <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
+            <button type="submit" style="display: none;"></button>
+        </form>
         <ul>
             <li><a href="/articles">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
@@ -42,40 +43,59 @@
         <h2>Thermos personnalisé</h2>
         <p>☆ ☆ ☆ ☆ ☆</p>
     </div>
-    <div class="liste-avis">
-        <div class="avis">
-            <div class="titre-avis">
-                <h3>Pierre-Antoine G. </h3>
-                <p>☆ ☆ ☆ ☆ ☆</p>
-            </div>
-            <div class="commentaire">
-                <p>Très pratique, gravure impeccable, je recommande !!</p>
-            </div>
-        </div>
-        <div class="avis">
-            <div class="titre-avis">
-                <h3>Julie C. </h3>
-                <p>☆ ☆ ☆ ☆</p>
-            </div>
-            <div class="commentaire">
-                <p>Nickel, livraison rapide</p>
-            </div>
-        </div>
-        <div class="avis">
-            <div class="titre-avis">
-                <h3>Eugène H. </h3>
-                <p>☆ ☆ ☆ ☆ ☆</p>
-            </div>
-            <div class="commentaire">
-                <p></p>
-            </div>
-        </div>
 
+    <div class="formulaire-avis">
+        <?php if (!empty($succes)): ?>
+            <p class="succes-message"><?= htmlspecialchars($succes) ?></p>
+        <?php endif; ?>
+        <button class="btn-form" onclick="toggleForm()">Donner un avis</button>
+        <div id="form-avis" class="form-avis">
+            <form action="avis" method="POST">
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+                <div class="note">
+                    <button type="button" onclick="changeRating(-1)">-</button>
+                    <input type="number" name="note" id="note" value="5" min="1" max="5" readonly>
+                    <button type="button" onclick="changeRating(1)">+</button>
+                </div>
+                <textarea name="comment" id="comment" rows="3" placeholder="Votre commentaire ..." required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
     </div>
-    <p class="retour">&#10094; <a href="">Retour</a></p>
+
+    <div class="liste-avis">
+    <?php foreach ($data as $avis): ?>
+        <div class="avis">
+            <div class="titre-avis">
+                <h3><?= htmlspecialchars($avis['user']) ?></h3>
+                <p>☆<?= str_repeat('☆', $avis['note']-1) ?></p>
+            </div>
+            <div class="commentaire">
+                <p><?= htmlspecialchars($avis['comment']) ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+    <p class="retour">&#10094; <a href="/detail">Retour</a></p>
 </body>
 <?php
 require_once "footer.php"
 ?>
+
+<script>
+    function toggleForm() {
+        const form = document.getElementById('form-avis');
+        form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function changeRating(change) {
+        const noteInput = document.getElementById('note');
+        let currentNote = parseInt(noteInput.value);
+        currentNote += change;
+        if (currentNote >= 1 && currentNote <= 5) {
+            noteInput.value = currentNote;
+        }
+    }
+</script>
 
 </html>

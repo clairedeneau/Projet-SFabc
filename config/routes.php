@@ -24,8 +24,20 @@ return [
         'redirect' => '/',
         'requiresArgument' => false
     ],
+    '/recherche-articles' => [
+        'controler' => SFabc\controlers\ControleurRechercheArticles::class,
+        'methods' => ['GET'],
+        'redirect' => '/',
+        'requiresArgument' => false
+    ],
     '/admin' => [
         'controler' => SFabc\controlers\AdminLoginControler::class,
+        'methods' => ['GET', 'POST'],
+        'redirect' => '/',
+        'requiresArgument' => false
+    ],
+    '/bienvenue' => [
+        'controler' => SFabc\controlers\AdminBienvenue::class,
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
@@ -40,11 +52,11 @@ return [
         'controler' => SFabc\controlers\DetailControler::class,
         'methods' => ['GET'],
         'redirect' => '/',
-        'requiresArgument' => false
+        'requiresArgument' => true
     ],
     '/avis' => [
         'controler' => SFabc\controlers\AvisControler::class,
-        'methods' => ['GET'],
+        'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
     ],

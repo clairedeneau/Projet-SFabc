@@ -3,6 +3,7 @@ namespace SFabc\dataprovider;
 
 use Exception;
 
+
 class JsonProvider
 {
     private string $jsonFilePath;
@@ -16,6 +17,7 @@ class JsonProvider
     {
         if (!file_exists($this->jsonFilePath)) {
             throw new Exception("Le fichier JSON n'existe pas.");
+
         }
 
         $jsonData = file_get_contents($this->jsonFilePath);
@@ -64,6 +66,7 @@ class JsonProvider
         }
     }
 
+
     private function mapToCatalogue(array $catalogueData): Catalogue
     {
         return new Catalogue(
@@ -91,3 +94,4 @@ class JsonProvider
         );
     }
 }
+

@@ -15,6 +15,7 @@
             }
         ],
         "txt1": null,
+
         "photos": [
 
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_7.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_10.jpg",
@@ -33,6 +34,7 @@
             " Fil en corde ",
             " Positionnable à volonté (couché, debout, assis, oreilles positionnables)"
         ],
+
         "prix": [
             {
                 "description": "",
@@ -40,6 +42,7 @@
             }
         ],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg",
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
@@ -54,6 +57,7 @@
             "Alimentation sur batterie (surcyclée) ",
             "Recharge par chargeur 5V (type téléphone portable) "
         ],
+
         "prix": [],
         "txt1": null,
         "photos": [
@@ -70,6 +74,7 @@
         "description1": [
             "Socle noir (7 couleurs - plaque 12 × 16 cm)"
         ],
+
         "prix": [
             {
                 "description": "",
@@ -310,8 +315,10 @@
         "description1": [
             ""
         ],
+
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/créations sur mesure/BBQ/support_barbecue_bois_recyclage_surcyclage_upcycling_3.jpg",
             "static/images/images_articles/créations sur mesure/BBQ/support_barbecue_bois_recyclage_surcyclage_upcycling_4.jpg"
@@ -325,8 +332,10 @@
         "description1": [
             "Bambou et Inox"
         ],
+
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/créations sur mesure/caisse biere/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_1.jpg",
             "static/images/images_articles/créations sur mesure/caisse biere/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg"
@@ -342,6 +351,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             ""
         ],
@@ -356,6 +366,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg",
             "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.png",
@@ -372,6 +383,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 1.png",
             "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 details1.jpg",
@@ -389,6 +401,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg",
             "static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_6.jpg"
@@ -404,6 +417,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.1.jpg",
             "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.2.jpg",
@@ -423,6 +437,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             ""
         ],
@@ -437,6 +452,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             ""
         ],
@@ -451,6 +467,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/tasse/Tasse_Verre_gravure_personnalisee.jpg"
         ],
@@ -465,6 +482,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             ""
         ],
@@ -479,6 +497,7 @@
         ],
         "prix": [],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_3.1.jpg",
             "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_4.1.jpg",
@@ -504,6 +523,7 @@
             }
         ],
         "txt1": null,
+
         "photos": [
             "static/images/images_articles/porte clef/Porte clef gravé personnalisé_1.jpg",
             "static/images/images_articles/porte clef/Porte clef gravé personnalisé_2.jpg",
@@ -519,6 +539,7 @@
         "description1": [
             "Bois \/ métal"
         ],
+
         "prix": [
             {
                 "description": "",
