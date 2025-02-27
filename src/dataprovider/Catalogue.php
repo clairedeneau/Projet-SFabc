@@ -96,11 +96,12 @@ class Catalogue
     }
 
     public static function getProduitById($catalogues, $id) {
-        $filteredCatalogues = array_filter($catalogues, function($catalogue) use ($id) {
-            return $catalogue->getId() === $id;
-        });
-
-        return reset($filteredCatalogues);
+        foreach($catalogues as $article){
+            if($article->getId() == $id){
+                return $article;
+            }
+        }
+        return null;
     }
 
     public static function getProduitByName($catalogues, $name) {
@@ -113,6 +114,7 @@ class Catalogue
 
     public function renderArticle(): string {
         $html = "<div class='produit'>";
+        $html .= "<a href='"."/detail/".$this->id."'>";
         $html .= "<img src='".$this->photos[0]."' alt='".$this->nom."' width='200' height='auto'>";
         $html .= "<div class='contenu-produit'>";
         $html .= "<h3>".$this->nom."</h3>";
@@ -129,6 +131,46 @@ class Catalogue
             $prixAffiche = "A partir de " . $prixMini . " €";
         }
         $html .= "<p id='prix'>".$prixAffiche."</p>";
+        $html .= "</div>";
+        $html .= "</a>";
+        $html .= "</div>";
+        return $html;
+    }
+
+    public function renderDetail(): string {
+        $html = "<h2>".$this->getNom()."</h2>";
+        $html .= "<div class='container'>";
+        $html .= "<div class='diapo'>";
+        $html .= "<a class='prev' onclick='changeSlide(-1)'>&#10094;</a>";
+        foreach($this->photos as $i => $photo){
+            $html .= "<div class='slide fade'>";
+            $html .= "<img src='" . (str_starts_with($photo,"/") ? $photo : "/" . $photo) . "' alt='Image ".$i."'>";
+            $html .= "</div>";
+        }
+        $html .= "<a class='next' onclick='changeSlide(1)'>&#10095;</a>";
+        $html .= "</div>";
+        $html .= "<div class='info'>";
+        $html .= "<h3>Caractéristiques :</h3>";
+        $html .= "<ul>";
+        foreach($this->description1 as $desc){
+            $html .= "<li>" . $desc . "</li>";
+        }
+        $html .= "</ul>";
+        if(sizeof($this->prix) == 0){
+            $html .= "<p id='prix'>Création sur demande</p>";
+        }else if(sizeof($this->prix) == 1){
+            $html .= "<p id='prix'>Prix : " . $this->prix[0]["tarif"] . " €";
+        }else{
+            $html .= "<ul>";
+            foreach($this->prix as $tarif){
+                $desc = $tarif["description"];
+                $prix = $tarif["tarif"];
+                $html .= "<li>" . $desc . " : " . $prix . " €</li>";
+            }
+            $html .= "</ul>";
+        }
+        $html .= "<div class='avis'>";
+        $html .= "<p>☆ ☆ ☆ ☆ ☆ - <a href='/avis'>Voir les avis</a></p>";
         $html .= "</div>";
         $html .= "</div>";
         return $html;

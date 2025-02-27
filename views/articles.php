@@ -14,7 +14,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll(".produit img").forEach(img => {
-                if (img.naturalHeight > img.naturalWidth) {
+                if (img.naturalHeight > img.naturalWidth + 10) {
                     img.style.transform = "rotate(90deg)";
                 }
             });
