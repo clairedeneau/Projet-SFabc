@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="static/bienvenue.css">
     <link rel="stylesheet" href="static/footer.css">
     <link rel="stylesheet" href="static/header.css">
-    <title>À propos</title>
+    <title>Admin - Bienvenue</title>
 </head>
 <header>
     <nav id="topnav">
         <ul>
-            <li><a href="/admin/bienvenue" class="nav-link-active">Informations générales</a></li>
+            <li><a href="/bienvenue" class="nav-link-active">Informations générales</a></li>
             <li><a href="/admin">Gestionnaire des pages</a></li>
             <li><a href="/admin">Gestionnaire des articles</a></li>
             <li><a href="/admin">Avis</a></li>
@@ -34,12 +34,15 @@
 </section>
 <body>
     <div class="container">
-        <form action="footer" method="post" class="formulaire">
-            <input type="email" name="email" id="mail" placeholder="Email">
-            <input type="tel" name="tel" id="tel" placeholder="Numéro de téléphone">
-            <input type="url" name="facebook" id="fb" placeholder="Lien Facebook">
-            <input type="url" name="instagram" id="insta" placeholder="Lien Instagram">
-            <textarea cols="25" rows="2" name="adresse" id="adresse" placeholder="Adresse"></textarea>
+        <form action="bienvenue" method="post" class="formulaire">
+            <?php if (!empty($succes)): ?>
+                <p class="succes-message"><?= htmlspecialchars($succes) ?></p>
+            <?php endif; ?>
+            <input type="email" name="email" id="mail" placeholder="Email" value="<?= htmlspecialchars($data['email'] ?? '') ?>">
+            <input type="tel" name="tel" id="tel" placeholder="Numéro de téléphone" value="<?= htmlspecialchars($data['tel'] ?? '') ?>">
+            <input type="url" name="facebook" id="fb" placeholder="Lien Facebook" value="<?= htmlspecialchars($data['facebook'] ?? '') ?>">
+            <input type="url" name="instagram" id="insta" placeholder="Lien Instagram" value="<?= htmlspecialchars($data['instagram'] ?? '') ?>">
+            <textarea cols="25" rows="2" name="adresse" id="adresse" placeholder="Adresse"><?= htmlspecialchars($data['adresse'] ?? '') ?></textarea>
             <button type="submit">Modifier</button>
         </form>
     </div>

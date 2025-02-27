@@ -36,10 +36,10 @@ return [
         'redirect' => '/',
         'requiresArgument' => false
     ],
-    '/admin/bienvenue' => [
+    '/bienvenue' => [
         'controler' => SFabc\controlers\AdminBienvenue::class,
-        'methods' => ['GET'],
-        'redirect' => '/admin',
+        'methods' => ['GET', 'POST'],
+        'redirect' => '/',
         'requiresArgument' => false
     ],
     '/logout' => [
