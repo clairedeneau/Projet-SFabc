@@ -24,12 +24,13 @@
 </head>
 <header>
     <nav id="topnav">
-        <div class="search-container">
+        <form action="recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
-            <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
-        </div>
+            <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
+            <button type="submit" style="display: none;"></button>
+        </form>
         <ul>
-            <li><a href="/articles">Articles</a></li>
+            <li><a href="/articles"  class="nav-link-active">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>

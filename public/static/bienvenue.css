@@ -1,0 +1,80 @@
+body {
+    font-family: 'Alata', sans-serif;
+    background-color: #F6F2E8;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* MISE EN FORME DU FORMULAIRE */
+
+#info-form {
+    text-align: center;
+    font-size: 16px;
+    color: #B8A67E;
+    margin: 20px auto 5px auto; 
+    width: fit-content;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 10px 20px;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="tel"], input[type="email"], input[type="url"], textarea {
+    font-family: 'Alata', sans-serif;
+    font-size: 16px;
+    border: 1.5px solid #5A4328;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #EEE7D8;
+}
+
+input[type="tel"]::placeholder, input[type="url"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
+    color: #B8A67E;
+}
+
+input[type="tel"]:focus, input[type="url"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    border-color: #5A4328;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    font-size: 16px;
+    background-color: #5A4328;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #4A3628;
+}
+
+.succes-message {
+    text-align: center;
+    color:#2c4a28;
+}
