@@ -21,7 +21,7 @@ class AdminLoginControler extends Controler
 
         if($nom_utilisateur === $admin && $mot_de_passe === $mdp_admin) {
             $_SESSION["user"] = $nom_utilisateur;
-            $this->redirectTo('/'); // à modifier
+            $this->redirectTo('bienvenue');
         } else {
             $erreur = "Identifiants ou mot de passe incorrects";
             echo $erreur;

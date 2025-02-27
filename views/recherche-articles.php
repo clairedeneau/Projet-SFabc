@@ -7,20 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alata&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-    <link rel="stylesheet" href="static/articles.css">
+    <link rel="stylesheet" href="static/recherche-articles.css">
     <link rel="stylesheet" href="static/header.css">
     <link rel="stylesheet" href="static/footer.css">
-    <title>Articles</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".produit img").forEach(img => {
-                if (img.naturalHeight > img.naturalWidth + 10) {
-                    img.style.transform = "rotate(90deg)";
-                }
-            });
-        });
-    </script>
-
+    <title>Résultats recherche d'articles</title>
 </head>
 <header>
     <nav id="topnav">
@@ -30,7 +20,7 @@
             <button type="submit" style="display: none;"></button>
         </form>
         <ul>
-            <li><a href="/articles"  class="nav-link-active">Articles</a></li>
+            <li><a href="/articles" class="nav-link-active">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
@@ -43,18 +33,26 @@
     </nav>
 </header>
 <section class="bandeau">
-    <h1>Les articles en vente</h1>
+    <h1>Résultats de votre recherche</h1>
     <img src="static/images/fond_bandeau.png" alt="bandeau">
 </section>
 
 <body>
-    <h2>Tous les articles</h2>
+    <h2>Résultats de la recherche - "<?= htmlspecialchars($query) ?>"</h2>
     <main>
-        <?php
-        foreach($articles as $article){
-            echo $article->renderArticle();
-        }
-        ?>
+        <?php if(empty($articles)): ?> 
+            <p style="color: red;"> Aucun résultat trouvé !</p>
+        <?php else: ?>
+            <?php foreach ($articles as $article): ?>
+                <div class="produit">
+                    <img src="<?= htmlspecialchars($article["image"]) ?>" alt="<?= htmlspecialchars($article["nom"]) ?>" width="200" height="auto">
+                    <div class="contenu-produit">
+                        <h3><?= htmlspecialchars($article["nom"]) ?></h3>
+                        <p id="prix"><?= htmlspecialchars($article["prix"]) ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </main>
 </body>
 <?php
