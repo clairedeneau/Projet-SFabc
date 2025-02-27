@@ -15,10 +15,11 @@
 </head>
 <header>
     <nav id="topnav">
-        <div class="search-container">
+        <form action="recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
-            <input type="search" name="Rechercher" id="rechercher" placeholder="Rechercher">
-        </div>
+            <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
+            <button type="submit" style="display: none;"></button>
+        </form>
         <ul>
             <li><a href="/articles">Articles</a></li>
             <li><a href="/a-propos">À propos</a></li>
@@ -56,42 +57,25 @@
                     <input type="number" name="note" id="note" value="5" min="1" max="5" readonly>
                     <button type="button" onclick="changeRating(1)">+</button>
                 </div>
-                <textarea name="comment" id="comment" rows="4" required></textarea>
+                <textarea name="comment" id="comment" rows="3" placeholder="Votre commentaire ..." required></textarea>
                 <button type="submit">Envoyer</button>
             </form>
         </div>
     </div>
 
     <div class="liste-avis">
+    <?php foreach ($data as $avis): ?>
         <div class="avis">
             <div class="titre-avis">
-                <h3>Pierre-Antoine G. </h3>
-                <p>☆ ☆ ☆ ☆ ☆</p>
+                <h3><?= htmlspecialchars($avis['user']) ?></h3>
+                <p>☆<?= str_repeat('☆', $avis['note']-1) ?></p>
             </div>
             <div class="commentaire">
-                <p>Très pratique, gravure impeccable, je recommande !!</p>
+                <p><?= htmlspecialchars($avis['comment']) ?></p>
             </div>
         </div>
-        <div class="avis">
-            <div class="titre-avis">
-                <h3>Julie C. </h3>
-                <p>☆ ☆ ☆ ☆</p>
-            </div>
-            <div class="commentaire">
-                <p>Nickel, livraison rapide</p>
-            </div>
-        </div>
-        <div class="avis">
-            <div class="titre-avis">
-                <h3>Eugène H. </h3>
-                <p>☆ ☆ ☆ ☆ ☆</p>
-            </div>
-            <div class="commentaire">
-                <p></p>
-            </div>
-        </div>
-
-    </div>
+    <?php endforeach; ?>
+</div>
     <p class="retour">&#10094; <a href="/detail">Retour</a></p>
 </body>
 <?php
@@ -99,13 +83,11 @@ require_once "footer.php"
 ?>
 
 <script>
-    // Fonction pour afficher ou cacher le formulaire
     function toggleForm() {
         const form = document.getElementById('form-avis');
         form.style.display = form.style.display === 'block' ? 'none' : 'block';
     }
 
-    // Fonction pour augmenter ou diminuer la note
     function changeRating(change) {
         const noteInput = document.getElementById('note');
         let currentNote = parseInt(noteInput.value);

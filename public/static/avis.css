@@ -55,6 +55,11 @@ body {
     margin: 5px 10px 10px 25px;
 }
 
+.commentaire p {
+    overflow-wrap:break-word ;
+}
+
+
 .retour {
     margin-left: 50px;
     font-size: 20px;
@@ -109,6 +114,7 @@ body {
 
 .form-avis input[type="text"],
 .form-avis textarea {
+    font-family: 'Alata', sans-serif;
     width: 80%;
     padding: 10px;
     margin-bottom: 10px;

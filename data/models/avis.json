@@ -1,13 +1,53 @@
-
 {
-    
     "avis": [
-    {
-        "idProduit": 1,
-        "user": "John Doe",
-        "note": 4,
-        "comment": "Great product, really enjoyed using it!",
-        "date": "2023-10-01"
-    }
-
-]}
+        {
+            "idProduit": 1,
+            "user": "John Doe",
+            "note": 4,
+            "comment": "Great product, really enjoyed using it!",
+            "date": "2023-10-01"
+        },
+        {
+            "idProduit": 1,
+            "user": "Thomas test",
+            "note": 3,
+            "comment": "Cette article est une tr\u00e8s belle invention !",
+            "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "testbis",
+            "note": 3,
+            "comment": "je retest",
+            "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "Thomas test",
+            "note": 5,
+            "comment": "feefef",
+            "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "testttttt",
+            "note": 5,
+            "comment": "teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "testttttt",
+            "note": 5,
+            "comment": "teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "tttttttt",
+            "note": 5,
+            "comment": "ttttttttttttt",
+            "date": "2025-02-27"
+        }
+    ]
+}
