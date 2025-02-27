@@ -34,6 +34,6 @@ class AdminBienvenue extends Controler
 
         file_put_contents($this->filePath, json_encode($nouvelle_donnees, JSON_PRETTY_PRINT));
 
-        $this->render('bienvenue', ['data' => $data, 'succes' => 'Informations mises à jour avec succès !']);
+        $this->render('bienvenue', ['data' => $nouvelle_donnees, 'succes' => 'Informations mises à jour avec succès !']);
     }
 }

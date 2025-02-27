@@ -13,6 +13,13 @@
             "note": 3,
             "comment": "Cette article est une tr\u00e8s belle invention !",
             "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "Test",
+            "note": 3,
+            "comment": "Pas mal mais peux mieux faire",
+            "date": "2025-02-27"
         }
     ]
 }
