@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alata&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-    <link rel="stylesheet" href="static/a-propos.css">
-    <link rel="stylesheet" href="static/footer.css">
-    <link rel="stylesheet" href="static/header.css">
+    <link rel="stylesheet" href="/static/a-propos.css">
+    <link rel="stylesheet" href="/static/footer.css">
+    <link rel="stylesheet" href="/static/header.css">
     <title>Erreur</title>
 </head>
 <header>
@@ -27,13 +27,13 @@
 
     <nav id="mainnav">
         <div class="logo-container">
-            <a id="logo" href="/"><img src="static/images/logo.png" alt="SFabc" width="120" heigt="auto"></a>
+            <a id="logo" href="/"><img src="/static/images/logo.png" alt="SFabc" width="120" heigt="auto"></a>
         </div>
     </nav>
 </header>
 <section class="bandeau">
     <h1>Erreur...</h1>
-    <img src="static/images/fond_bandeau.png" alt="bandeau">
+    <img src="/static/images/fond_bandeau.png" alt="bandeau">
 </section>
 
 <body>
