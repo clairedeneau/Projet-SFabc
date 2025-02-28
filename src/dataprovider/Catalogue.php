@@ -15,6 +15,8 @@ class Catalogue
     private ?string $famille;
     private ?string $sousfamille;
 
+    private ?array $avis;
+
     public function __construct(
         int $id,
         ?string $nom,
@@ -77,6 +79,10 @@ class Catalogue
 
     public function getSousfamille() {
         return $this->sousfamille;
+    }
+
+    public function setAvis(array $avis){
+        $this->avis = $avis;
     }
 
     public static function getProduitsBySousFamille($catalogues, $sousfamille) {
@@ -170,7 +176,27 @@ class Catalogue
             $html .= "</ul>";
         }
         $html .= "<div class='avis'>";
-        $html .= "<p>☆ ☆ ☆ ☆ ☆ - <a href='/avis'>Voir les avis</a></p>";
+        $html .= "<div class='stars-container'>";
+        if(isset($this->avis) && sizeof($this->avis) > 0){
+            $html .= "<div class='stars-background'>";
+            $html .= "☆☆☆☆☆";
+            $html .= "</div>";
+            $somme = 0;
+            foreach($this->avis as $currAvis){
+                $somme += $currAvis->getNote();
+            }
+            $html .= "<div class='stars-filled' style='width: " . (($somme / sizeof($this->avis))/5*100) . "%;'>";
+            $html .= "★★★★★";
+            $html .= "</div>";
+            $html .= "</div>";
+            $html .= "<p><a href='/avis'>Voir les avis</a></p>";
+        }else{
+            $html .= "<div class='stars-background'>";
+            $html .= "-----";
+            $html .= "</div>";
+            $html .= "</div>";
+            $html .= "<p><a href='/avis'>Ajouter un avis</a></p>";
+        }
         $html .= "</div>";
         $html .= "</div>";
         $html .= "</div>";
