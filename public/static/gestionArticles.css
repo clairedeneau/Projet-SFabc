@@ -173,7 +173,7 @@ a {
     width: 40%; 
 }
 
-#myBtn, #myBtn2, #myBtn3, #myBtn4, #myBtn5, #myBtn6, #myBtn7, #myBtn8, #addFamilleBtn, #addSousFamilleBtn {
+#myBtn, #myBtn2, #myBtn3, #myBtn4, #myBtn5, #myBtn6, #myBtn7, #myBtn8, #addFamilleBtn, #addSousFamilleBtn, #deleteFamilleBtn, #deleteSousFamilleBtn {
     width: 25%;
     padding: 10px;
     background: #5a4d42;
