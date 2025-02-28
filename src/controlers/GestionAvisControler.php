@@ -15,8 +15,10 @@ class GestionAvisControler extends Controler
     {
 
         try {
+
             $jsonProvider = new JsonProvider('../data/models/catalogue.json', "../data/models/avis.json", '../data/models/famille.json');
             $avis = $jsonProvider->loadAvis();
+
             $catalogues = $jsonProvider->loadCatalogue();
 
             $_SESSION['avis'] = [];
