@@ -69,7 +69,7 @@ class GestionAvisControler extends Controler
 
         if (isset($_POST['id'])) {
             $id = (int) $_POST['id'];
-            $jsonProvider = new JsonProvider('../data/models/avis.json');
+            $jsonProvider = new JsonProvider("",'../data/models/avis.json');
             $avis = $jsonProvider->loadAvis();
             $newAvis = [];
             foreach ($avis as $avi) {

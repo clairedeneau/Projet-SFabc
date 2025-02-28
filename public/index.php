@@ -59,7 +59,7 @@
         } catch (Throwable $e) {
             http_response_code(500);
             $err_code = 500;
-            $erreur = $e->getMessage();
+            $erreur = $e;
             ob_end_clean();
             require_once __DIR__ . '/../views/error.php';
         }

@@ -74,7 +74,7 @@ class JsonProvider
         );
     }
 
-    public function loadAvis(int $idProduit = null): array
+    public function loadAvis(?int $idProduit = null): array
     {
         if (!file_exists($this->avisFilePath)) {
             throw new \Exception("Le fichier JSON n'existe pas.");
@@ -103,6 +103,7 @@ class JsonProvider
     private function mapToAvis(array $avisData): Avis
     {
         return new Avis(
+            intval($avisData["id"]),
             $avisData["idProduit"],
             $avisData["user"],
             intval($avisData["note"]),
