@@ -14,7 +14,7 @@ class GestionArticlesControler extends Controler
     public function get(string $params): void
     {
         try {
-            $jsonProvider = new JsonProvider('../data/models/catalogue.json');
+            $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
             $catalogues = $jsonProvider->loadCatalogue();
             $_SESSION['catalogue'] = [];
             if (isset($_GET['index'])) {
@@ -82,7 +82,7 @@ class GestionArticlesControler extends Controler
             exit();
         }
     
-        $jsonProvider = new JsonProvider('../data/models/catalogue.json');
+        $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
         $catalogues = $jsonProvider->loadCatalogue();
         try {
             if (isset($_POST['_method']) && $_POST['_method'] == 'PUT') {
@@ -341,7 +341,7 @@ class GestionArticlesControler extends Controler
 
     private function exportToXLSX(): void
     {
-        $jsonProvider = new JsonProvider('../data/models/catalogue.json');
+        $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
         $catalogues = $jsonProvider->loadCatalogue();
 
         $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
