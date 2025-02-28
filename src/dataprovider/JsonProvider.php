@@ -2,6 +2,7 @@
 namespace SFabc\dataprovider;
 
 use SFabc\dataprovider\Catalogue;
+use Exception;
 
 class JsonProvider
 {

@@ -8,7 +8,6 @@
             " Fil en corde ",
             " Positionnable à volonté (couché, debout, assis), oreilles positionnables"
         ],
-        "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
         "prix": [
             {
                 "description": "",
@@ -98,7 +97,6 @@
         "description1": [
             "Socle blanc, lumineux, télécommandé (7 couleurs - plaque 12 × 16 cm)"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -106,7 +104,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée edition luxe.jpg",
             "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée edition luxe noir.jpg"
@@ -120,7 +117,6 @@
         "description1": [
             "Environ 25 cm × diam : 6 cm"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -128,7 +124,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel2.jpg",
             "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel3.jpg"
@@ -142,7 +137,6 @@
         "description1": [
             "Environ 34 cm × diam : 7,6 cm"
         ],
-        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -150,7 +144,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_2.jpg",
             "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg"
@@ -164,7 +157,6 @@
         "description1": [
             "Miroir Bois recyclé"
         ],
-        "description2": "Dimension du miroir : 30 × 30 cm ;Gravure personnalisée",
         "prix": [
             {
                 "description": "Si gravure du bois uniquement",
@@ -180,7 +172,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_9.jpg",
             "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_10.jpg",
@@ -195,7 +186,6 @@
         "description1": [
             "Miroir Bois recyclé"
         ],
-        "description2": "Dimension du miroir : 21 × 30 cm ;Gravure personnalisée",
         "prix": [
             {
                 "description": "Si gravure du bois uniquement",
@@ -211,7 +201,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_5.jpg"
         ],
@@ -224,7 +213,6 @@
         "description1": [
             "Bois \/ métal"
         ],
-        "description2": "Dimension : 12 × 3 cm (plié)",
         "prix": [
             {
                 "description": "Gravure manche bois",
@@ -236,7 +224,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs produits identiques commandés",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 1.jpg",
             "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 2 fond 2.jpg",
@@ -254,7 +241,6 @@
         "description1": [
             "Bois \/ métal"
         ],
-        "description2": "Gravure personnalisée",
         "prix": [
             {
                 "description": "Gravure manche bois",
@@ -266,7 +252,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/stylo\/stylo bambou gravure personnalisé.jpg",
             "static\/images\/images_articles\/stylo\/stylo bambou gravure personnalisé 2.png",
@@ -281,7 +266,6 @@
         "description1": [
             "Bois \/ métal"
         ],
-        "description2": "Gravure personnalisée",
         "prix": [
             {
                 "description": "Gravure manche bois",
@@ -293,7 +277,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/couteaux\/couteau gravure personnalisée 1.jpg",
             "static\/images\/images_articles\/couteaux\/couteau gravure personnalisée 2.jpg"
@@ -307,7 +290,6 @@
         "description1": [
             "Bambou et Inox"
         ],
-        "description2": "450 mL ;Filtre pour le thé",
         "prix": [
             {
                 "description": "",
@@ -315,7 +297,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_1.jpg",
             "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_2.jpg",
@@ -486,7 +467,6 @@
         "description1": [
             "Métal - plaque noire"
         ],
-        "description2": "50 × 38 mm",
         "prix": [
             {
                 "description": "Pour gravure des 2 côtés",
@@ -520,7 +500,6 @@
             }
         ],
         "txt1": null,
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/boite\/gravure_boite_personnalisée_bois_2.jpg"
         ],
@@ -545,15 +524,5 @@
         "photos": [],
         "famille": "Gravures personnalisées",
         "sousfamille": "Gravure sur Toile"
-    },
-    {
-        "id": 29,
-        "nom": "Nouveau produit",
-        "description1": [],
-        "prix": [],
-        "txt1": "",
-        "photos": [],
-        "famille": "",
-        "sousfamille": ""
     }
 ]

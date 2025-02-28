@@ -62,12 +62,12 @@ class Catalogue
         $this->prix = $prix;
     }
 
-    public function setTxt1($txt1) {
-        $this->txt1 = $txt1;
+    public function getTxt1() {
+        return $this->txt1;
     }
 
-    public function getTxt2() {
-        return $this->txt2;
+    public function setTxt1($txt1) {
+        $this->txt1 = $txt1;
     }
 
     public function getPhotos() {

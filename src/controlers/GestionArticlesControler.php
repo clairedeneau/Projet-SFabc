@@ -213,7 +213,7 @@ class GestionArticlesControler extends Controler
         $allowedTypes = ["image/png", "image/jpeg"];
 
         if (in_array($fileType, $allowedTypes)) {
-            $destinationDir = __DIR__ . '/../../public/static/images/images_ajoute/';
+            $destinationDir = __DIR__ . '/../../public/static/images/images_articles/';
             $destinationPath = $destinationDir . $fileName;
 
             if (!is_dir($destinationDir)) {
@@ -240,7 +240,7 @@ class GestionArticlesControler extends Controler
         foreach ($data as &$produit) {
             if ($produit['id'] == $id) {
                 if (isset($produit['photos'][$photoIndex])) {
-                    $produit['photos'][$photoIndex] = 'static/images/images_ajoute/' . $fileName;
+                    $produit['photos'][$photoIndex] = 'static/images/images_articles/' . $fileName;
                 }
             }
         }
@@ -401,7 +401,7 @@ class GestionArticlesControler extends Controler
         $allowedTypes = ["image/png", "image/jpeg"];
 
         if (in_array($fileType, $allowedTypes)) {
-            $destinationPath = __DIR__ . '/../../public/static/images/images_ajoute/' . $fileName;
+            $destinationPath = __DIR__ . '/../../public/static/images/images_articles/' . $fileName;
 
             if (move_uploaded_file($fileTmpPath, $destinationPath)) {
                 error_log("Image déplacée avec succès.");
@@ -426,7 +426,7 @@ class GestionArticlesControler extends Controler
                 if (!isset($produit['photos'])) {
                     $produit['photos'] = [];
                 }
-                $produit['photos'][] = '/static/images/images_ajoute/' . $fileName;
+                $produit['photos'][] = '/static/images/images_articles/' . $fileName;
                 break;
             }
         }
