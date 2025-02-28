@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace SFabc\controlers;
 
+use SFabc\dataprovider\JsonProvider;
+
 class AvisControler extends Controler
 {
     private string $filePath = __DIR__ . '/../../data/models/avis.json';
@@ -12,7 +14,22 @@ class AvisControler extends Controler
     {
         $data = file_get_contents($this->filePath);
         $json = json_decode($data, true);
-        $this->render('avis', ['data' => $json['avis']]);
+        $avis = [];
+        foreach($json["avis"] as $currAvis){
+            if($currAvis["idProduit"] == $params){
+                $avis[] = $currAvis;
+            }
+        }
+        $jp = new JsonProvider("../data/models/catalogue.json","");
+        $catalogue = $jp->loadCatalogue();
+        $art = null;
+        foreach($catalogue as $article){
+            if($article->getId() == $params){
+                $art = $article;
+                break;
+            }
+        }
+        $this->render('avis', ['data' => $avis]);
     }
 
     public function post(string $params): void

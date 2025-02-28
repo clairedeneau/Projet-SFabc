@@ -213,13 +213,13 @@ class Catalogue
             $html .= "★★★★★";
             $html .= "</div>";
             $html .= "</div>";
-            $html .= "<p><a href='/avis'>Voir les avis</a></p>";
+            $html .= "<p><a href='/avis/".$this->id."'>Voir les avis</a></p>";
         }else{
             $html .= "<div class='stars-background'>";
             $html .= "-----";
             $html .= "</div>";
             $html .= "</div>";
-            $html .= "<p><a href='/avis'>Ajouter un avis</a></p>";
+            $html .= "<p><a href='/avis/".$this->id."'>Ajouter un avis</a></p>";
         }
         $html .= "</div>";
         $html .= "</div>";
