@@ -15,14 +15,9 @@ class GestionAvisControler extends Controler
     {
 
         try {
-            error_log("Chargement des avis réussi");
-            $jsonProvider = new JsonProvider('',"../data/models/avis.json", '');
+            $jsonProvider = new JsonProvider('../data/models/catalogue.json', "../data/models/avis.json", '../data/models/famille.json');
             $avis = $jsonProvider->loadAvis();
-            $jsonProvider = new JsonProvider('../data/models/catalogue.json',"../data/models/avis.json",'');
             $catalogues = $jsonProvider->loadCatalogue();
-
-            error_log("Chargement des catalogues réussi");
-           
 
             $_SESSION['avis'] = [];
             $_SESSION['catalogue'] = [];
@@ -54,15 +49,22 @@ class GestionAvisControler extends Controler
     private function getArticleNamesById(array $avis, array $catalogues): array
     {
         $articleNames = [];
+
         foreach ($avis as $avi) {
+            error_log("Avis: " . $avi->getIdProduit());
             $articleNames[$avi->getId()] = "Article inconnu";
+            error_log("Articles name".print_r($articleNames, true));
+
             foreach ($catalogues as $catalogue) {
+                error_log("Catalogue: " . $catalogue->getId());
                 if ($catalogue->getId() == $avi->getIdProduit()) {
                     $articleNames[$avi->getId()] = $catalogue->getNom();
+                    error_log("Articles finie ".print_r($articleNames, true));
                     break;
                 }
             }
         }
+
         return $articleNames;
     }
 
@@ -74,7 +76,7 @@ class GestionAvisControler extends Controler
 
         if (isset($_POST['id'])) {
             $id = (int) $_POST['id'];
-            $jsonProvider = new JsonProvider('','../data/models/avis.json', '');
+            $jsonProvider = new JsonProvider('../data/models/catalogue.json', "../data/models/avis.json", '../data/models/famille.json');
             $avis = $jsonProvider->loadAvis();
             $newAvis = [];
             foreach ($avis as $avi) {

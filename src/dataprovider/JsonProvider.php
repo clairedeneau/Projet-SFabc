@@ -1,4 +1,5 @@
 <?php
+
 namespace SFabc\dataprovider;
 
 use SFabc\dataprovider\Catalogue;
@@ -11,7 +12,12 @@ class JsonProvider
     private string $avisFilePath;
     private string $familleFilePath;
 
-    public function __construct(string $catalogueFilePath, string $avisFilePath, string $familleFilePath){
+    public function __construct(string $catalogueFilePath, string $avisFilePath, string $familleFilePath)
+    {
+        if (empty($catalogueFilePath) || empty($avisFilePath) || empty($familleFilePath)) {
+            throw new Exception("Path cannot be empty");
+        }
+
         $this->catalogueFilePath = $catalogueFilePath;
         $this->avisFilePath = $avisFilePath;
         $this->familleFilePath = $familleFilePath;
@@ -53,9 +59,9 @@ class JsonProvider
 
         $jsonData = file_get_contents($this->catalogueFilePath);
         $data = json_decode($jsonData, true);
-        
+
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception("Erreur de dÃ©codage JSON: " . json_last_error_msg());
+            throw new \Exception("Erreur de décodage JSON: " . json_last_error_msg());
         }
 
         return $data;
@@ -66,29 +72,35 @@ class JsonProvider
         return array_map(fn($item) => $this->mapToCatalogue($item), $this->loadData());
     }
 
-
-
     public function saveCatalogue(array $catalogues): void
     {
-        $this->saveData(array_map(fn($catalogue) => $catalogue->toArray(), $catalogues));
+        // Convertir les objets Catalogue en tableaux
+        $catalogueArray = array_map(fn($catalogue) => $catalogue->toArray(), $catalogues);
+        
+        // Sauvegarder les données en maintenant la structure de tableau
+        $this->saveData($catalogueArray, $this->catalogueFilePath);
     }
 
     public function saveAvis(array $avis): void
     {
-        $this->saveData(['avis' => array_map(fn($avi) => $avi->toArray(), $avis)]);
+        $this->saveData(['avis' => array_map(fn($avi) => $avi->toArray(), $avis)], $this->avisFilePath);
     }
 
-    private function saveData(array $data): void
-    {
-        $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception("Erreur d'encodage JSON: " . json_last_error_msg());
-        }
-
-        if (file_put_contents($this->catalogueFilePath, $jsonData) === false) {
-            throw new Exception("Erreur lors de l'écriture du fichier JSON.");
-        }
+    private function saveData(array $data, string $filePath): void
+{
+    // Encoder les données en JSON avec les options appropriées
+    $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception("Erreur d'encodage JSON: " . json_last_error_msg());
     }
+
+    // Écrire les données JSON dans le fichier spécifié
+    if (file_put_contents($filePath, $jsonData) === false) {
+        throw new Exception("Erreur lors de l'écriture du fichier JSON.");
+    }
+}
+
+    
 
     private function mapToCatalogue(array $catalogueData): Catalogue
     {
@@ -101,7 +113,6 @@ class JsonProvider
             $catalogueData['photos'],
             $catalogueData['famille'],
             $catalogueData['sousfamille']
-          
         );
     }
 
@@ -115,18 +126,18 @@ class JsonProvider
         $data = json_decode($jsonData, true);
 
         error_log("loadAvis: " . json_last_error_msg());
-        
+
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception("Erreur de dÃ©codage JSON: " . json_last_error_msg());
+            throw new \Exception("Erreur de décodage JSON: " . json_last_error_msg());
         }
 
         $avis = [];
         foreach ($data["avis"] as $avisData) {
-            if(!is_null($idProduit)){
-                if($idProduit === $avisData["idProduit"]){
+            if (!is_null($idProduit)) {
+                if ($idProduit === $avisData["idProduit"]) {
                     $avis[] = $this->mapToAvis($avisData);
                 }
-            }else{
+            } else {
                 $avis[] = $this->mapToAvis($avisData);
             }
         }
@@ -144,7 +155,4 @@ class JsonProvider
             $avisData["date"]
         );
     }
-
-
-
 }
