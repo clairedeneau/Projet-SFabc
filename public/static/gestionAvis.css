@@ -1,0 +1,38 @@
+
+button.supprimer {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #d9534f;
+    padding: 5px;
+    margin-left: 55vw;
+    
+}
+
+.content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articleNom{
+    margin-left: 60vw;
+
+}
+
+.articleNom p{
+    font-size: 20px;
+    color: #B8A67E;
+    max-width: 25vw;
+    overflow-wrap: break-word;
+}
+
+.titre{
+   width: 28vw;
+}
+
+.commentaire {
+    max-width: 45vw;
+    overflow-wrap: break-word;
+}

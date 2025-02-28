@@ -1,0 +1,20 @@
+body {
+    font-family: 'Alata', sans-serif;
+    background-color: #F6F2E8;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* MISE EN FORME DU CONTENU DE LA PAGE */
+
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.info-surcyclage ul {
+    padding-left: 20px;
+}

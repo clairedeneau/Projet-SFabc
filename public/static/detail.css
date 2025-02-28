@@ -1,0 +1,124 @@
+body {
+    font-family: 'Alata', sans-serif;
+    background-color: #F6F2E8;
+    margin: 0;
+    padding: 0;
+}
+
+/* MISE EN FORME DU CONTENU DE LA PAGE */
+
+body h2 {
+    margin: 10px 20px 30px 20px;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.diapo {
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 40px;
+    position: relative;
+    width: 200px;
+    overflow: hidden;
+    background-color: white;
+    padding: 5px;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.fade {
+    animation: fadeEffect 0.1s ease-in;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    color: #B8A67E;
+}
+
+.info {
+    flex: 1;
+}
+
+.info h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+#prix {
+    font-size: 25px;
+    margin-top: 40px;
+    margin-right: 50px;
+    color: #5A4328;
+}
+
+.avis {
+    font-size: 20px;
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.avis a {
+    text-decoration: none;
+    color: #5A4328;
+}
+
+.avis a:hover {
+    text-decoration: underline;
+}
+
+/* ETOILES */
+.stars-container {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.stars-background {
+    display: flex;
+}
+
+.stars-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    color: #5A4328;
+    overflow: hidden;
+    white-space: nowrap;
+}
