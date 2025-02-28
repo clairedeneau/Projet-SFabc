@@ -1,9 +1,7 @@
 <?php
 namespace SFabc\dataprovider;
 
-use Exception;
-
-
+use SFabc\dataprovider\Catalogue;
 class JsonProvider
 {
     private string $jsonFilePath;
@@ -13,58 +11,26 @@ class JsonProvider
         $this->jsonFilePath = $jsonFilePath;
     }
 
-    private function loadData(): array
+    public function loadCatalogue(): array
     {
         if (!file_exists($this->jsonFilePath)) {
-            throw new Exception("Le fichier JSON n'existe pas.");
-
+            throw new \Exception("Le fichier JSON n'existe pas.");
         }
 
         $jsonData = file_get_contents($this->jsonFilePath);
         $data = json_decode($jsonData, true);
-
+        
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception("Erreur de décodage JSON: " . json_last_error_msg());
+            throw new \Exception("Erreur de dÃ©codage JSON: " . json_last_error_msg());
         }
 
-        return $data;
-    }
-
-    public function loadCatalogue(): array
-    {
-        return array_map(fn($item) => $this->mapToCatalogue($item), $this->loadData());
-    }
-
-    public function loadAvis(): array
-    {
-        return array_map(fn($item) => $this->mapToAvis($item), $this->loadData());
-    }
-
-    public function saveCatalogue(array $catalogues): void
-    {
-        $_SESSION["savedCatalogue"] = $catalogues;
-
-        $this->saveData(array_map(fn($catalogue) => $catalogue->toArray(), $catalogues));
-    }
-
-    public function saveAvis(array $avis): void
-    {
-        $_SESSION["savedAvis"] = $avis;
-
-        $this->saveData(array_map(fn($avi) => $avi->toArray(), $avis));
-    }
-
-    private function saveData(array $data): void
-    {
-        $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception("Erreur d'encodage JSON: " . json_last_error_msg());
+        $catalogues = [];
+        foreach ($data as $catalogueData) {
+            $catalogues[] = $this->mapToCatalogue($catalogueData);
         }
-
-        if (file_put_contents($this->jsonFilePath, $jsonData) === false) {
-            throw new Exception("Erreur lors de l'écriture du fichier JSON.");
-        }
+        return $catalogues;
     }
+
 
 
     private function mapToCatalogue(array $catalogueData): Catalogue
@@ -73,25 +39,16 @@ class JsonProvider
             $catalogueData['id'],
             $catalogueData['nom'],
             $catalogueData['description1'],
+            $catalogueData['description2'],
             $catalogueData['prix'],
             $catalogueData['txt1'],
+            $catalogueData['txt2'],
             $catalogueData['photos'],
             $catalogueData['famille'],
             $catalogueData['sousfamille']
+          
         );
     }
 
-    private function mapToAvis(array $avisData): Avis
-    {
-        return new Avis(
-            $avisData['id'],
-            $avisData['idProduit'],
-            $avisData['user'],
-            $avisData['mail'],
-            $avisData['note'],
-            $avisData['commentaire'],
-            $avisData['date']
-        );
-    }
+
 }
-
