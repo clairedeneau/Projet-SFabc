@@ -29,6 +29,11 @@ main {
     box-sizing: border-box;
 }
 
+.produit a {
+    color:black;
+    text-decoration: none;
+}
+
 .produit img {
     max-width: 100%;
     height: auto;

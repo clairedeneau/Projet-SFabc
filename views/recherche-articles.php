@@ -40,35 +40,15 @@
 <body>
     <h2>Résultats de la recherche - "<?= htmlspecialchars($query) ?>"</h2>
     <main>
-        <?php if(empty($articles)): ?> 
-            <p style="color: red;"> Aucun résultat trouvé !</p>
-        <?php else: ?>
-            <?php foreach ($articles as $article): ?>
-                <div class="produit">
-                    <?php
-                        $photo = $article->getPhotos();
-                        $imageSrc = !empty($photo) ? htmlspecialchars($photo[0]) : ""; 
-                    ?>
-                    <img src="<?= $imageSrc ?>" alt="<?= htmlspecialchars($article->getNom()) ?>" width="200" height="auto">
-                    <div class="contenu-produit">
-                        <h3><?= htmlspecialchars($article->getNom()) ?></h3>
-                        <p id="prix">
-                            <?php
-                            $prix = $article->getPrix();
-                            if (empty($prix)) {
-                                echo "Création sur demande";
-                            } elseif (count($prix) == 1) {
-                                echo htmlspecialchars($prix[0]["tarif"]) . " €";
-                            } else {
-                                $prixMini = min(array_column($prix, 'tarif'));
-                                echo "À partir de " . htmlspecialchars($prixMini) . " €";
-                            }
-                            ?>
-                        </p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+        <?php
+            if(empty($articles)) {
+                echo "<p style='color: red;'> Aucun résultat trouvé !</p>";
+            } else {
+                foreach($articles as $article){
+                    echo $article->renderArticle();
+                }
+            }
+        ?>
     </main>
 </body>
 <?php
