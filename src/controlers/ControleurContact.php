@@ -23,15 +23,15 @@ class ControleurContact extends Controler
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com'; // à modifier si autre système utilisé que GMAIL
                     $mail->SMTPAuth = true;
-                    $mail->Username = "mail_reception@example.com"; // à compléter par l'adresse mail qui doit recevoir les mails
-                    $mail->Password = "mdp-application"; // Mot de passe d'application
+                    $mail->Username = "brossier.thomas.2@gmail.com"; // à compléter par l'adresse mail qui doit recevoir les mails
+                    $mail->Password = "tosajbxrdlhuxaea"; // Mot de passe d'application
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port = 587;
 
                     // Expéditeur
                     $mail->setFrom($_POST['mail'], $_POST['utilisateur']);
                     // Destinataire
-                    $mail->addAddress('mail_reception@example.com');  // à compléter par l'adresse mail qui doit recevoir les mails
+                    $mail->addAddress('brossier.thomas.2@gmail.com');  // à compléter par l'adresse mail qui doit recevoir les mails
 
                     $mail->isHTML(true);
                     $mail->Subject = "Mail de contact : " . $_POST['sujet'];
