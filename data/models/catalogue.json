@@ -16,10 +16,6 @@
             }
         ],
         "txt1": null,
-<<<<<<< HEAD
-        "txt2": null,
-=======
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_7.jpg",
             "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_10.jpg",
@@ -39,10 +35,6 @@
             " Fil en corde ",
             " Positionnable à volonté (couché, debout, assis, oreilles positionnables)"
         ],
-<<<<<<< HEAD
-        "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
-=======
->>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "",
@@ -50,10 +42,6 @@
             }
         ],
         "txt1": null,
-<<<<<<< HEAD
-        "txt2": null,
-=======
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg",
             "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
@@ -68,13 +56,8 @@
             "Alimentation sur batterie (surcyclée) ",
             "Recharge par chargeur 5V (type téléphone portable) "
         ],
-<<<<<<< HEAD
-        "description2": "Tête et pattes positionnables ;Gravure à personnaliser",
-=======
->>>>>>> Liaisonv2
         "prix": [],
         "txt1": null,
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_1.jpg",
             "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_2.jpg",
@@ -92,10 +75,6 @@
         "description1": [
             "Socle noir (7 couleurs - plaque 12 × 16 cm)"
         ],
-<<<<<<< HEAD
-        "description2": null,
-=======
->>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "",
@@ -103,7 +82,6 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
-        "txt2": null,
         "photos": [
             "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée basique.jpg",
             "static\/images\/images_articles\/lampe led\/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs.jpg",
@@ -352,19 +330,9 @@
     {
         "id": 14,
         "nom": "Support BBQ",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/créations sur mesure\/BBQ\/support_barbecue_bois_recyclage_surcyclage_upcycling_3.jpg",
             "static\/images\/images_articles\/créations sur mesure\/BBQ\/support_barbecue_bois_recyclage_surcyclage_upcycling_4.jpg"
@@ -378,15 +346,8 @@
         "description1": [
             "Bambou et Inox"
         ],
-<<<<<<< HEAD
-        "description2": null,
         "prix": [],
         "txt1": null,
-        "txt2": null,
-=======
-        "prix": [],
-        "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/créations sur mesure\/caisse biere\/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_1.jpg",
             "static\/images\/images_articles\/créations sur mesure\/caisse biere\/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg"
@@ -397,42 +358,19 @@
     {
         "id": 16,
         "nom": "Gravure coque téléphone",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-        "photos": [
-            ""
-        ],
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
         "photos": [],
->>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Gravure coque téléphone"
     },
     {
         "id": 17,
         "nom": "Plaque porte de chambre",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/créations sur mesure\/enseigne\/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg",
             "static\/images\/images_articles\/créations sur mesure\/enseigne\/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.png",
@@ -444,19 +382,9 @@
     {
         "id": 18,
         "nom": "Tableau en bois",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/plaque bois\/Plaque bois gravure personnalisee 200 x 400 1.png",
             "static\/images\/images_articles\/plaque bois\/Plaque bois gravure personnalisee 200 x 400 details1.jpg",
@@ -469,19 +397,9 @@
     {
         "id": 19,
         "nom": "Jeux de société",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/jeux\/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg",
             "static\/images\/images_articles\/jeux\/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_6.jpg"
@@ -492,19 +410,9 @@
     {
         "id": 20,
         "nom": "Bar à pétanque",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.1.jpg",
             "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.2.jpg",
@@ -519,65 +427,29 @@
     {
         "id": 21,
         "nom": "Guitare",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-        "photos": [
-            ""
-        ],
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
         "photos": [],
->>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Guitare"
     },
     {
         "id": 22,
         "nom": "Horloge Harry Potter",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-        "photos": [
-            ""
-        ],
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
         "photos": [],
->>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Horloge Harry Potter"
     },
     {
         "id": 23,
         "nom": "Vase",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/tasse\/Tasse_Verre_gravure_personnalisee.jpg"
         ],
@@ -587,42 +459,19 @@
     {
         "id": 24,
         "nom": "Table de chevet",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-        "photos": [
-            ""
-        ],
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
         "photos": [],
->>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Table de chevet"
     },
     {
         "id": 25,
         "nom": "Coffre au trésor",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-        "prix": [],
-        "txt1": null,
-        "txt2": null,
-=======
         "description1": [],
         "prix": [],
         "txt1": null,
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/créations sur mesure\/coffre pirate\/coffre_pirate_bois_Sur_Mesure_3.1.jpg",
             "static\/images\/images_articles\/créations sur mesure\/coffre pirate\/coffre_pirate_bois_Sur_Mesure_4.1.jpg",
@@ -649,10 +498,6 @@
             }
         ],
         "txt1": null,
-<<<<<<< HEAD
-        "txt2": null,
-=======
->>>>>>> Liaisonv2
         "photos": [
             "static\/images\/images_articles\/porte clef\/Porte clef gravé personnalisé_1.jpg",
             "static\/images\/images_articles\/porte clef\/Porte clef gravé personnalisé_2.jpg",
@@ -668,10 +513,6 @@
         "description1": [
             "Bois \/ métal"
         ],
-<<<<<<< HEAD
-        "description2": null,
-=======
->>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "",
@@ -689,14 +530,7 @@
     {
         "id": 28,
         "nom": "Gravure sur Toile 25cmx25cm",
-<<<<<<< HEAD
-        "description1": [
-            ""
-        ],
-        "description2": null,
-=======
         "description1": [],
->>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "Prix",
@@ -708,14 +542,7 @@
             }
         ],
         "txt1": null,
-<<<<<<< HEAD
-        "txt2": null,
-        "photos": [
-            ""
-        ],
-=======
         "photos": [],
->>>>>>> Liaisonv2
         "famille": "Gravures personnalisées",
         "sousfamille": "Gravure sur Toile"
     },
