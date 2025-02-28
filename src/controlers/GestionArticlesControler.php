@@ -395,7 +395,7 @@ class GestionArticlesControler extends Controler
 
     private function exportToXLSX(): void
     {
-        $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
+        $jsonProvider = new JsonProvider('../data/models/catalogue.json', "", '');
         $catalogues = $jsonProvider->loadCatalogue();
 
         $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
