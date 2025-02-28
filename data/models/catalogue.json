@@ -12,16 +12,20 @@
         "prix": [
             {
                 "description": "",
-                "tarif": "69.00"
+                "tarif": "69"
             }
         ],
         "txt1": null,
+<<<<<<< HEAD
         "txt2": null,
+=======
+>>>>>>> Liaisonv2
         "photos": [
-
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_7.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_10.jpg",
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_11.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_12.jpg",
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_13.jpg"
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_7.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_10.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_11.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_12.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_13.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"
@@ -35,18 +39,24 @@
             " Fil en corde ",
             " Positionnable à volonté (couché, debout, assis, oreilles positionnables)"
         ],
+<<<<<<< HEAD
         "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
+=======
+>>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "",
-                "tarif": "79.00"
+                "tarif": "79"
             }
         ],
         "txt1": null,
+<<<<<<< HEAD
         "txt2": null,
+=======
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg",
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"
@@ -58,14 +68,20 @@
             "Alimentation sur batterie (surcyclée) ",
             "Recharge par chargeur 5V (type téléphone portable) "
         ],
+<<<<<<< HEAD
         "description2": "Tête et pattes positionnables ;Gravure à personnaliser",
+=======
+>>>>>>> Liaisonv2
         "prix": [],
         "txt1": null,
         "txt2": null,
         "photos": [
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_1.jpg","static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_2.jpg",
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_3.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_4 sans fond.png",
-            "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_5- sans fond.png", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_6-sans fond.png"
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_1.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_2.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_3.jpg",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_4 sans fond.png",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_5- sans fond.png",
+            "static\/images\/images_articles\/lampe bois\/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_6-sans fond.png"
         ],
         "famille": "Lampes",
         "sousfamille": "Lampe Bois recyclé - Éclairage Led (4W)"
@@ -76,21 +92,24 @@
         "description1": [
             "Socle noir (7 couleurs - plaque 12 × 16 cm)"
         ],
+<<<<<<< HEAD
         "description2": null,
+=======
+>>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "",
-                "tarif": "33.90"
+                "tarif": "33.9"
             }
         ],
         "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/lampe led/Lampe led plexi personnalisée basique.jpg",
-            "static/images/images_articles/lampe led/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs.jpg",
-            "static/images/images_articles/lampe led/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs 2.jpg",
-            "static/images/images_articles/lampe led/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs 3.jpg",
-            "static/images/images_articles/lampe led/Lampe led plexi personnalisée basique noir.jpg"
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée basique.jpg",
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs.jpg",
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs 2.jpg",
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs 3.jpg",
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée basique noir.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Lampe Led Plexi Personnalisée"
@@ -105,14 +124,14 @@
         "prix": [
             {
                 "description": "",
-                "tarif": "36.90"
+                "tarif": "36.9"
             }
         ],
         "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/lampe led/Lampe led plexi personnalisée edition luxe.jpg",
-            "static/images/images_articles/lampe led/Lampe led plexi personnalisée edition luxe noir.jpg"
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée edition luxe.jpg",
+            "static\/images\/images_articles\/lampe led\/Lampe led plexi personnalisée edition luxe noir.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Lampe Led Plexi Personnalisée"
@@ -127,14 +146,14 @@
         "prix": [
             {
                 "description": "",
-                "tarif": "14.90"
+                "tarif": "14.9"
             }
         ],
         "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel2.jpg",
-            "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel3.jpg"
+            "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel2.jpg",
+            "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel3.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Eclairage Ambiance Bouteille"
@@ -149,14 +168,14 @@
         "prix": [
             {
                 "description": "",
-                "tarif": "17.90"
+                "tarif": "17.9"
             }
         ],
         "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_2.jpg",
-            "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg"
+            "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_2.jpg",
+            "static\/images\/images_articles\/bouteille\/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg"
         ],
         "famille": "Lampes",
         "sousfamille": "Eclairage Ambiance Bouteille"
@@ -170,11 +189,11 @@
         "description2": "Dimension du miroir : 30 × 30 cm ;Gravure personnalisée",
         "prix": [
             {
-                "description": "Si gravure du bois uniquement ",
+                "description": "Si gravure du bois uniquement",
                 "tarif": "30,90"
             },
             {
-                "description": "Si gravure du miroir uniquement ",
+                "description": "Si gravure du miroir uniquement",
                 "tarif": "31,90"
             },
             {
@@ -185,9 +204,9 @@
         "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_9.jpg",
-            "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_10.jpg",
-            "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_21x30.jpg"
+            "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_9.jpg",
+            "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_10.jpg",
+            "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_21x30.jpg"
         ],
         "famille": "Miroirs",
         "sousfamille": "Miroir Bois"
@@ -201,12 +220,12 @@
         "description2": "Dimension du miroir : 21 × 30 cm ;Gravure personnalisée",
         "prix": [
             {
-                "description": "Si gravure du bois uniquement ",
-                "tarif": "29,90 "
+                "description": "Si gravure du bois uniquement",
+                "tarif": "29,90"
             },
             {
                 "description": "Si gravure du miroir uniquement",
-                "tarif": "30,90 "
+                "tarif": "30,90"
             },
             {
                 "description": "Si gravure du bois et du miroir",
@@ -216,7 +235,7 @@
         "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_5.jpg"
+            "static\/images\/images_articles\/miroir\/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_5.jpg"
         ],
         "famille": "Miroirs",
         "sousfamille": "Miroir Bois"
@@ -230,23 +249,23 @@
         "description2": "Dimension : 12 × 3 cm (plié)",
         "prix": [
             {
-                "description": "Gravure manche bois ",
-                "tarif": "9,50 "
+                "description": "Gravure manche bois",
+                "tarif": "9,50"
             },
             {
                 "description": "5 gravures",
-                "tarif": "29,90 "
+                "tarif": "29,90"
             }
         ],
         "txt1": "Prix dégressif si plusieurs produits identiques commandés",
         "txt2": null,
         "photos": [
-            "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 1.jpg",
-            "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 2 fond 2.jpg",
-            "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 2 fond.jpg",
-            "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 2.jpg",
-            "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 3.jpg",
-            "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 4.png"
+            "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 1.jpg",
+            "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 2 fond 2.jpg",
+            "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 2 fond.jpg",
+            "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 2.jpg",
+            "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 3.jpg",
+            "static\/images\/images_articles\/tirebouchon\/Tirebouchon_luxe_bois_metal_gravure_personalisée 4.png"
         ],
         "famille": "Gravures personnalisées",
         "sousfamille": "Tire bouchon"
@@ -260,8 +279,8 @@
         "description2": "Gravure personnalisée",
         "prix": [
             {
-                "description": "Gravure manche bois ",
-                "tarif": "5,00 "
+                "description": "Gravure manche bois",
+                "tarif": "5,00"
             },
             {
                 "description": "2 gravures",
@@ -271,9 +290,9 @@
         "txt1": null,
         "txt2": null,
         "photos": [
-            "static/images/images_articles/stylo/stylo bambou gravure personnalisé.jpg",
-            "static/images/images_articles/stylo/stylo bambou gravure personnalisé 2.png",
-            "static/images/images_articles/stylo/stylo bambou gravure personnalisé 3.png"
+            "static\/images\/images_articles\/stylo\/stylo bambou gravure personnalisé.jpg",
+            "static\/images\/images_articles\/stylo\/stylo bambou gravure personnalisé 2.png",
+            "static\/images\/images_articles\/stylo\/stylo bambou gravure personnalisé 3.png"
         ],
         "famille": "Gravures personnalisées",
         "sousfamille": "Stylo"
@@ -287,7 +306,7 @@
         "description2": "Gravure personnalisée",
         "prix": [
             {
-                "description": "Gravure manche bois ",
+                "description": "Gravure manche bois",
                 "tarif": "15,00"
             },
             {
@@ -298,8 +317,8 @@
         "txt1": null,
         "txt2": null,
         "photos": [
-            "static/images/images_articles/couteaux/couteau gravure personnalisée 1.jpg",
-            "static/images/images_articles/couteaux/couteau gravure personnalisée 2.jpg"
+            "static\/images\/images_articles\/couteaux\/couteau gravure personnalisée 1.jpg",
+            "static\/images\/images_articles\/couteaux\/couteau gravure personnalisée 2.jpg"
         ],
         "famille": "Gravures personnalisées",
         "sousfamille": "Couteau"
@@ -314,18 +333,18 @@
         "prix": [
             {
                 "description": "",
-                "tarif": "44.90"
+                "tarif": "44.9"
             }
         ],
         "txt1": null,
         "txt2": null,
         "photos": [
-            "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_1.jpg",
-            "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_2.jpg",
-            "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_3.jpg",
-            "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_4.jpg",
-            "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_5.jpg",
-            "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_6.jpg"
+            "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_1.jpg",
+            "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_2.jpg",
+            "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_3.jpg",
+            "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_4.jpg",
+            "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_5.jpg",
+            "static\/images\/images_articles\/gourde\/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_6.jpg"
         ],
         "famille": "Gravures personnalisées",
         "sousfamille": "Thermos"
@@ -333,6 +352,7 @@
     {
         "id": 14,
         "nom": "Support BBQ",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -340,9 +360,14 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/créations sur mesure/BBQ/support_barbecue_bois_recyclage_surcyclage_upcycling_3.jpg",
-            "static/images/images_articles/créations sur mesure/BBQ/support_barbecue_bois_recyclage_surcyclage_upcycling_4.jpg"
+            "static\/images\/images_articles\/créations sur mesure\/BBQ\/support_barbecue_bois_recyclage_surcyclage_upcycling_3.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/BBQ\/support_barbecue_bois_recyclage_surcyclage_upcycling_4.jpg"
         ],
         "famille": "BBQ",
         "sousfamille": "Support BBQ"
@@ -353,13 +378,18 @@
         "description1": [
             "Bambou et Inox"
         ],
+<<<<<<< HEAD
         "description2": null,
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/créations sur mesure/caisse biere/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_1.jpg",
-            "static/images/images_articles/créations sur mesure/caisse biere/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg"
+            "static\/images\/images_articles\/créations sur mesure\/caisse biere\/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_1.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/caisse biere\/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg"
         ],
         "famille": "BBQ",
         "sousfamille": "Caisse à bière"
@@ -367,6 +397,7 @@
     {
         "id": 16,
         "nom": "Gravure coque téléphone",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -377,12 +408,19 @@
         "photos": [
             ""
         ],
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+        "photos": [],
+>>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Gravure coque téléphone"
     },
     {
         "id": 17,
         "nom": "Plaque porte de chambre",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -390,10 +428,15 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg",
-            "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.png",
-            "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_4.jpg"
+            "static\/images\/images_articles\/créations sur mesure\/enseigne\/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/enseigne\/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.png",
+            "static\/images\/images_articles\/créations sur mesure\/enseigne\/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_4.jpg"
         ],
         "famille": "Création diverses sur mesures",
         "sousfamille": "Plaque porte de chambre"
@@ -401,6 +444,7 @@
     {
         "id": 18,
         "nom": "Tableau en bois",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -408,11 +452,16 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 1.png",
-            "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 details1.jpg",
-            "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 details2.png",
-            "static/images/images_articles/plaque bois/Plaque_bois_gravure_personnalisee_400x400_enseigne_boutique.png"
+            "static\/images\/images_articles\/plaque bois\/Plaque bois gravure personnalisee 200 x 400 1.png",
+            "static\/images\/images_articles\/plaque bois\/Plaque bois gravure personnalisee 200 x 400 details1.jpg",
+            "static\/images\/images_articles\/plaque bois\/Plaque bois gravure personnalisee 200 x 400 details2.png",
+            "static\/images\/images_articles\/plaque bois\/Plaque_bois_gravure_personnalisee_400x400_enseigne_boutique.png"
         ],
         "famille": "Création diverses sur mesures",
         "sousfamille": "Tableau en bois"
@@ -420,6 +469,7 @@
     {
         "id": 19,
         "nom": "Jeux de société",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -427,9 +477,14 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg",
-            "static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_6.jpg"
+            "static\/images\/images_articles\/jeux\/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg",
+            "static\/images\/images_articles\/jeux\/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_6.jpg"
         ],
         "famille": "Création diverses sur mesures",
         "sousfamille": "Jeux de société"
@@ -437,6 +492,7 @@
     {
         "id": 20,
         "nom": "Bar à pétanque",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -444,13 +500,18 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.1.jpg",
-            "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.2.jpg",
-            "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.jpg",
-            "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_avec_score 2.png",
-            "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_avec_score 3.png",
-            "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_avec_score.png"
+            "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.1.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.2.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_avec_score 2.png",
+            "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_avec_score 3.png",
+            "static\/images\/images_articles\/créations sur mesure\/bar pétanque\/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_avec_score.png"
         ],
         "famille": "Création diverses sur mesures",
         "sousfamille": "Bar à pétanque"
@@ -458,6 +519,7 @@
     {
         "id": 21,
         "nom": "Guitare",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -468,12 +530,19 @@
         "photos": [
             ""
         ],
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+        "photos": [],
+>>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Guitare"
     },
     {
         "id": 22,
         "nom": "Horloge Harry Potter",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -484,12 +553,19 @@
         "photos": [
             ""
         ],
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+        "photos": [],
+>>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Horloge Harry Potter"
     },
     {
         "id": 23,
         "nom": "Vase",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -497,8 +573,13 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/tasse/Tasse_Verre_gravure_personnalisee.jpg"
+            "static\/images\/images_articles\/tasse\/Tasse_Verre_gravure_personnalisee.jpg"
         ],
         "famille": "Création diverses sur mesures",
         "sousfamille": "Vase"
@@ -506,6 +587,7 @@
     {
         "id": 24,
         "nom": "Table de chevet",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -516,12 +598,19 @@
         "photos": [
             ""
         ],
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+        "photos": [],
+>>>>>>> Liaisonv2
         "famille": "Création diverses sur mesures",
         "sousfamille": "Table de chevet"
     },
     {
         "id": 25,
         "nom": "Coffre au trésor",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
@@ -529,10 +618,15 @@
         "prix": [],
         "txt1": null,
         "txt2": null,
+=======
+        "description1": [],
+        "prix": [],
+        "txt1": null,
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_3.1.jpg",
-            "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_4.1.jpg",
-            "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_6.1.jpg"
+            "static\/images\/images_articles\/créations sur mesure\/coffre pirate\/coffre_pirate_bois_Sur_Mesure_3.1.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/coffre pirate\/coffre_pirate_bois_Sur_Mesure_4.1.jpg",
+            "static\/images\/images_articles\/créations sur mesure\/coffre pirate\/coffre_pirate_bois_Sur_Mesure_6.1.jpg"
         ],
         "famille": "Création diverses sur mesures",
         "sousfamille": "Coffre au trésor"
@@ -546,8 +640,8 @@
         "description2": "50 × 38 mm",
         "prix": [
             {
-                "description": "Pour gravure des 2 côtés ",
-                "tarif": "11,90 "
+                "description": "Pour gravure des 2 côtés",
+                "tarif": "11,90"
             },
             {
                 "description": "Pour gravure d'un seul côté",
@@ -555,12 +649,15 @@
             }
         ],
         "txt1": null,
+<<<<<<< HEAD
         "txt2": null,
+=======
+>>>>>>> Liaisonv2
         "photos": [
-            "static/images/images_articles/porte clef/Porte clef gravé personnalisé_1.jpg",
-            "static/images/images_articles/porte clef/Porte clef gravé personnalisé_2.jpg",
-            "static/images/images_articles/porte clef/Porte_Clef_bois_personnalisé.png",
-            "static/images/images_articles/porte clef/Porte clef gravé personnalisé_4.jpg"
+            "static\/images\/images_articles\/porte clef\/Porte clef gravé personnalisé_1.jpg",
+            "static\/images\/images_articles\/porte clef\/Porte clef gravé personnalisé_2.jpg",
+            "static\/images\/images_articles\/porte clef\/Porte_Clef_bois_personnalisé.png",
+            "static\/images\/images_articles\/porte clef\/Porte clef gravé personnalisé_4.jpg"
         ],
         "famille": "Gravures personnalisées",
         "sousfamille": "Porte clef"
@@ -571,17 +668,20 @@
         "description1": [
             "Bois \/ métal"
         ],
+<<<<<<< HEAD
         "description2": null,
+=======
+>>>>>>> Liaisonv2
         "prix": [
             {
                 "description": "",
-                "tarif": "11.90"
+                "tarif": "11.9"
             }
         ],
         "txt1": null,
         "txt2": null,
         "photos": [
-            "static/images/images_articles/boite/gravure_boite_personnalisée_bois_2.jpg"
+            "static\/images\/images_articles\/boite\/gravure_boite_personnalisée_bois_2.jpg"
         ],
         "famille": "Gravures personnalisées",
         "sousfamille": "Boite à mouchoirs"
@@ -589,26 +689,44 @@
     {
         "id": 28,
         "nom": "Gravure sur Toile 25cmx25cm",
+<<<<<<< HEAD
         "description1": [
             ""
         ],
         "description2": null,
+=======
+        "description1": [],
+>>>>>>> Liaisonv2
         "prix": [
             {
-                "description": "Prix ",
+                "description": "Prix",
                 "tarif": "15,00"
             },
             {
-                "description": "Pour image personnalisée ",
+                "description": "Pour image personnalisée",
                 "tarif": "22,00"
             }
         ],
         "txt1": null,
+<<<<<<< HEAD
         "txt2": null,
         "photos": [
             ""
         ],
+=======
+        "photos": [],
+>>>>>>> Liaisonv2
         "famille": "Gravures personnalisées",
         "sousfamille": "Gravure sur Toile"
+    },
+    {
+        "id": 29,
+        "nom": "Nouveau produit",
+        "description1": [],
+        "prix": [],
+        "txt1": "",
+        "photos": [],
+        "famille": "",
+        "sousfamille": ""
     }
 ]

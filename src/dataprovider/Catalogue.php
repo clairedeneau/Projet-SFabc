@@ -51,8 +51,14 @@ class Catalogue
         return $this->description1;
     }
 
+<<<<<<< HEAD
     public function getDescription2() {
         return $this->description2;
+=======
+    public function setDescription1($description1) {
+        $this->description1 = $description1;
+
+>>>>>>> Liaisonv2
     }
 
     public function getPrix() {
@@ -96,12 +102,21 @@ class Catalogue
     }
 
     public static function getProduitById($catalogues, $id) {
+<<<<<<< HEAD
         foreach($catalogues as $article){
             if($article->getId() == $id){
                 return $article;
             }
         }
         return null;
+=======
+        $filteredCatalogues = array_filter($catalogues, function($catalogue) use ($id) {
+            return $catalogue->getId() == $id;
+        });
+        error_log("Catalogue::getProduitById : " . print_r($filteredCatalogues, true));
+        return reset($filteredCatalogues);
+
+>>>>>>> Liaisonv2
     }
 
     public static function getProduitByName($catalogues, $name) {
@@ -112,6 +127,22 @@ class Catalogue
         return reset($filteredCatalogues);
     }
 
+<<<<<<< HEAD
+=======
+
+    public function toArray() {
+        return [
+            'id' => $this->id,
+            'nom' => $this->nom,
+            'description1' => $this->description1,
+            'prix' => $this->prix,
+            'txt1' => $this->txt1,
+            'photos' => $this->photos,
+            'famille' => $this->famille,
+            'sousfamille' => $this->sousfamille
+        ];
+    }
+>>>>>>> Liaisonv2
     public function renderArticle(): string {
         $html = "<div class='produit'>";
         $html .= "<a href='"."/detail/".$this->id."'>";

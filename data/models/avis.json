@@ -1,24 +1,27 @@
 {
     "avis": [
         {
+            "id": 7,
             "idProduit": 1,
-            "user": "John Doe",
-            "note": 4,
-            "comment": "Great product, really enjoyed using it!",
-            "date": "2023-10-01"
-        },
-        {
-            "idProduit": 1,
-            "user": "Thomas test",
-            "note": 3,
-            "comment": "Cette article est une tr\u00e8s belle invention !",
+            "user": "tttttttt",
+            "note": 5,
+            "comment": "ttttttttttttt",
             "date": "2025-02-27"
         },
         {
+            "id": 8,
             "idProduit": 1,
-            "user": "Test",
+            "user": "dajdojdo",
             "note": 3,
-            "comment": "Pas mal mais peux mieux faire",
+            "comment": "odaojdj",
+            "date": "2025-02-27"
+        },
+        {
+            "id": 9,
+            "idProduit": 2,
+            "user": "JM",
+            "note": 2,
+            "comment": "ADAOJ",
             "date": "2025-02-27"
         }
     ]
