@@ -20,6 +20,13 @@
             "note": 3,
             "comment": "Pas mal mais peux mieux faire",
             "date": "2025-02-27"
+        },
+        {
+            "idProduit": 1,
+            "user": "Jean-Michel",
+            "note": 1,
+            "comment": "Pas fou fou... unn trou \u00e7a fui",
+            "date": "2025-02-28"
         }
     ]
 }
