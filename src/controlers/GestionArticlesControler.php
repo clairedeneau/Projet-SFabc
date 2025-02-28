@@ -38,12 +38,27 @@ class GestionArticlesControler extends Controler
 
             $catalogues = $jsonProvider->loadCatalogue();
 
+            $familles = [];
+            foreach ($catalogues as $catalogue) {
+                $famille = $catalogue->getFamille();
+                $sousfamille = $catalogue->getSousFamille();
+                if (!isset($familles[$famille])) {
+                    $familles[$famille] = [];
+                }
+                if (!in_array($sousfamille, $familles[$famille])) {
+                    $familles[$famille][] = $sousfamille;
+                }
+            }
+
+            $famillesJson = json_encode($familles, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
             foreach ($catalogues as $catalogue) {
                 $_SESSION['catalogue'][] = $catalogue;
             }
 
             $this->render('gestionarticles', [
-                'catalogue' => $catalogues
+                'catalogue' => $catalogues,
+                'famillesJson' => $famillesJson
             ]);
         } catch (Exception $e) {
             echo "Erreur: " . htmlspecialchars($e->getMessage());

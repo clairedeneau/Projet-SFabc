@@ -4,6 +4,8 @@ $selectedCatalogue = null;
 if (isset($_SESSION['catalogue'][$_GET['index']])) {
     $selectedCatalogue = $_SESSION['catalogue'][$_GET['index']];
 }
+
+$familles = json_decode($famillesJson, true);
 ?>
 
 <!DOCTYPE html>
@@ -106,8 +108,23 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                     <button type="button" id="myBtn">Nouvelle Description</button>
                     <button type="button" id="myBtn2">Modifier Description</button>
 
-                    <input type="text" name="famille" value="<?php echo htmlspecialchars($selectedCatalogue->getFamille()); ?>" placeholder="Famille">
-                    <input type="text" name="sousFamille" value="<?php echo htmlspecialchars($selectedCatalogue->getSousFamille()); ?>" placeholder="Sous-famille">
+                    <select name="famille" id="famille-select">
+    <?php 
+        foreach ($familles as $famille => $sousFamilles) {
+            $selected = ($famille == $selectedCatalogue->getFamille()) ? 'selected' : '';
+            echo '<option value="' . htmlspecialchars($famille) . '" ' . $selected . ' data-sousfamilles="' . htmlspecialchars(json_encode($sousFamilles)) . '">' . htmlspecialchars($famille) . '</option>';
+        }
+    ?>
+</select>
+
+<select name="sousFamille" id="sousFamille-select">
+    <?php 
+        foreach ($familles[$selectedCatalogue->getFamille()] as $sousFamille) {
+            $selected = ($sousFamille == $selectedCatalogue->getSousFamille()) ? 'selected' : '';
+            echo '<option value="' . htmlspecialchars($sousFamille) . '" ' . $selected . '>' . htmlspecialchars($sousFamille) . '</option>';
+        }
+    ?>
+</select>
                     <select name="prixI" id="prix-select">
                         <?php
                         foreach ($selectedCatalogue->getPrix() as $index => $prix) {
@@ -268,6 +285,21 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
 
 </body>
 <script defer>
+
+document.getElementById('famille-select').addEventListener('change', function() {
+    var selectedFamille = this.options[this.selectedIndex];
+    var sousFamilles = JSON.parse(selectedFamille.getAttribute('data-sousfamilles'));
+    
+    var sousFamilleSelect = document.getElementById('sousFamille-select');
+    sousFamilleSelect.innerHTML = ''; // Clear existing options
+
+    sousFamilles.forEach(function(sousFamille) {
+        var option = document.createElement('option');
+        option.value = sousFamille;
+        option.textContent = sousFamille;
+        sousFamilleSelect.appendChild(option);
+    });
+});
     document.querySelectorAll('.current-photos .photo').forEach(photo => {
         photo.addEventListener('click', function() {
             const photoInput = document.getElementById('photo-input');
