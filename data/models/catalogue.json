@@ -8,6 +8,7 @@
             " Fil en corde ",
             " Positionnable à volonté (couché, debout, assis), oreilles positionnables"
         ],
+        "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
         "prix": [
             {
                 "description": "",
@@ -15,7 +16,7 @@
             }
         ],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
 
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_7.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chien_gravure_personnalisee_10.jpg",
@@ -34,7 +35,7 @@
             " Fil en corde ",
             " Positionnable à volonté (couché, debout, assis, oreilles positionnables)"
         ],
-
+        "description2": "Dimensions :\n - couché : 30 cm de long\n - 4 pattes : 30 cm de haut\n\nGravure sur les pattes à personnaliser",
         "prix": [
             {
                 "description": "",
@@ -42,7 +43,7 @@
             }
         ],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_13.jpg",
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_chat_gravure_personnalisee_16.jpg"
@@ -57,9 +58,10 @@
             "Alimentation sur batterie (surcyclée) ",
             "Recharge par chargeur 5V (type téléphone portable) "
         ],
-
+        "description2": "Tête et pattes positionnables ;Gravure à personnaliser",
         "prix": [],
         "txt1": null,
+        "txt2": null,
         "photos": [
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_1.jpg","static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_2.jpg",
             "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_3.jpg", "static/images/images_articles/lampe bois/lampe_bois_recyclage_surcyclage_upcycling_palette_Poule_gravure_personnalisee_4 sans fond.png",
@@ -74,7 +76,7 @@
         "description1": [
             "Socle noir (7 couleurs - plaque 12 × 16 cm)"
         ],
-
+        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -82,6 +84,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/lampe led/Lampe led plexi personnalisée basique.jpg",
             "static/images/images_articles/lampe led/Lampe led plexi gravure et decoupe personnalisée basique noir - 7 couleurs.jpg",
@@ -98,6 +101,7 @@
         "description1": [
             "Socle blanc, lumineux, télécommandé (7 couleurs - plaque 12 × 16 cm)"
         ],
+        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -105,6 +109,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs plaques identiques commandées",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/lampe led/Lampe led plexi personnalisée edition luxe.jpg",
             "static/images/images_articles/lampe led/Lampe led plexi personnalisée edition luxe noir.jpg"
@@ -118,6 +123,7 @@
         "description1": [
             "Environ 25 cm × diam : 6 cm"
         ],
+        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -125,6 +131,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel2.jpg",
             "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_noel3.jpg"
@@ -138,6 +145,7 @@
         "description1": [
             "Environ 34 cm × diam : 7,6 cm"
         ],
+        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -145,6 +153,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs bouteilles identiques commandées",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_2.jpg",
             "static/images/images_articles/bouteille/bouteille_lampe_led_gravure_personnalisee_recyclage_surcyclage_upcycling_cadeau_1.jpg"
@@ -158,6 +167,7 @@
         "description1": [
             "Miroir Bois recyclé"
         ],
+        "description2": "Dimension du miroir : 30 × 30 cm ;Gravure personnalisée",
         "prix": [
             {
                 "description": "Si gravure du bois uniquement ",
@@ -173,6 +183,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_9.jpg",
             "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_10.jpg",
@@ -187,6 +198,7 @@
         "description1": [
             "Miroir Bois recyclé"
         ],
+        "description2": "Dimension du miroir : 21 × 30 cm ;Gravure personnalisée",
         "prix": [
             {
                 "description": "Si gravure du bois uniquement ",
@@ -202,6 +214,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs miroirs identiques commandées",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/miroir/miroir_bois_recyclage_surcyclage_upcycling_palette_gravure_personnalisee_5.jpg"
         ],
@@ -214,6 +227,7 @@
         "description1": [
             "Bois \/ métal"
         ],
+        "description2": "Dimension : 12 × 3 cm (plié)",
         "prix": [
             {
                 "description": "Gravure manche bois ",
@@ -225,6 +239,7 @@
             }
         ],
         "txt1": "Prix dégressif si plusieurs produits identiques commandés",
+        "txt2": null,
         "photos": [
             "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 1.jpg",
             "static/images/images_articles/tirebouchon/Tirebouchon_luxe_bois_metal_gravure_personalisée 2 fond 2.jpg",
@@ -242,6 +257,7 @@
         "description1": [
             "Bois \/ métal"
         ],
+        "description2": "Gravure personnalisée",
         "prix": [
             {
                 "description": "Gravure manche bois ",
@@ -253,6 +269,7 @@
             }
         ],
         "txt1": null,
+        "txt2": null,
         "photos": [
             "static/images/images_articles/stylo/stylo bambou gravure personnalisé.jpg",
             "static/images/images_articles/stylo/stylo bambou gravure personnalisé 2.png",
@@ -267,6 +284,7 @@
         "description1": [
             "Bois \/ métal"
         ],
+        "description2": "Gravure personnalisée",
         "prix": [
             {
                 "description": "Gravure manche bois ",
@@ -278,6 +296,7 @@
             }
         ],
         "txt1": null,
+        "txt2": null,
         "photos": [
             "static/images/images_articles/couteaux/couteau gravure personnalisée 1.jpg",
             "static/images/images_articles/couteaux/couteau gravure personnalisée 2.jpg"
@@ -291,6 +310,7 @@
         "description1": [
             "Bambou et Inox"
         ],
+        "description2": "450 mL ;Filtre pour le thé",
         "prix": [
             {
                 "description": "",
@@ -298,6 +318,7 @@
             }
         ],
         "txt1": null,
+        "txt2": null,
         "photos": [
             "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_1.jpg",
             "static/images/images_articles/gourde/gravure_gourde_personnalisee_bouteille_isotherme_thermos_infuseur_The_bambou__tasse__bois_2.jpg",
@@ -315,10 +336,10 @@
         "description1": [
             ""
         ],
-
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/créations sur mesure/BBQ/support_barbecue_bois_recyclage_surcyclage_upcycling_3.jpg",
             "static/images/images_articles/créations sur mesure/BBQ/support_barbecue_bois_recyclage_surcyclage_upcycling_4.jpg"
@@ -332,10 +353,10 @@
         "description1": [
             "Bambou et Inox"
         ],
-
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/créations sur mesure/caisse biere/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_1.jpg",
             "static/images/images_articles/créations sur mesure/caisse biere/caisse_porte_biere_decapsuleur_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg"
@@ -349,9 +370,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             ""
         ],
@@ -364,9 +386,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_2.jpg",
             "static/images/images_articles/créations sur mesure/enseigne/plaque_porte_enseigne_suspendue_pancarte_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee_3.png",
@@ -381,9 +404,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 1.png",
             "static/images/images_articles/plaque bois/Plaque bois gravure personnalisee 200 x 400 details1.jpg",
@@ -399,9 +423,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_5.jpg",
             "static/images/images_articles/jeux/jeux_societe_jackpot_bois_recyclage_surcyclage_upcycling_palette_6.jpg"
@@ -415,9 +440,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.1.jpg",
             "static/images/images_articles/créations sur mesure/bar pétanque/bar_boule_petanque_bois_surcyclage_recyclage_upcycling_palette_gravure_personnalisee v2.2.jpg",
@@ -435,9 +461,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             ""
         ],
@@ -450,9 +477,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             ""
         ],
@@ -465,9 +493,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/tasse/Tasse_Verre_gravure_personnalisee.jpg"
         ],
@@ -480,9 +509,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             ""
         ],
@@ -495,9 +525,10 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_3.1.jpg",
             "static/images/images_articles/créations sur mesure/coffre pirate/coffre_pirate_bois_Sur_Mesure_4.1.jpg",
@@ -512,6 +543,7 @@
         "description1": [
             "Métal - plaque noire"
         ],
+        "description2": "50 × 38 mm",
         "prix": [
             {
                 "description": "Pour gravure des 2 côtés ",
@@ -523,7 +555,7 @@
             }
         ],
         "txt1": null,
-
+        "txt2": null,
         "photos": [
             "static/images/images_articles/porte clef/Porte clef gravé personnalisé_1.jpg",
             "static/images/images_articles/porte clef/Porte clef gravé personnalisé_2.jpg",
@@ -539,7 +571,7 @@
         "description1": [
             "Bois \/ métal"
         ],
-
+        "description2": null,
         "prix": [
             {
                 "description": "",
@@ -547,6 +579,7 @@
             }
         ],
         "txt1": null,
+        "txt2": null,
         "photos": [
             "static/images/images_articles/boite/gravure_boite_personnalisée_bois_2.jpg"
         ],
@@ -559,6 +592,7 @@
         "description1": [
             ""
         ],
+        "description2": null,
         "prix": [
             {
                 "description": "Prix ",
@@ -570,6 +604,7 @@
             }
         ],
         "txt1": null,
+        "txt2": null,
         "photos": [
             ""
         ],
