@@ -194,12 +194,19 @@ public function post(string $params): void
                     }
                 } elseif (isset($_POST['form_type']) && $_POST['form_type'] === 'delete_sousfamille') {
                     $sousfamille = $_POST['sousfamille'];
+                    foreach ($catalogues as $catalogue) {
+                        if ($catalogue->getSousFamille() == $sousfamille) {
+                            $catalogue->setSousFamille('');
+                        }
+                    }
                     foreach ($familles as $famille => $sousFamilles) {
                         if (($key = array_search($sousfamille, $sousFamilles)) !== false) {
                             unset($sousFamilles[$key]);
                             $familles[$famille] = array_values($sousFamilles);
                         }
                     }
+                    $jsonProvider->saveFamilles($familles);
+                    $jsonProvider->saveCatalogue($catalogues);
                 } elseif (isset($_POST['form_type']) && $_POST['form_type'] === 'delete_famille') {
                     $familleToDelete = $_POST['famille'];                  
                     foreach ($catalogues as $catalogue) {
@@ -238,7 +245,6 @@ public function post(string $params): void
             }
         }
 
-        // Re-index the array to maintain the structure as a list
         $catalogues = array_values($catalogues);
 
         $jsonProvider->saveCatalogue($catalogues);
