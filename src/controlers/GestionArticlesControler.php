@@ -14,36 +14,24 @@ class GestionArticlesControler extends Controler
     public function get(string $params): void
     {
         try {
-            $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
+            $jsonProvider = new JsonProvider('../data/models/catalogue.json', "", '../data/models/famille.json');
             $catalogues = $jsonProvider->loadCatalogue();
             $_SESSION['catalogue'] = [];
-            if (isset($_GET['index'])) {
-                if (count($catalogues) ==  $_GET['index']) {
-                    $produit = new Catalogue(
-                        count($catalogues) + 1,
-                        "Nouveau produit",
-                        [],
-                        [],
-                        '',
-                        [],
-                        '',
-                        ''
-                    );
+            
+            $catalogues = $jsonProvider->loadCatalogue();        
+            $familles = $jsonProvider->loadFamilles();
 
-                    $catalogues[] = $produit;
-
-                    $jsonProvider->saveCatalogue($catalogues);
-                }
-            }
-
-            $catalogues = $jsonProvider->loadCatalogue();
+           
 
             foreach ($catalogues as $catalogue) {
                 $_SESSION['catalogue'][] = $catalogue;
             }
+        
 
             $this->render('gestionarticles', [
-                'catalogue' => $catalogues
+                'catalogue' => $catalogues,
+                'selectedCatalogue' => isset($_GET['index']) ? $_SESSION['catalogue'][$_GET['index']-1] : null,
+                'famillesJson' => json_encode($familles, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
             ]);
         } catch (Exception $e) {
             echo "Erreur: " . htmlspecialchars($e->getMessage());
@@ -51,6 +39,7 @@ class GestionArticlesControler extends Controler
         }
     }
 
+    
     public function post(string $params): void
     {
         if (isset($_POST['deconnexion'])) {
@@ -70,26 +59,13 @@ class GestionArticlesControler extends Controler
             exit();
         }
     
-        if (isset($_POST['upload_image'])) {
-            $this->handleImageUpload();
-            header('Location: gestionarticles');
-            exit();
-        }
-    
-        if (isset($_POST['form_type']) && $_POST['form_type'] === 'edit_photos') {
-            $this->handlePhotoEdit();
-            header('Location: gestionarticles');
-            exit();
-        }
-    
-        $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
+        $jsonProvider = new JsonProvider('../data/models/catalogue.json', "",  '../data/models/famille.json');
         $catalogues = $jsonProvider->loadCatalogue();
         try {
             if (isset($_POST['_method']) && $_POST['_method'] == 'PUT') {
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
-                    error_log(print_r($_POST, true));
-                    foreach ($catalogues as $catalogue) {
+                    foreach ($catalogues as $catalogue) { 
                         if ($catalogue->getId() == $id) {
                             if (isset($_POST['form_type']) && $_POST['form_type'] === 'edit_article') {
                                 $nomArticle = $_POST['nom'];
@@ -116,15 +92,29 @@ class GestionArticlesControler extends Controler
                                 }
                                 $catalogue->setPrix($currentPrix);
                             }
-    
                             break;
                         }
                     }
                 }
             } elseif (isset($_POST['_method']) && $_POST['_method'] == 'POST') {
-                if (isset($_POST['id'])) {
+                error_log(print_r($_POST, true));
+                $familles = $jsonProvider->loadFamilles();
+                if (isset($_POST['id'])) {  
                     $id = $_POST['id'];
-                    if ($_POST['form_type'] === 'add_description') {
+                    
+                    if ($_POST['form_type'] == 'add_famille') {
+                        $newFamille = $_POST['new_famille'];
+                        if (!isset($familles[$newFamille])) {
+                            $familles[$newFamille] = [];
+                        }
+                        error_log("Famille ".print_r($familles, true));
+                    } elseif ($_POST['form_type'] === 'add_sousfamille') {
+                        $famille = $_POST['famille'];
+                    $newSousFamille = $_POST['new_sousfamille'];
+                    if (isset($familles[$famille]) && !in_array($newSousFamille, $familles[$famille])) {
+                        $familles[$famille][] = $newSousFamille;
+                    }
+                    } elseif ($_POST['form_type'] === 'add_description') {
                         $newDescription = $_POST['new_description'];
                         foreach ($catalogues as $catalogue) {
                             if ($catalogue->getId() == $id) {
@@ -145,16 +135,63 @@ class GestionArticlesControler extends Controler
                                 break;
                             }
                         }
+                    }elseif ($_POST["form_type"] === "add_article") {
+                        $newArticle = new Catalogue(
+                            count($catalogues) + 1,
+                            "Nouvel article",
+                            [],
+                            [],
+                            "",
+                            [],
+                            "",
+                            "",
+                        );
+                        $catalogues[] = $newArticle;
+                        $jsonProvider->saveCatalogue($catalogues);
+
                     }
+
+                    
                 }
+                $jsonProvider->saveFamilles($familles);
             } elseif (isset($_POST['_method']) && $_POST['_method'] == 'DELETE') {
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
-                    foreach ($catalogues as $index => $catalogue) {
-                        if ($catalogue->getId() == $id) {
-                            unset($catalogues[$index]);
-                            $this->removeProductIdFromAvis((int)$id); 
-                            break;
+                    error_log("Suppression du produit ID: " . $id);
+                    error_log(print_r($_POST, true));
+                    if (isset($_POST['form_type']) && $_POST['form_type'] === 'delete_description') {
+                        $descriptionIndex = $_POST['description_index'];
+                        foreach ($catalogues as $catalogue) {
+                            if ($catalogue->getId() == $id) {
+                                $descriptions = $catalogue->getDescription1();
+                                if (isset($descriptions[$descriptionIndex])) {
+                                    unset($descriptions[$descriptionIndex]);
+                                    $catalogue->setDescription1(array_values($descriptions));
+                                }
+                                break;
+                            }
+                        }
+                    } elseif (isset($_POST['form_type']) && $_POST['form_type'] === 'delete_prix') {
+                        $prixIndex = $_POST['prix_index'];
+                        error_log("Suppression du prix à l'index: " . $prixIndex);
+                        foreach ($catalogues as $catalogue) {
+                            if ($catalogue->getId() == $id) {
+                                $prixs = $catalogue->getPrix();
+                                error_log(print_r($prixs, true));
+                                if (isset($prixs[$prixIndex])) {
+                                    unset($prixs[$prixIndex]);
+                                    $catalogue->setPrix(array_values($prixs));
+                                }
+                                break;
+                            }
+                        }
+                    } else {
+                        foreach ($catalogues as $index => $catalogue) {
+                            if ($catalogue->getId() == $id) {
+                                unset($catalogues[$index]);
+                                $this->removeProductIdFromAvis((int)$id); 
+                                break;
+                            }
                         }
                     }
                 }
@@ -163,7 +200,24 @@ class GestionArticlesControler extends Controler
             $jsonProvider->saveCatalogue($catalogues);
             $message = 'Les modifications ont été enregistrées avec succès.';
             error_log($message);
-            $this->redirectTo('gestionarticles');
+            if (isset($_POST['upload_image'])) {
+                $this->handleImageUpload();
+                $index = $_POST['id'];
+                $this->redirectTo('gestionarticles?index=' . $index);
+            }
+    
+            if (isset($_POST['form_type']) && $_POST['form_type'] === 'edit_photos') {
+                $this->handlePhotoEdit();
+                $index = $_POST['id'];
+                $this->redirectTo('gestionarticles?index=' . $index);
+            }
+    
+            if (isset($_POST['id']) && $_POST['form_type'] !== 'edit_article') {
+                $index = $_POST['id'];               
+                $this->redirectTo('gestionarticles?index=' . $index);
+            } else {
+                $this->redirectTo('gestionarticles');    
+            }
         } catch (Exception $e) {
             echo "Erreur: " . htmlspecialchars($e->getMessage());
             error_log("Erreur lors de la mise à jour du catalogue: " . $e->getMessage());

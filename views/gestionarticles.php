@@ -1,9 +1,7 @@
 <?php
 
-$selectedCatalogue = null;
-if (isset($_SESSION['catalogue'][$_GET['index']])) {
-    $selectedCatalogue = $_SESSION['catalogue'][$_GET['index']];
-}
+
+$familles = json_decode($famillesJson, true);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +25,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     <nav id="topnav">
         <ul>
             <li><a href="/bienvenue">Informations générales</a></li>
-            <li><a href="/admin">Gestionnaire des pages</a></li>
+            <!--<li><a href="/admin">Gestionnaire des pages</a></li>-->
             <li><a href="/gestionarticles" class="nav-link-active">Gestionnaire des articles</a></li>
             <li><a href="/gestionavis">Avis</a></li>
             <li><a href="/logout">Déconnexion</a></li>
@@ -52,7 +50,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             <ul>
                 <?php
                 if (isset($_SESSION['catalogue'])) {
-                    foreach ($_SESSION['catalogue'] as $index => $catalogue) {
+                    foreach ($_SESSION['catalogue'] as $catalogue) {
                         if ($catalogue->getNom() !== null) {
                             echo '<li>';
                             echo '<form action="gestionarticles" method="post" style="display:inline; margin-left: 10px;">';
@@ -61,7 +59,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                             echo '<button type="submit" class="supprimer">🗑</button>';
                             echo '</form>';
                             echo '<form action="gestionarticles" method="get" style="display:inline;">';
-                            echo '<input type="hidden" name="index" value="' . $index . '">';
+                            echo '<input type="hidden" name="index" value="' . $catalogue->getId() . '">';
                             echo '<button type="submit" style="background:none;border:none;color:black;cursor:pointer;">' . htmlspecialchars($catalogue->getNom()) . '</button>';
                             echo '</form>';
                             echo '</li>';
@@ -77,12 +75,16 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             if (isset($_SESSION['catalogue']) && !empty($_SESSION['catalogue'])) {
                 $lastElement = end($_SESSION['catalogue']);
                 $lastIndex = $lastElement->getId();
-                echo '<form action="gestionarticles" method="get">';
-                echo '<button type="submit" class="ajouter" name="index" value="' . $lastIndex . '">Ajouter un produit</button>';
+                echo '<form action="gestionarticles" method="post">';
+                echo '<input type="hidden" name="_method" value="POST">';
+                echo '<input type="hidden" name="form_type" value="add_article">';
+                echo '<button type="submit" class="ajouter" name="id" value="' . $lastIndex+1 . '">Ajouter un produit</button>';
                 echo '</form>';
             } else {
-                echo '<form action="gestionarticles" method="get">';
-                echo '<button type="submit" class="ajouter" name="index" value="0">Ajouter un produit</button>';
+                echo '<form action="gestionarticles" method="post">';
+                echo '<input type="hidden" name="_method" value="POST">';
+                echo '<input type="hidden" name="form_type" value="add_article">';
+                echo '<button type="submit" class="ajouter" name="id" value="1">Ajouter un produit</button>';
                 echo '</form>';
             }
 
@@ -105,25 +107,103 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                     </select>
                     <button type="button" id="myBtn">Nouvelle Description</button>
                     <button type="button" id="myBtn2">Modifier Description</button>
+                    <button type="button" name="descriptionDelete" id="myBtn7">Supprimer Description</button>
 
-                    <input type="text" name="famille" value="<?php echo htmlspecialchars($selectedCatalogue->getFamille()); ?>" placeholder="Famille">
-                    <input type="text" name="sousFamille" value="<?php echo htmlspecialchars($selectedCatalogue->getSousFamille()); ?>" placeholder="Sous-famille">
-                    <select name="prixI" id="prix-select">
-                        <?php
-                        foreach ($selectedCatalogue->getPrix() as $index => $prix) {
-                            echo '<option name="' . $index . '" value="' . htmlspecialchars($prix['description']) . '">' . htmlspecialchars($prix['description']) . ' ( ' . htmlspecialchars($prix['tarif']) . ' € )' . '</option>';
-                        }
-                        ?>
-                    </select>
+                    <select name="famille" id="famille-select">
+    <?php 
+        foreach ($familles as $famille => $sousFamilles) {
+            if (!empty($famille)) {
+                $selected = ($famille == $selectedCatalogue->getFamille()) ? 'selected' : '';
+                echo '<option value="' . htmlspecialchars($famille) . '" ' . $selected . ' data-sousfamilles="' . htmlspecialchars(json_encode($sousFamilles)) . '">' . htmlspecialchars($famille) . '</option>';
+            }
+        }
+    ?>
+</select>
+
+<select name="sousFamille" id="sousFamille-select">
+    <?php 
+        foreach ($familles as $famille => $sousFamilles) {
+            foreach ($sousFamilles as $sousFamille) {
+                $selected = ($sousFamille == $selectedCatalogue->getSousFamille()) ? 'selected' : '';
+                echo '<option value="' . htmlspecialchars($sousFamille) . '" ' . $selected . '>' . htmlspecialchars($sousFamille) . '</option>';
+            }
+        }
+    ?>
+</select>
+
+<button type="button" id="addFamilleBtn">Ajouter Famille</button>
+<button type="button" id="addSousFamilleBtn">Ajouter Sous-Famille</button>
+
+
+<select name="prix_index" id="prix-select">
+    <?php
+    foreach ($selectedCatalogue->getPrix() as $index => $prix) {
+        echo '<option data-index="' . $index . '" value="' . htmlspecialchars($prix['description']) . '">' . htmlspecialchars($prix['description']) . ' ( ' . htmlspecialchars($prix['tarif']) . ' € )' . '</option>';
+    }
+    ?>
+</select>
                     <button type="button" id="myBtn3">Nouveau Prix</button>
                     <button type="button" id="myBtn4">Modifier Prix</button>
+                    <button type="button" id="myBtn8">Supprimer Prix</button>
+
 
                     <textarea name="text1" id="description" placeholder="Text"><?php echo htmlspecialchars($selectedCatalogue->getTxt1()); ?></textarea>
                     <button type="button" id="myBtn5">Ajouter une image</button>
                     <button type="button" id="myBtn6">Modifier les photos</button>
+                    
                     <button type="submit" class="save-button" name="form_type" value="edit_article">Enregistrer les changements</button>
                 </form>
 
+
+
+
+<div id="addFamilleModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Ajouter une nouvelle famille</h2>
+        <form action="gestionarticles" method="post">
+            <input type="hidden" name="_method" value="POST">
+            <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+            <input type="hidden" name="form_type" value="add_famille">
+            <input type="text" name="new_famille" placeholder="Nouvelle famille" required>
+            <button type="submit" class="save-button">Enregistrer</button>
+        </form>
+    </div>
+</div>
+
+<div id="addSousFamilleModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Ajouter une nouvelle sous-famille</h2>
+        <form action="gestionarticles" method="post">
+            <input type="hidden" name="_method" value="POST">
+            <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+            <input type="hidden" name="form_type" value="add_sousfamille">
+            <select name="famille" required>
+                <?php
+                foreach ($familles as $famille => $sousFamilles) {
+                    echo '<option value="' . htmlspecialchars($famille) . '">' . htmlspecialchars($famille) . '</option>';
+                }
+                ?>
+            </select>
+            <input type="text" name="new_sousfamille" placeholder="Nouvelle sous-famille" required>
+            <button type="submit" class="save-button">Enregistrer</button>
+        </form>
+    </div>
+</div>
+                <form id="delete-description-form" action="gestionarticles" method="post" style="display:none;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                    <input type="hidden" name="description_index" id="description-index-to-delete">
+                    <input type="hidden" name="form_type" value="delete_description">
+                </form>
+
+                <form id="delete-prix-form" action="gestionarticles" method="post" style="display:none;">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+    <input type="hidden" name="prix_index" id="prix-index-to-delete">
+    <input type="hidden" name="form_type" value="delete_prix">
+</form>
 
                 <div id="myModal" class="modal">
                     <div class="modal-content">
@@ -268,6 +348,24 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
 
 </body>
 <script defer>
+
+document.getElementById('famille-select').addEventListener('change', function() {
+        var selectedFamille = this.options[this.selectedIndex];
+        var sousFamilles = JSON.parse(selectedFamille.getAttribute('data-sousfamilles'));
+        var sousFamilleSelect = document.getElementById('sousFamille-select');
+
+        sousFamilleSelect.innerHTML = '';
+
+        sousFamilles.forEach(function(sousFamille) {
+            var option = document.createElement('option');
+            option.value = sousFamille;
+            option.textContent = sousFamille;
+            sousFamilleSelect.appendChild(option);
+        });
+    });
+
+    document.getElementById('famille-select').dispatchEvent(new Event('change'));
+    
     document.querySelectorAll('.current-photos .photo').forEach(photo => {
         photo.addEventListener('click', function() {
             const photoInput = document.getElementById('photo-input');
@@ -310,6 +408,8 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     var modal4 = document.getElementById("myModal4");
     var modal5 = document.getElementById("myModal5");
     var modal6 = document.getElementById("myModal6");
+    var addFamilleModal = document.getElementById("addFamilleModal");
+    var addSousFamilleModal = document.getElementById("addSousFamilleModal");
 
     var btn = document.getElementById("myBtn");
     var btn2 = document.getElementById("myBtn2");
@@ -317,6 +417,12 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     var btn4 = document.getElementById("myBtn4");
     var btn5 = document.getElementById("myBtn5");
     var btn6 = document.getElementById("myBtn6");
+    var btn7 = document.getElementById("myBtn7");
+    var btn8 = document.getElementById("myBtn8");
+    var addFamilleBtn = document.getElementById("addFamilleBtn");
+    var addSousFamilleBtn = document.getElementById("addSousFamilleBtn");
+
+
 
     var span = document.getElementsByClassName("close")[0];
     var span2 = document.getElementsByClassName("close")[1];
@@ -324,6 +430,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     var span4 = document.getElementsByClassName("close")[3];
     var span5 = document.getElementsByClassName("close")[4];
     var span6 = document.getElementsByClassName("close")[5];
+    var closeBtns = document.getElementsByClassName("close");
 
     btn.onclick = function() {
         modal.style.display = "block";
@@ -349,6 +456,27 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
         modal6.style.display = "block";
     }
 
+    btn7.onclick = function() {
+        var descriptionIndex = document.querySelector('select[name="description_index"]').value;
+        document.getElementById('description-index-to-delete').value = descriptionIndex;
+        document.getElementById('delete-description-form').submit();
+    }
+
+    btn8.onclick = function() {
+    var prixIndex = document.querySelector('#prix-select option:checked').getAttribute('data-index');
+    document.getElementById('prix-index-to-delete').value = prixIndex;
+    document.getElementById('delete-prix-form').submit();
+}
+
+addFamilleBtn.onclick = function() {
+    addFamilleModal.style.display = "block";
+}
+
+addSousFamilleBtn.onclick = function() {
+    addSousFamilleModal.style.display = "block";
+}
+
+
     span.onclick = function() {
         modal.style.display = "none";
     }
@@ -373,6 +501,15 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
         modal6.style.display = "none";
     }
 
+    
+for (var i = 0; i < closeBtns.length; i++) {
+    closeBtns[i].onclick = function() {
+        addFamilleModal.style.display = "none";
+        addSousFamilleModal.style.display = "none";
+    }
+}
+
+
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -391,6 +528,12 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
         }
         if (event.target == modal6) {
             modal6.style.display = "none";
+        }
+        if (event.target == addFamilleModal) {
+        addFamilleModal.style.display = "none";
+        }
+        if (event.target == addSousFamilleModal) {
+            addSousFamilleModal.style.display = "none";
         }
     }
 </script>

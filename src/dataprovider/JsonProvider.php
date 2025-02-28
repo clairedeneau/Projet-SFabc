@@ -9,11 +9,40 @@ class JsonProvider
 {
     private string $catalogueFilePath;
     private string $avisFilePath;
+    private string $familleFilePath;
 
-    public function __construct(string $catalogueFilePath, string $avisFilePath)
-    {
+    public function __construct(string $catalogueFilePath, string $avisFilePath, string $familleFilePath){
         $this->catalogueFilePath = $catalogueFilePath;
         $this->avisFilePath = $avisFilePath;
+        $this->familleFilePath = $familleFilePath;
+    }
+
+    public function loadFamilles(): array
+    {
+        if (!file_exists($this->familleFilePath)) {
+            throw new Exception("Le fichier des familles n'existe pas.");
+        }
+
+        $famillesJson = file_get_contents($this->familleFilePath);
+        $familles = json_decode($famillesJson, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new Exception("Erreur de décodage JSON: " . json_last_error_msg());
+        }
+
+        return $familles;
+    }
+
+    public function saveFamilles(array $familles): void
+    {
+        $famillesJson = json_encode($familles, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new Exception("Erreur d'encodage JSON: " . json_last_error_msg());
+        }
+
+        if (file_put_contents($this->familleFilePath, $famillesJson) === false) {
+            throw new Exception("Erreur lors de l'écriture du fichier JSON des familles.");
+        }
     }
 
     public function loadData(): array
@@ -36,6 +65,8 @@ class JsonProvider
     {
         return array_map(fn($item) => $this->mapToCatalogue($item), $this->loadData());
     }
+
+
 
     public function saveCatalogue(array $catalogues): void
     {
@@ -82,6 +113,8 @@ class JsonProvider
 
         $jsonData = file_get_contents($this->avisFilePath);
         $data = json_decode($jsonData, true);
+
+        error_log("loadAvis: " . json_last_error_msg());
         
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new \Exception("Erreur de dÃ©codage JSON: " . json_last_error_msg());
@@ -103,6 +136,7 @@ class JsonProvider
     private function mapToAvis(array $avisData): Avis
     {
         return new Avis(
+            $avisData["id"],
             $avisData["idProduit"],
             $avisData["user"],
             intval($avisData["note"]),
@@ -110,6 +144,7 @@ class JsonProvider
             $avisData["date"]
         );
     }
+
 
 
 }

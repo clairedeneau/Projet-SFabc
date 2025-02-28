@@ -13,12 +13,17 @@ class GestionAvisControler extends Controler
 {
     public function get(string $params): void
     {
+
         try {
-            $jsonProvider = new JsonProvider('../data/models/avis.json');
+            error_log("Chargement des avis réussi");
+            $jsonProvider = new JsonProvider('',"../data/models/avis.json", '');
             $avis = $jsonProvider->loadAvis();
-            $jsonProvider = new JsonProvider('../data/models/catalogue.json');
+            $jsonProvider = new JsonProvider('../data/models/catalogue.json',"../data/models/avis.json",'');
             $catalogues = $jsonProvider->loadCatalogue();
+
+            error_log("Chargement des catalogues réussi");
            
+
             $_SESSION['avis'] = [];
             $_SESSION['catalogue'] = [];
 
@@ -31,7 +36,7 @@ class GestionAvisControler extends Controler
             }
 
 
-            
+           
             $articleNames = $this->getArticleNamesById($_SESSION['avis'], $_SESSION['catalogue']);
 
             $this->render('gestionavis', [
@@ -69,7 +74,7 @@ class GestionAvisControler extends Controler
 
         if (isset($_POST['id'])) {
             $id = (int) $_POST['id'];
-            $jsonProvider = new JsonProvider('../data/models/avis.json');
+            $jsonProvider = new JsonProvider('','../data/models/avis.json', '');
             $avis = $jsonProvider->loadAvis();
             $newAvis = [];
             foreach ($avis as $avi) {
