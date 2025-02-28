@@ -16,8 +16,8 @@
         <ul>
             <li><a href="/bienvenue" class="nav-link-active">Informations générales</a></li>
             <li><a href="/admin">Gestionnaire des pages</a></li>
-            <li><a href="/admin">Gestionnaire des articles</a></li>
-            <li><a href="/admin">Avis</a></li>
+            <li><a href="/gestionarticles">Gestionnaire des articles</a></li>
+            <li><a href="/gestionavis">Avis</a></li>
             <li><a href="/logout">Déconnexion</a></li>
         </ul>
     </nav>
