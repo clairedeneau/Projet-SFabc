@@ -1,11 +1,3 @@
-<?php
-
-$selectedCatalogue = null;
-if (isset($_SESSION['catalogue'][$_GET['index']])) {
-    $selectedCatalogue = $_SESSION['catalogue'][$_GET['index']];
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,7 +19,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
     <nav id="topnav">
         <ul>
             <li><a href="/bienvenue">Informations générales</a></li>
-            <li><a href="/admin">Gestionnaire des pages</a></li>
+            <!--<li><a href="/admin">Gestionnaire des pages</a></li>-->
             <li><a href="/gestionarticles" class="nav-link-active">Gestionnaire des articles</a></li>
             <li><a href="/gestionavis">Avis</a></li>
             <li><a href="/logout">Déconnexion</a></li>
@@ -52,7 +44,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             <ul>
                 <?php
                 if (isset($_SESSION['catalogue'])) {
-                    foreach ($_SESSION['catalogue'] as $index => $catalogue) {
+                    foreach ($_SESSION['catalogue'] as $catalogue) {
                         if ($catalogue->getNom() !== null) {
                             echo '<li>';
                             echo '<form action="gestionarticles" method="post" style="display:inline; margin-left: 10px;">';
@@ -61,7 +53,7 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                             echo '<button type="submit" class="supprimer">🗑</button>';
                             echo '</form>';
                             echo '<form action="gestionarticles" method="get" style="display:inline;">';
-                            echo '<input type="hidden" name="index" value="' . $index . '">';
+                            echo '<input type="hidden" name="index" value="' . $catalogue->getId() . '">';
                             echo '<button type="submit" style="background:none;border:none;color:black;cursor:pointer;">' . htmlspecialchars($catalogue->getNom()) . '</button>';
                             echo '</form>';
                             echo '</li>';
@@ -77,12 +69,16 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
             if (isset($_SESSION['catalogue']) && !empty($_SESSION['catalogue'])) {
                 $lastElement = end($_SESSION['catalogue']);
                 $lastIndex = $lastElement->getId();
-                echo '<form action="gestionarticles" method="get">';
-                echo '<button type="submit" class="ajouter" name="index" value="' . $lastIndex . '">Ajouter un produit</button>';
+                echo '<form action="gestionarticles" method="post">';
+                echo '<input type="hidden" name="_method" value="POST">';
+                echo '<input type="hidden" name="form_type" value="add_article">';
+                echo '<button type="submit" class="ajouter" name="id" value="' . $lastIndex + 1 . '">Ajouter un produit</button>';
                 echo '</form>';
             } else {
-                echo '<form action="gestionarticles" method="get">';
-                echo '<button type="submit" class="ajouter" name="index" value="0">Ajouter un produit</button>';
+                echo '<form action="gestionarticles" method="post">';
+                echo '<input type="hidden" name="_method" value="POST">';
+                echo '<input type="hidden" name="form_type" value="add_article">';
+                echo '<button type="submit" class="ajouter" name="id" value="1">Ajouter un produit</button>';
                 echo '</form>';
             }
 
@@ -105,25 +101,136 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
                     </select>
                     <button type="button" id="myBtn">Nouvelle Description</button>
                     <button type="button" id="myBtn2">Modifier Description</button>
+                    <button type="button" name="descriptionDelete" id="myBtn7">Supprimer Description</button>
 
-                    <input type="text" name="famille" value="<?php echo htmlspecialchars($selectedCatalogue->getFamille()); ?>" placeholder="Famille">
-                    <input type="text" name="sousFamille" value="<?php echo htmlspecialchars($selectedCatalogue->getSousFamille()); ?>" placeholder="Sous-famille">
-                    <select name="prixI" id="prix-select">
+                    <?php
+                    $selectedFamille = $selectedCatalogue->getFamille();
+                    $selectedFamilleExists = false;
+
+                    foreach ($familles as $famille => $sousFamilles) {
+                        if ($famille == $selectedFamille) {
+                            $selectedFamilleExists = true;
+                            break;
+                        }
+                    }
+                    ?>
+                    <select name="famille" id="famille-select">
+                        <?php if (!$selectedFamilleExists): ?>
+                            <option value="" selected>Aucune famille</option>
+                        <?php endif; ?>
+                        <?php
+                        foreach ($familles as $famille => $sousFamilles) {
+                            if (!empty($famille)) {
+                                $selected = ($famille == $selectedFamille) ? 'selected' : '';
+                                echo '<option value="' . htmlspecialchars($famille) . '" ' . $selected . ' data-sousfamilles="' . htmlspecialchars(json_encode($sousFamilles)) . '">' . htmlspecialchars($famille) . '</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+
+                   
+                    <select name="sousFamille" id="sousFamille-select">
+                        <?php
+                        if (!$selectedFamilleExists || empty($familles[$selectedFamille])) {
+                            echo '<option value="" selected>Aucune sous-famille</option>';
+                        } else {
+                            foreach ($familles[$selectedFamille] as $sousFamille) {
+                                $selected = ($sousFamille == $selectedCatalogue->getSousFamille()) ? 'selected' : '';
+                                echo '<option value="' . htmlspecialchars($sousFamille) . '" ' . $selected . '>' . htmlspecialchars($sousFamille) . '</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+                    <button type="button" id="addFamilleBtn">Ajouter Famille</button>
+                    <button type="button" id="addSousFamilleBtn">Ajouter Sous-Famille</button>
+                    <button type="button" id="deleteFamilleBtn">Supprimer Famille</button>
+                    <button type="button" id="deleteSousFamilleBtn">Supprimer Sous-Famille</button>
+
+
+                    <select name="prix_index" id="prix-select">
                         <?php
                         foreach ($selectedCatalogue->getPrix() as $index => $prix) {
-                            echo '<option name="' . $index . '" value="' . htmlspecialchars($prix['description']) . '">' . htmlspecialchars($prix['description']) . ' ( ' . htmlspecialchars($prix['tarif']) . ' € )' . '</option>';
+                            echo '<option data-index="' . $index . '" value="' . htmlspecialchars($prix['description']) . '">' . htmlspecialchars($prix['description']) . ' ( ' . htmlspecialchars($prix['tarif']) . ' € )' . '</option>';
                         }
                         ?>
                     </select>
                     <button type="button" id="myBtn3">Nouveau Prix</button>
                     <button type="button" id="myBtn4">Modifier Prix</button>
+                    <button type="button" id="myBtn8">Supprimer Prix</button>
+
 
                     <textarea name="text1" id="description" placeholder="Text"><?php echo htmlspecialchars($selectedCatalogue->getTxt1()); ?></textarea>
                     <button type="button" id="myBtn5">Ajouter une image</button>
                     <button type="button" id="myBtn6">Modifier les photos</button>
+
                     <button type="submit" class="save-button" name="form_type" value="edit_article">Enregistrer les changements</button>
                 </form>
 
+
+
+
+                <div id="addFamilleModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Ajouter une nouvelle famille</h2>
+                        <form action="gestionarticles" method="post">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                            <input type="hidden" name="form_type" value="add_famille">
+                            <input type="text" name="new_famille" placeholder="Nouvelle famille" required>
+                            <button type="submit" class="save-button">Enregistrer</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="addSousFamilleModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Ajouter une nouvelle sous-famille</h2>
+                        <form action="gestionarticles" method="post">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                            <input type="hidden" name="form_type" value="add_sousfamille">
+                            <select name="famille" required>
+                                <?php
+                                foreach ($familles as $famille => $sousFamilles) {
+                                    echo '<option value="' . htmlspecialchars($famille) . '">' . htmlspecialchars($famille) . '</option>';
+                                }
+                                ?>
+                            </select>
+                            <input type="text" name="new_sousfamille" placeholder="Nouvelle sous-famille" required>
+                            <button type="submit" class="save-button">Enregistrer</button>
+                        </form>
+                    </div>
+                </div>
+
+                <form id="delete-famille-form" action="gestionarticles" method="post" style="display:none;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                    <input type="hidden" name="famille" id="famille-to-delete">
+                    <input type="hidden" name="form_type" value="delete_famille">
+                </form>
+                <form id="delete-sousfamille-form" action="gestionarticles" method="post" style="display:none;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                    <input type="hidden" name="sousfamille" id="sousfamille-to-delete">
+                    <input type="hidden" name="form_type" value="delete_sousfamille">
+                </form>
+
+
+                <form id="delete-description-form" action="gestionarticles" method="post" style="display:none;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                    <input type="hidden" name="description_index" id="description-index-to-delete">
+                    <input type="hidden" name="form_type" value="delete_description">
+                </form>
+
+                <form id="delete-prix-form" action="gestionarticles" method="post" style="display:none;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $selectedCatalogue->getId(); ?>">
+                    <input type="hidden" name="prix_index" id="prix-index-to-delete">
+                    <input type="hidden" name="form_type" value="delete_prix">
+                </form>
 
                 <div id="myModal" class="modal">
                     <div class="modal-content">
@@ -268,131 +375,150 @@ if (isset($_SESSION['catalogue'][$_GET['index']])) {
 
 </body>
 <script defer>
-    document.querySelectorAll('.current-photos .photo').forEach(photo => {
-        photo.addEventListener('click', function() {
-            const photoInput = document.getElementById('photo-input');
-            const photoIndex = document.getElementById('photo-index');
-            const photoPreview = document.getElementById('photo-preview');
+    document.addEventListener('DOMContentLoaded', function() {
+        const familleSelect = document.getElementById('famille-select');
+        const sousFamilleSelect = document.getElementById('sousFamille-select');
+        const selectedSousFamille = "<?php echo $selectedCatalogue ? $selectedCatalogue->getSousFamille() : ''; ?>";
 
-            photoIndex.value = this.getAttribute('data-index');
-            photoInput.click();
+        function updateSousFamilles() {
+            const selectedFamille = familleSelect.options[familleSelect.selectedIndex];
+            const sousFamilles = JSON.parse(selectedFamille.getAttribute('data-sousfamilles'));
 
-            photoInput.addEventListener('change', function() {
-                const file = photoInput.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        photoPreview.src = e.target.result;
-                        photoPreview.style.display = 'block';
-                    }
-                    reader.readAsDataURL(file);
+            sousFamilleSelect.innerHTML = '';
+
+            sousFamilles.forEach(function(sousFamille) {
+                const option = document.createElement('option');
+                option.value = sousFamille;
+                option.textContent = sousFamille;
+                if (sousFamille === selectedSousFamille) {
+                    option.selected = true;
                 }
+                sousFamilleSelect.appendChild(option);
+            });
+        }
+
+        if (familleSelect) {
+            familleSelect.addEventListener('change', updateSousFamilles);
+            familleSelect.dispatchEvent(new Event('change'));
+        }
+
+        document.querySelectorAll('.current-photos .photo').forEach(photo => {
+            photo.addEventListener('click', function() {
+                const photoInput = document.getElementById('photo-input');
+                const photoIndex = document.getElementById('photo-index');
+                const photoPreview = document.getElementById('photo-preview');
+
+                photoIndex.value = this.getAttribute('data-index');
+                photoInput.click();
+
+                photoInput.addEventListener('change', function() {
+                    const file = photoInput.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            photoPreview.src = e.target.result;
+                            photoPreview.style.display = 'block';
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
             });
         });
-    });
 
-    document.getElementById('image').addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const imagePreview = document.getElementById('image-preview');
-                imagePreview.src = e.target.result;
-                imagePreview.style.display = 'block';
+        document.getElementById('image').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imagePreview = document.getElementById('image-preview');
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
             }
-            reader.readAsDataURL(file);
+        });
+
+        document.getElementById('deleteFamilleBtn').addEventListener('click', function() {
+            const famille = familleSelect.value;
+            document.getElementById('famille-to-delete').value = famille;
+            document.getElementById('delete-famille-form').submit();
+        });
+
+        document.getElementById('deleteSousFamilleBtn').addEventListener('click', function() {
+            const sousFamille = sousFamilleSelect.value;
+            document.getElementById('sousfamille-to-delete').value = sousFamille;
+            document.getElementById('delete-sousfamille-form').submit();
+        });
+
+        const modals = {
+            myModal: document.getElementById("myModal"),
+            myModal2: document.getElementById("myModal2"),
+            myModal3: document.getElementById("myModal3"),
+            myModal4: document.getElementById("myModal4"),
+            myModal5: document.getElementById("myModal5"),
+            myModal6: document.getElementById("myModal6"),
+            addFamilleModal: document.getElementById("addFamilleModal"),
+            addSousFamilleModal: document.getElementById("addSousFamilleModal")
+        };
+
+        const buttons = {
+            myBtn: document.getElementById("myBtn"),
+            myBtn2: document.getElementById("myBtn2"),
+            myBtn3: document.getElementById("myBtn3"),
+            myBtn4: document.getElementById("myBtn4"),
+            myBtn5: document.getElementById("myBtn5"),
+            myBtn6: document.getElementById("myBtn6"),
+            myBtn7: document.getElementById("myBtn7"),
+            myBtn8: document.getElementById("myBtn8"),
+            addFamilleBtn: document.getElementById("addFamilleBtn"),
+            addSousFamilleBtn: document.getElementById("addSousFamilleBtn")
+        };
+
+        const spans = document.getElementsByClassName("close");
+
+        function openModal(modal) {
+            modal.style.display = "block";
         }
-    });
 
-    var modal = document.getElementById("myModal");
-    var modal2 = document.getElementById("myModal2");
-    var modal3 = document.getElementById("myModal3");
-    var modal4 = document.getElementById("myModal4");
-    var modal5 = document.getElementById("myModal5");
-    var modal6 = document.getElementById("myModal6");
-
-    var btn = document.getElementById("myBtn");
-    var btn2 = document.getElementById("myBtn2");
-    var btn3 = document.getElementById("myBtn3");
-    var btn4 = document.getElementById("myBtn4");
-    var btn5 = document.getElementById("myBtn5");
-    var btn6 = document.getElementById("myBtn6");
-
-    var span = document.getElementsByClassName("close")[0];
-    var span2 = document.getElementsByClassName("close")[1];
-    var span3 = document.getElementsByClassName("close")[2];
-    var span4 = document.getElementsByClassName("close")[3];
-    var span5 = document.getElementsByClassName("close")[4];
-    var span6 = document.getElementsByClassName("close")[5];
-
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    btn2.onclick = function() {
-        modal2.style.display = "block";
-    }
-
-    btn3.onclick = function() {
-        modal3.style.display = "block";
-    }
-
-    btn4.onclick = function() {
-        modal4.style.display = "block";
-    }
-
-    btn5.onclick = function() {
-        modal5.style.display = "block";
-    }
-
-    btn6.onclick = function() {
-        modal6.style.display = "block";
-    }
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    span2.onclick = function() {
-        modal2.style.display = "none";
-    }
-
-    span3.onclick = function() {
-        modal3.style.display = "none";
-    }
-
-    span4.onclick = function() {
-        modal4.style.display = "none";
-    }
-
-    span5.onclick = function() {
-        modal5.style.display = "none";
-    }
-
-    span6.onclick = function() {
-        modal6.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
+        function closeModal(modal) {
             modal.style.display = "none";
         }
-        if (event.target == modal2) {
-            modal2.style.display = "none";
+
+        buttons.myBtn.onclick = () => openModal(modals.myModal);
+        buttons.myBtn2.onclick = () => openModal(modals.myModal2);
+        buttons.myBtn3.onclick = () => openModal(modals.myModal3);
+        buttons.myBtn4.onclick = () => openModal(modals.myModal4);
+        buttons.myBtn5.onclick = () => openModal(modals.myModal5);
+        buttons.myBtn6.onclick = () => openModal(modals.myModal6);
+        buttons.addFamilleBtn.onclick = () => openModal(modals.addFamilleModal);
+        buttons.addSousFamilleBtn.onclick = () => openModal(modals.addSousFamilleModal);
+
+        Array.from(spans).forEach(span => {
+            span.onclick = function() {
+                Object.values(modals).forEach(closeModal);
+            }
+        });
+
+        window.onclick = function(event) {
+            Object.values(modals).forEach(modal => {
+                if (event.target == modal) {
+                    closeModal(modal);
+                }
+            });
         }
-        if (event.target == modal3) {
-            modal3.style.display = "none";
+
+        buttons.myBtn7.onclick = function() {
+            const descriptionIndex = document.querySelector('select[name="description_index"]').value;
+            document.getElementById('description-index-to-delete').value = descriptionIndex;
+            document.getElementById('delete-description-form').submit();
         }
-        if (event.target == modal4) {
-            modal4.style.display = "none";
+
+        buttons.myBtn8.onclick = function() {
+            const prixIndex = document.querySelector('#prix-select option:checked').getAttribute('data-index');
+            document.getElementById('prix-index-to-delete').value = prixIndex;
+            document.getElementById('delete-prix-form').submit();
         }
-        if (event.target == modal5) {
-            modal5.style.display = "none";
-        }
-        if (event.target == modal6) {
-            modal6.style.display = "none";
-        }
-    }
+    });
 </script>
 <?php
 require_once "footer.php"
