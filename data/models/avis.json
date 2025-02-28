@@ -1,44 +1,11 @@
 {
     "avis": [
         {
-            "id": 3,
-            "idProduit": 1,
-            "user": "Test",
-            "note": 3,
-            "comment": "je retest",
-            "date": "2025-02-27"
-        },
-        {
-            "id": 4,
-            "idProduit": 1,
-            "user": "Thomas test",
-            "note": 5,
-            "comment": "feefef",
-            "date": "2025-02-27"
-        },
-        {
-            "id": 5,
-            "idProduit": 1,
-            "user": "testttttt",
-            "note": 5,
-            "comment": "teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-            "date": "2025-02-27"
-        },
-        {
-            "id": 6,
-            "idProduit": 1,
-            "user": "testttttt",
-            "note": 5,
-            "comment": "teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-            "date": "2025-02-27"
-        },
-        {
             "id": 7,
             "idProduit": 1,
             "user": "tttttttt",
             "note": 5,
             "comment": "ttttttttttttt",
-
             "date": "2025-02-27"
         },
         {
@@ -51,7 +18,7 @@
         },
         {
             "id": 9,
-            "idProduit": 1,
+            "idProduit": 2,
             "user": "JM",
             "note": 2,
             "comment": "ADAOJ",

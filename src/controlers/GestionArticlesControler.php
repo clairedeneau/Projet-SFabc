@@ -17,8 +17,8 @@ class GestionArticlesControler extends Controler
             $jsonProvider = new JsonProvider('../data/models/catalogue.json');
             $catalogues = $jsonProvider->loadCatalogue();
             $_SESSION['catalogue'] = [];
-            if (isset($_GET['index'])){
-                if(count($catalogues) ==  $_GET['index']){
+            if (isset($_GET['index'])) {
+                if (count($catalogues) ==  $_GET['index']) {
                     $produit = new Catalogue(
                         count($catalogues) + 1,
                         "Nouveau produit",
@@ -58,13 +58,30 @@ class GestionArticlesControler extends Controler
             header('Location: connexionAdmin.php');
             exit();
         }
-
+    
         if (isset($_FILES["file"])) {
             $this->handleFileUpload();
             header('Location: gestionarticles');
-            
+            exit();
         }
-
+    
+        if (isset($_POST['export_csv'])) {
+            $this->exportToXLSX();
+            exit();
+        }
+    
+        if (isset($_POST['upload_image'])) {
+            $this->handleImageUpload();
+            header('Location: gestionarticles');
+            exit();
+        }
+    
+        if (isset($_POST['form_type']) && $_POST['form_type'] === 'edit_photos') {
+            $this->handlePhotoEdit();
+            header('Location: gestionarticles');
+            exit();
+        }
+    
         $jsonProvider = new JsonProvider('../data/models/catalogue.json');
         $catalogues = $jsonProvider->loadCatalogue();
         try {
@@ -79,12 +96,11 @@ class GestionArticlesControler extends Controler
                                 $famille = $_POST['famille'];
                                 $sousfamille = $_POST['sousFamille'];
                                 $txt1 = $_POST['text1'];
-
+    
                                 $catalogue->setNom($nomArticle);
                                 $catalogue->setFamille($famille);
                                 $catalogue->setSousFamille($sousfamille);
                                 $catalogue->setTxt1($txt1);
-
                             } elseif ($_POST['form_type'] === 'edit_description') {
                                 $currentDescriptions = [];
                                 $descriptions = $catalogue->getDescription1();
@@ -100,7 +116,7 @@ class GestionArticlesControler extends Controler
                                 }
                                 $catalogue->setPrix($currentPrix);
                             }
-
+    
                             break;
                         }
                     }
@@ -137,12 +153,13 @@ class GestionArticlesControler extends Controler
                     foreach ($catalogues as $index => $catalogue) {
                         if ($catalogue->getId() == $id) {
                             unset($catalogues[$index]);
+                            $this->removeProductIdFromAvis((int)$id); 
                             break;
                         }
                     }
                 }
             }
-
+    
             $jsonProvider->saveCatalogue($catalogues);
             $message = 'Les modifications ont été enregistrées avec succès.';
             error_log($message);
@@ -150,6 +167,89 @@ class GestionArticlesControler extends Controler
         } catch (Exception $e) {
             echo "Erreur: " . htmlspecialchars($e->getMessage());
             error_log("Erreur lors de la mise à jour du catalogue: " . $e->getMessage());
+        }
+    }
+
+    private function removeProductIdFromAvis(int $productId): void
+{
+    $jsonFilePath = __DIR__ . '/../../data/models/avis.json';
+    $jsonData = file_get_contents($jsonFilePath);
+    $data = json_decode($jsonData, true);
+
+    foreach ($data['avis'] as $index => &$avis) {
+        if ($avis['idProduit'] == $productId) {
+            error_log("Suppression de l'avis pour le produit ID: " . $productId);
+            error_log(print_r($avis, true));
+            unset($data['avis'][$index]);
+        }
+    }   
+
+    
+    $data['avis'] = array_values($data['avis']);
+
+    error_log("Nouveau tableau d'avis:");
+    error_log(print_r($data['avis'], true));
+
+    
+
+    $newJsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    if (file_put_contents($jsonFilePath, $newJsonData) === false) {
+        error_log("Erreur lors de l'écriture du fichier JSON des avis.");
+    } else {
+        error_log("Fichier JSON des avis mis à jour avec succès.");
+    }
+}
+
+    private function handlePhotoEdit(): void
+    {
+        $fileTmpPath = $_FILES["photo"]["tmp_name"];
+        $fileName = $_FILES["photo"]["name"];
+        $fileType = $_FILES["photo"]["type"];
+        $photoIndex = $_POST["photo_index"];
+        $id = $_POST["id"];
+
+        error_log("Image reçue: " . $fileName);
+        error_log("Type de fichier: " . $fileType);
+        $allowedTypes = ["image/png", "image/jpeg"];
+
+        if (in_array($fileType, $allowedTypes)) {
+            $destinationDir = __DIR__ . '/../../public/static/images/images_ajoute/';
+            $destinationPath = $destinationDir . $fileName;
+
+            if (!is_dir($destinationDir)) {
+                mkdir($destinationDir, 0777, true);
+            }
+
+            if (move_uploaded_file($fileTmpPath, $destinationPath)) {
+                error_log("Image déplacée avec succès.");
+                $this->updatePhotoInJson($id, $photoIndex, $fileName);
+            } else {
+                echo "Échec du déplacement de l'image.";
+            }
+        } else {
+            echo "Format de fichier non supporté.";
+        }
+    }
+
+    private function updatePhotoInJson(string $id, string $photoIndex, string $fileName): void
+    {
+        $jsonFilePath = __DIR__ . '/../../data/models/catalogue.json';
+        $jsonData = file_get_contents($jsonFilePath);
+        $data = json_decode($jsonData, true);
+
+        foreach ($data as &$produit) {
+            if ($produit['id'] == $id) {
+                if (isset($produit['photos'][$photoIndex])) {
+                    $produit['photos'][$photoIndex] = 'static/images/images_ajoute/' . $fileName;
+                }
+            }
+        }
+
+        $newJsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        if (file_put_contents($jsonFilePath, $newJsonData) === false) {
+            error_log("Erreur lors de l'écriture du fichier JSON.");
+        } else {
+            error_log("Fichier JSON mis à jour avec succès.");
         }
     }
 
@@ -163,18 +263,14 @@ class GestionArticlesControler extends Controler
         error_log("Type de fichier: " . $fileType);
         $allowedTypes = ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"];
 
-        $destinationPath =  '../data/' . $fileName;
-
-        if (move_uploaded_file($fileTmpPath, $destinationPath)) {
-            if (in_array($fileType, $allowedTypes)) {
-                $outputFileName = __DIR__ . '/../../data/models/catalogue.json';
-                error_log("Fichier déplacé avec succès.");
-                $this->convertToJSON($destinationPath, $outputFileName);
-            } else {
-                echo "Format de fichier non supporté.";
-            }
+        if (in_array($fileType, $allowedTypes)) {
+            $outputJsonFileName = __DIR__ . '/../../data/models/catalogue.json';
+            $outputCsvFileName = __DIR__ . '/../../data/catalogue.csv';
+            error_log("Conversion du fichier en JSON et CSV.");
+            $this->convertToJSON($fileTmpPath, $outputJsonFileName);
+            $this->convertToCSV($fileTmpPath, $outputCsvFileName);
         } else {
-            echo "Échec du déplacement du fichier.";
+            echo "Format de fichier non supporté.";
         }
     }
 
@@ -195,14 +291,14 @@ class GestionArticlesControler extends Controler
 
             $produit = [
                 "id" => $productCounter++,
-                "nom" => $row['C'],
-                "description1" => isset($row['D']) ? explode(';', $row['D']) : [],
+                "nom" => $row['D'],
+                "description1" => isset($row['E']) ? explode(';', $row['E']) : [],
                 "prix" => []
             ];
 
-            if (!empty($row['F'])) {
-                $prixDescriptions = isset($row['E']) ? explode(';', $row['E']) : [];
-                $prixTarifs = explode(';', str_replace(['€', ' '], '', $row['F']));
+            if (!empty($row['G'])) {
+                $prixDescriptions = isset($row['F']) ? explode(';', $row['F']) : [];
+                $prixTarifs = explode(';', str_replace(['€', ' '], '', $row['G']));
 
                 foreach ($prixTarifs as $index => $prix) {
                     $produit["prix"][] = [
@@ -212,16 +308,131 @@ class GestionArticlesControler extends Controler
                 }
             }
 
-            $produit["txt1"] = $row['G'];
-            $produit["photos"] = isset($row['H']) ? explode(';', $row['H']) : [];
-            $produit["famille"] = $row['A'];
-            $produit["sousfamille"] = $row['B'];
+            $produit["txt1"] = $row['H'];
+            $produit["photos"] = isset($row['I']) ? explode(';', $row['I']) : [];
+            $produit["famille"] = $row['B'];
+            $produit["sousfamille"] = $row['C'];
 
             $data[] = $produit;
         }
 
         $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         if (file_put_contents($outputFileName, $jsonData) === false) {
+            error_log("Erreur lors de l'écriture du fichier JSON.");
+        } else {
+            error_log("Fichier JSON mis à jour avec succès.");
+        }
+    }
+
+    private function convertToCSV(string $inputFileName, string $outputFileName): void
+    {
+        $spreadsheet = IOFactory::load($inputFileName);
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheetData = $sheet->toArray(null, true, true, true);
+
+        $file = fopen($outputFileName, 'w');
+
+        foreach ($sheetData as $row) {
+            fputcsv($file, $row);
+        }
+
+        fclose($file);
+    }
+
+    private function exportToXLSX(): void
+    {
+        $jsonProvider = new JsonProvider('../data/models/catalogue.json');
+        $catalogues = $jsonProvider->loadCatalogue();
+
+        $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'ID')
+            ->setCellValue('B1', 'Famille')
+            ->setCellValue('C1', 'Sous-famille')
+            ->setCellValue('D1', 'Nom')
+            ->setCellValue('E1', 'Descriptions')
+            ->setCellValue('F1', 'Prix Descriptions')
+            ->setCellValue('G1', 'Prix Tarifs')
+            ->setCellValue('H1', 'Texte')
+            ->setCellValue('I1', 'Photos');
+
+        $rowNumber = 2;
+        foreach ($catalogues as $catalogue) {
+            $descriptions = implode(';', $catalogue->getDescription1());
+            $prixDescriptions = implode(';', array_column($catalogue->getPrix(), 'description'));
+            $prixTarifs = implode(';', array_column($catalogue->getPrix(), 'tarif'));
+            $photos = implode(';', $catalogue->getPhotos());
+
+            $sheet->setCellValue('A' . $rowNumber, $catalogue->getId())
+                ->setCellValue('B' . $rowNumber, $catalogue->getFamille())
+                ->setCellValue('C' . $rowNumber, $catalogue->getSousFamille())
+                ->setCellValue('D' . $rowNumber, $catalogue->getNom())
+                ->setCellValue('E' . $rowNumber, $descriptions)
+                ->setCellValue('F' . $rowNumber, $prixDescriptions)
+                ->setCellValue('G' . $rowNumber, $prixTarifs)
+                ->setCellValue('H' . $rowNumber, $catalogue->getTxt1())
+                ->setCellValue('I' . $rowNumber, $photos);
+
+            $rowNumber++;
+        }
+
+        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+        ob_start();
+        $writer->save('php://output');
+        $xlsxData = ob_get_contents();
+        ob_end_clean();
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="catalogue.xlsx"');
+        header('Content-Length: ' . strlen($xlsxData));
+        echo $xlsxData;
+    }
+
+    private function handleImageUpload(): void
+    {
+        $fileTmpPath = $_FILES["image"]["tmp_name"];
+        $fileName = $_FILES["image"]["name"];
+        $fileType = $_FILES["image"]["type"];
+        $productId = $_POST["id"];
+
+        error_log("Image reçue: " . $fileName);
+        error_log("Type de fichier: " . $fileType);
+        $allowedTypes = ["image/png", "image/jpeg"];
+
+        if (in_array($fileType, $allowedTypes)) {
+            $destinationPath = __DIR__ . '/../../public/static/images/images_ajoute/' . $fileName;
+
+            if (move_uploaded_file($fileTmpPath, $destinationPath)) {
+                error_log("Image déplacée avec succès.");
+                $this->addImagePathToJson($fileName, (int)$productId);
+            } else {
+                echo "Échec du déplacement de l'image.";
+            }
+        } else {
+            echo "Format de fichier non supporté.";
+        }
+    }
+
+    private function addImagePathToJson(string $fileName, int $productId): void
+    {
+        $jsonFilePath = __DIR__ . '/../../data/models/catalogue.json';
+        $jsonData = file_get_contents($jsonFilePath);
+        $data = json_decode($jsonData, true);
+
+        foreach ($data as &$produit) {
+            if ($produit['id'] == $productId) {
+
+                if (!isset($produit['photos'])) {
+                    $produit['photos'] = [];
+                }
+                $produit['photos'][] = '/static/images/images_ajoute/' . $fileName;
+                break;
+            }
+        }
+
+        $newJsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        if (file_put_contents($jsonFilePath, $newJsonData) === false) {
             error_log("Erreur lors de l'écriture du fichier JSON.");
         } else {
             error_log("Fichier JSON mis à jour avec succès.");

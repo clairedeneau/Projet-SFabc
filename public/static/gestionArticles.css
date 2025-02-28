@@ -50,7 +50,7 @@ li button {
 }
 
 
-button.ajouter {
+button.ajouter, button.export-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -63,9 +63,17 @@ button.ajouter {
     margin-top: 10px;
 }
 
-button.ajouter:hover {
+button.export-button {
+    width: 50%;
+    margin: 20px auto;
+
+}
+
+button.ajouter:hover , button.export-button:hover {
     background: #8b5e3c;
 }
+
+
 
 button.supprimer {
     background: none;
@@ -89,6 +97,23 @@ a {
 
 
 
+#product-details input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px;
+}
+#product-details button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 #product-details {
     width: 50%;
     margin: 20px auto;
@@ -96,6 +121,8 @@ a {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    
 }
 
 #product-details h3 {
@@ -146,7 +173,7 @@ a {
     width: 40%; 
 }
 
-#myBtn, #myBtn2, #myBtn3, #myBtn4 {
+#myBtn, #myBtn2, #myBtn3, #myBtn4, #myBtn5, #myBtn6 {
     width: 40%;
     padding: 10px;
     background: #5a4d42;
@@ -194,5 +221,12 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::pla
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+
+
+.current-photos img {
+    width: 20vw;
+    height: 20vw;
 }
 
