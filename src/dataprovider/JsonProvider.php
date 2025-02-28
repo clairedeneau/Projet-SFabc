@@ -2,6 +2,7 @@
 namespace SFabc\dataprovider;
 
 use SFabc\dataprovider\Catalogue;
+
 class JsonProvider
 {
     private string $jsonFilePath;
@@ -11,7 +12,7 @@ class JsonProvider
         $this->jsonFilePath = $jsonFilePath;
     }
 
-    public function loadCatalogue(): array
+    public function loadData(): array
     {
         if (!file_exists($this->jsonFilePath)) {
             throw new \Exception("Le fichier JSON n'existe pas.");
@@ -24,11 +25,6 @@ class JsonProvider
             throw new \Exception("Erreur de dÃ©codage JSON: " . json_last_error_msg());
         }
 
-<<<<<<< HEAD
-        $catalogues = [];
-        foreach ($data as $catalogueData) {
-            $catalogues[] = $this->mapToCatalogue($catalogueData);
-=======
         return $data;
     }
 
@@ -61,12 +57,8 @@ class JsonProvider
 
         if (file_put_contents($this->jsonFilePath, $jsonData) === false) {
             throw new Exception("Erreur lors de l'écriture du fichier JSON.");
->>>>>>> Liaisonv2
         }
-        return $catalogues;
     }
-
-
 
     private function mapToCatalogue(array $catalogueData): Catalogue
     {
@@ -74,10 +66,8 @@ class JsonProvider
             $catalogueData['id'],
             $catalogueData['nom'],
             $catalogueData['description1'],
-            $catalogueData['description2'],
             $catalogueData['prix'],
             $catalogueData['txt1'],
-            $catalogueData['txt2'],
             $catalogueData['photos'],
             $catalogueData['famille'],
             $catalogueData['sousfamille']
@@ -85,8 +75,6 @@ class JsonProvider
         );
     }
 
-<<<<<<< HEAD
-=======
     private function mapToAvis(array $avisData): Avis
     {
         return new Avis(
@@ -98,7 +86,4 @@ class JsonProvider
             $avisData['date']
         );
     }
-}
->>>>>>> Liaisonv2
-
 }
