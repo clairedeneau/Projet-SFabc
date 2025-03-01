@@ -29,6 +29,7 @@ class AvisControler extends Controler
             $json = json_decode($data, true);
 
             $newAvis = [
+                'id' => count($json['avis']) + 1,
                 'idProduit' => 1,
                 'user' => $nom,
                 'note' => $note,
