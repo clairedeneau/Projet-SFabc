@@ -1,6 +1,7 @@
 {
     "avis": [
         {
+            "id": 1,
             "idProduit": 1,
             "user": "John D.",
             "note": 5,
@@ -8,6 +9,7 @@
             "date": "2025-02-27"
         },
         {
+            "id": 2,
             "idProduit": 1,
             "user": "Jean D.",
             "note": 3,
@@ -15,6 +17,7 @@
             "date": "2025-02-27"
         },
         {
+            "id": 3,
             "idProduit": 2,
             "user": "S\u00e9verine C.",
             "note": 2,
@@ -22,11 +25,28 @@
             "date": "2025-02-27"
         },
         {
+            "id": 4,
             "idProduit": 1,
             "user": "Aur\u00e9lie F.",
             "note": 5,
             "comment": "Waaaah trop meugnoooon",
             "date": "2025-02-28"
+        },
+        {
+            "id": 5,
+            "idProduit": 1,
+            "user": "dad",
+            "note": 4,
+            "comment": "daed",
+            "date": "2025-03-01"
+        },
+        {
+            "id": 6,
+            "idProduit": 1,
+            "user": "cap",
+            "note": 5,
+            "comment": "acpjcpa",
+            "date": "2025-03-01"
         }
     ]
 }

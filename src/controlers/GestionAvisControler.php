@@ -5,20 +5,23 @@ declare(strict_types=1);
 namespace SFabc\controlers;
 
 use \Exception;
-use SFabc\dataprovider\Catalogue;
-use SFabc\dataprovider\Avis;
 use SFabc\dataprovider\JsonProvider;
 
 class GestionAvisControler extends Controler
 {
+    private const CATALOGUE_JSON_PATH = '../data/models/catalogue.json';
+    private const AVIS_JSON_PATH = '../data/models/avis.json';
+    private const FAMILLE_JSON_PATH = '../data/models/famille.json';
+
     public function get(string $params): void
     {
         try {
-            $jsonProvider = new JsonProvider("", '../data/models/avis.json');
+
+            $jsonProvider = new JsonProvider(self::CATALOGUE_JSON_PATH, self::AVIS_JSON_PATH, self::FAMILLE_JSON_PATH);
+
             $avis = $jsonProvider->loadAvis();
-            $jsonProvider = new JsonProvider('../data/models/catalogue.json', "");
+
             $catalogues = $jsonProvider->loadCatalogue();
-           
             $_SESSION['avis'] = [];
             $_SESSION['catalogue'] = [];
 
@@ -30,8 +33,6 @@ class GestionAvisControler extends Controler
                 $_SESSION['catalogue'][] = $catalogue;
             }
 
-
-            
             $articleNames = $this->getArticleNamesById($_SESSION['avis'], $_SESSION['catalogue']);
 
             $this->render('gestionavis', [
@@ -40,17 +41,17 @@ class GestionAvisControler extends Controler
                 'articleNames' => $articleNames
             ]);
         } catch (Exception $e) {
-            echo "Erreur: " . htmlspecialchars($e->getMessage());
-            error_log("Erreur lors du chargement du catalogue: " . $e->getMessage());
+            $this->handleException($e, "Erreur lors du chargement du catalogue");
         }
     }
-
 
     private function getArticleNamesById(array $avis, array $catalogues): array
     {
         $articleNames = [];
+
         foreach ($avis as $avi) {
             $articleNames[$avi->getId()] = "Article inconnu";
+
             foreach ($catalogues as $catalogue) {
                 if ($catalogue->getId() == $avi->getIdProduit()) {
                     $articleNames[$avi->getId()] = $catalogue->getNom();
@@ -58,6 +59,7 @@ class GestionAvisControler extends Controler
                 }
             }
         }
+
         return $articleNames;
     }
 
@@ -65,11 +67,22 @@ class GestionAvisControler extends Controler
     {
         if (isset($_POST['deconnexion'])) {
             session_destroy();
+            header('Location: connexionAdmin.php');
+            exit();
         }
 
         if (isset($_POST['id'])) {
-            $id = (int) $_POST['id'];
-            $jsonProvider = new JsonProvider('../data/models/avis.json');
+            $this->deleteAvis((int)$_POST['id']);
+        }
+
+        header('Location: /gestionavis');
+    }
+
+
+    private function deleteAvis(int $id): void
+    {
+        try {
+            $jsonProvider = new JsonProvider(self::CATALOGUE_JSON_PATH, self::AVIS_JSON_PATH, self::FAMILLE_JSON_PATH);
             $avis = $jsonProvider->loadAvis();
             $newAvis = [];
             foreach ($avis as $avi) {
@@ -78,8 +91,14 @@ class GestionAvisControler extends Controler
                 }
             }
             $jsonProvider->saveAvis($newAvis);
+        } catch (Exception $e) {
+            $this->handleException($e, "Erreur lors de la suppression de l'avis");
         }
+    }
 
-        header('Location: /gestionavis');
+    private function handleException(Exception $e, string $message): void
+    {
+        echo "Erreur: " . htmlspecialchars($e->getMessage());
+        error_log($message . ": " . $e->getMessage());
     }
 }
