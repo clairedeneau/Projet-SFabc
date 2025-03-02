@@ -15,7 +15,7 @@
 </head>
 <header>
     <nav id="topnav">
-        <form action="recherche-articles" method="GET" class="search-container">
+        <form action="../recherche-articles" method="GET" class="search-container">
             <span class="material-symbols-outlined">search</span>
             <input type="search" name="recherche" id="rechercher" placeholder="Rechercher">
             <button type="submit" style="display: none;"></button>
