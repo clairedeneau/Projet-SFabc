@@ -155,4 +155,14 @@ class JsonProvider
             $avisData["date"]
         );
     }
+
+    public function addAvis(Avis $avis, bool $updateId = true): void
+    {
+        $allAvis = $this->loadAvis();
+        if ($updateId) {
+            $avis->setId(max(array_map(fn($avi) => $avi->getId(), $allAvis)));
+        }
+        $allAvis[] = $avis;
+        $this->saveAvis($allAvis);
+    }
 }

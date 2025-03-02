@@ -38,6 +38,11 @@ class Avis {
         $this->idProduit = $idProduit;
     }
 
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
     public function getUser() {
         return $this->user;
     }
