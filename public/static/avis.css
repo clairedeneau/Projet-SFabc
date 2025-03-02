@@ -172,3 +172,26 @@ body {
 .form-avis button[type="submit"]:hover {
     background-color: #B8A67E;
 }
+
+
+/* ETOILES */
+.stars-container {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.stars-background {
+    display: flex;
+}
+
+.stars-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    color: #5A4328;
+    overflow: hidden;
+    white-space: nowrap;
+}

@@ -58,7 +58,7 @@ return [
         'controler' => SFabc\controlers\AvisControler::class,
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
-        'requiresArgument' => false
+        'requiresArgument' => true
     ],
     '/gestionarticles' => [
         'controler' => SFabc\controlers\GestionArticlesControler::class,

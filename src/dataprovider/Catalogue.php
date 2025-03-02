@@ -213,17 +213,86 @@ class Catalogue
             $html .= "★★★★★";
             $html .= "</div>";
             $html .= "</div>";
-            $html .= "<p><a href='/avis'>Voir les avis</a></p>";
+            $html .= "<p><a href='/avis/" . $this->getId() ."'>Voir les avis</a></p>";
         }else{
             $html .= "<div class='stars-background'>";
             $html .= "-----";
             $html .= "</div>";
             $html .= "</div>";
-            $html .= "<p><a href='/avis'>Ajouter un avis</a></p>";
+            $html .= "<p><a href='/avis/" . $this->getId() ."'>Ajouter un avis</a></p>";
         }
         $html .= "</div>";
         $html .= "</div>";
         $html .= "</div>";
+        return $html;
+    }
+
+    public function renderAvis(): string {
+        $html = "<div class='titre'>";
+        $html .= "<h2>".$this->getNom()."</h2>";
+            $html .= "<div class='stars-container'>";
+            if(isset($this->avis) && sizeof($this->avis) > 0){
+                $html .= "<div class='stars-background'>";
+                $html .= "☆☆☆☆☆";
+                $html .= "</div>";
+                $somme = 0;
+                foreach($this->avis as $currAvis){
+                    $somme += $currAvis->getNote();
+                }
+                    $html .= "<div class='stars-filled' style='width: " . (($somme / sizeof($this->avis))/5*100) . "%;'>";
+                    $html .= "★★★★★";
+                    $html .= "</div>";
+                
+            }else{
+                    $html .= "<div class='stars-background'>";
+                    $html .= "Pas encore d'avis";
+                    $html .= "</div>";
+            }
+            $html .= "</div>";
+        $html .= "</div>";
+
+
+        $html .= "<div class='formulaire-avis'>";
+        if (!empty($succes)){
+            $html .= "<p class='succes-message'>" . htmlspecialchars($succes) . "</p>";
+        }
+            $html .= "<button class='btn-form' onclick='toggleForm()'>Donner un avis</button>";
+            $html .= "<div id='form-avis' class='form-avis'>";
+                $html .= "<form action='../avis/" . $this->getId() . "' method='POST'>";
+                    $html .= "<input type='text' name='nom' id='nom' placeholder='Votre nom' required>";
+                    $html .= "<div class='note'>";
+                        $html .= "<button type='button' onclick='changeRating(-1)'>-</button>";
+                        $html .= "<input type='number' name='note' id='note' value='5' min='1' max='5' readonly>";
+                        $html .= "<button type='button' onclick='changeRating(1)'>+</button>";
+                    $html .= "</div>";
+                    $html .= "<textarea name='comment' id='comment' rows='3' placeholder='Votre commentaire ...' required></textarea>";
+                    $html .= "<button type='submit'>Envoyer</button>";
+                $html .= "</form>";
+            $html .= "</div>";
+        $html .= "</div>";
+
+        $html .= "<div class='liste-avis'>";
+        foreach($this->avis as $currAvis){
+            $html .= "<div class='avis'>";
+                $html .= "<div class='titre-avis'>";
+                    $html .= "<h3>" . $currAvis->getUser() . "</h3>";
+                    $html .= "<div class='stars-container'>";
+                        $html .= "<div class='stars-background'>";
+                        $html .= "☆☆☆☆☆";
+                        $html .= "</div>";
+                        $html .= "<div class='stars-filled' style='width: " . (($currAvis->getNote())/5*100) . "%;'>";
+                        $html .= "★★★★★";
+                        $html .= "</div>";
+                    $html .= "</div>";
+                $html .= "</div>";
+                $html .= "<div class='commentaire'>";
+                    $html .= "<p>" . $currAvis->getCommentaire() . "</p>";
+                $html .= "</div>";
+            $html .= "</div>";
+        }
+        $html .= "</div>";
+
+        $html .= "<p class='retour'>&#10094; <a href='/detail/" . $this->getId() . "'>Retour</a></p>";
         return $html;
     }
 }
