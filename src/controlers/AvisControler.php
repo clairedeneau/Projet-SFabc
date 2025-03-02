@@ -14,7 +14,7 @@ class AvisControler extends Controler
 
     public function get(string $params): void
     {
-        $jp = new JsonProvider('../data/models/catalogue.json', "../data/models/avis.json", '../data/models/famille.json');
+        $jp = new JsonProvider();
         $articles = $jp->loadCatalogue();
         $avis = $jp->loadAvis(intval($params));
         $article = Catalogue::getProduitById($articles, $params);
@@ -25,7 +25,7 @@ class AvisControler extends Controler
 
     public function post(string $params): void
     {
-        $jp = new JsonProvider('../data/models/catalogue.json', "../data/models/avis.json", '../data/models/famille.json');
+        $jp = new JsonProvider();
 
         $nom = htmlspecialchars($_POST['nom']);
         $note = (int)$_POST['note'];

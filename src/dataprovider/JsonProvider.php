@@ -8,19 +8,15 @@ use Exception;
 
 class JsonProvider
 {
-    private string $catalogueFilePath;
-    private string $avisFilePath;
-    private string $familleFilePath;
+    private string $catalogueFilePath = "../data/models/catalogue.json";
+    private string $avisFilePath = "../data/models/avis.json";
+    private string $familleFilePath = "../data/models/famille.json";
 
-    public function __construct(string $catalogueFilePath, string $avisFilePath, string $familleFilePath)
+    public function __construct(string $catalogueFilePath = "", string $avisFilePath = "", string $familleFilePath = "")
     {
-        if (empty($catalogueFilePath) || empty($avisFilePath) || empty($familleFilePath)) {
-            throw new Exception("Path cannot be empty");
-        }
-
-        $this->catalogueFilePath = $catalogueFilePath;
-        $this->avisFilePath = $avisFilePath;
-        $this->familleFilePath = $familleFilePath;
+        if(!empty($catalogueFilePath)) $this->catalogueFilePath = $catalogueFilePath;
+        if(!empty($avisFilePath)) $this->avisFilePath = $avisFilePath;
+        if(!empty($familleFilePath)) $this->familleFilePath = $familleFilePath;
     }
 
     public function loadFamilles(): array

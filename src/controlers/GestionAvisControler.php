@@ -9,15 +9,11 @@ use SFabc\dataprovider\JsonProvider;
 
 class GestionAvisControler extends Controler
 {
-    private const CATALOGUE_JSON_PATH = '../data/models/catalogue.json';
-    private const AVIS_JSON_PATH = '../data/models/avis.json';
-    private const FAMILLE_JSON_PATH = '../data/models/famille.json';
-
     public function get(string $params): void
     {
         try {
 
-            $jsonProvider = new JsonProvider(self::CATALOGUE_JSON_PATH, self::AVIS_JSON_PATH, self::FAMILLE_JSON_PATH);
+            $jsonProvider = new JsonProvider();
 
             $avis = $jsonProvider->loadAvis();
 
@@ -82,7 +78,7 @@ class GestionAvisControler extends Controler
     private function deleteAvis(int $id): void
     {
         try {
-            $jsonProvider = new JsonProvider(self::CATALOGUE_JSON_PATH, self::AVIS_JSON_PATH, self::FAMILLE_JSON_PATH);
+            $jsonProvider = new JsonProvider();
             $avis = $jsonProvider->loadAvis();
             $newAvis = [];
             foreach ($avis as $avi) {

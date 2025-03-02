@@ -19,7 +19,7 @@ class GestionArticlesControler extends Controler
     public function get(string $params): void
     {
         try {
-            $jsonProvider = new JsonProvider(self::CATALOGUE_JSON_PATH, self::AVIS_JSON_PATH, self::FAMILLE_JSON_PATH);
+            $jsonProvider = new JsonProvider();
             $catalogues = $jsonProvider->loadCatalogue();
             $familles = $jsonProvider->loadFamilles();
 
@@ -65,7 +65,7 @@ class GestionArticlesControler extends Controler
             exit();
         }
 
-        $jsonProvider = new JsonProvider(self::CATALOGUE_JSON_PATH, self::AVIS_JSON_PATH, self::FAMILLE_JSON_PATH);
+        $jsonProvider = new JsonProvider();
         $catalogues = $jsonProvider->loadCatalogue();
         $familles = $jsonProvider->loadFamilles();
 
