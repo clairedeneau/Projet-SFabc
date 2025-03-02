@@ -145,7 +145,9 @@ class Catalogue
     public function renderArticle(): string {
         $html = "<div class='produit'>";
         $html .= "<a href='"."/detail/".$this->id."'>";
-        $html .= "<img src='".$this->photos[0]."' alt='".$this->nom."' width='200' height='auto'>";
+        if (! ($this->photos == [])) {
+            $html .= "<img src='".$this->photos[0]."' alt='".$this->nom."' width='200' height='auto'>";
+        }
         $html .= "<div class='contenu-produit'>";
         $html .= "<h3>".$this->nom."</h3>";
         $prixAffiche = "---------";

@@ -13,13 +13,13 @@
             "idProduit": 1,
             "user": "Jean D.",
             "note": 3,
-            "comment": "Pas mal mais je m'attendais pas \u00e0 \u00e7a",
+            "comment": "Pas mal mais je m'attendais pas à ça",
             "date": "2025-02-27"
         },
         {
             "id": 3,
             "idProduit": 2,
-            "user": "S\u00e9verine C.",
+            "user": "Séverine C.",
             "note": 2,
             "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "date": "2025-02-27"
@@ -27,7 +27,7 @@
         {
             "id": 4,
             "idProduit": 1,
-            "user": "Aur\u00e9lie F.",
+            "user": "Aurélie F.",
             "note": 5,
             "comment": "Waaaah trop meugnoooon",
             "date": "2025-02-28"
