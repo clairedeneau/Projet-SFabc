@@ -30,7 +30,7 @@ return [
         'redirect' => '/',
         'requiresArgument' => false
     ],
-    '/admin' => [
+    /*'/admin' => [
         'controler' => SFabc\controlers\AdminLoginControler::class,
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
@@ -47,7 +47,7 @@ return [
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => false
-    ],
+    ],*/
     '/detail' => [
         'controler' => SFabc\controlers\DetailControler::class,
         'methods' => ['GET'],
@@ -59,7 +59,7 @@ return [
         'methods' => ['GET', 'POST'],
         'redirect' => '/',
         'requiresArgument' => true
-    ],
+    ],/*
     '/gestionarticles' => [
         'controler' => SFabc\controlers\GestionArticlesControler::class,
         'methods' => ['GET', 'POST'],
@@ -71,5 +71,5 @@ return [
         'methods' => ['GET', 'POST'],
         'redirect' => '/gestionavis',
         'requiresArgument' => false
-    ],
+    ],*/
 ];
